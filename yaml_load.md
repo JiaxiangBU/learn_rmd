@@ -1,0 +1,77 @@
+yaml.load 的使用心得
+================
+
+针对 yaml 的问题，我在[Stack
+Overflow](https://stackoverflow.com/a/54283191/8625228)写了一个相关答案。
+
+``` r
+library(yaml)
+library(magrittr)
+library(readr)
+"
+---
+title: 'This is a title'
+output: github_document
+---
+
+some content
+" %>% 
+    yaml.load()
+```
+
+    ## $title
+    ## [1] "This is a title"
+    ## 
+    ## $output
+    ## [1] "github_document"
+
+``` r
+text <- "
+---
+title: 'This is a title'
+output: github_document
+---
+
+some content
+some content: some content
+"
+library(xfun)
+```
+
+    ## 
+    ## Attaching package: 'xfun'
+
+    ## The following objects are masked from 'package:base':
+    ## 
+    ##     attr, isFALSE
+
+``` r
+yaml_content <- 
+    read_lines(text,n_max = 5) %>% 
+    yaml.load()
+yaml_content
+```
+
+    ## $title
+    ## [1] "This is a title"
+    ## 
+    ## $output
+    ## [1] "github_document"
+
+``` r
+yaml_content$title
+```
+
+    ## [1] "This is a title"
+
+1.  处理成 list 格式
+2.  忽略非 yaml 字段，如`some content`
+
+但是当正文中含有 key-value pair 时，`yaml.load`会报错，因此需要限制 block
+    的行数。
+
+    Error in yaml::yaml.load(.) : Scanner error: mapping values are not allowed in this context at line 18, column 7
+
+参考[Stack
+Overflow](https://stackoverflow.com/a/52174427/8625228)，是因为`line 18`中`remote:
+Enumerating objects: 28, done.`出现了两个`:`，因此如何避免这种情况呢？选择第二个 `---`前的情况。
