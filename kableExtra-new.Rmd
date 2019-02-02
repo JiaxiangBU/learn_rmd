@@ -1,0 +1,53 @@
+---
+title: "kableExtra 新功能展示"
+---
+
+参考
+[haozhu](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html)
+
+```{r}
+library(kableExtra)
+library(magrittr)
+```
+
+```{r}
+text_spec("测试下颜色", bold = T, color = "white", background = "#d9230f") %>% cat
+```
+
+`r text_spec("测试下颜色", bold = T, color = "white", background = "#d9230f")`
+
+<input type="checkbox" id="checkbox1" class="styled">考虑加入add2md
+
+浮动图表
+
+```{r}
+dt <- 
+    mtcars %>% 
+    head
+kable(dt) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F, position = "float_right")
+```
+
+测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+
+```{r}
+library(kableExtra)
+library(magrittr)
+dt <-
+    mtcars %>% 
+    head
+dt %>% 
+    kable() %>% 
+    kable_styling() %>%
+    scroll_box(width = "500px", height = "200px")
+```
+
+正确使用方式参考[Github Issue 333](https://github.com/haozhu233/kableExtra/issues/333)
+`scroll_box`这个函数很不错。
+<input type="checkbox" id="checkbox1" class="styled">看下能不能用到 gitlab 上。
+
+其他再尝试
+[haozhu](https://haozhu233.github.io/kableExtra/)
