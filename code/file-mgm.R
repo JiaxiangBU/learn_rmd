@@ -19,6 +19,14 @@ dir_delete("sql")
 
 wflow_status()
 
-wflow_git_commit("analysis/*", message = "transfer all into analysis", all = TRUE)
+wflow_git_commit("analysis/about.Rmd", message = "1. update about")
 
-wflow_publish('analysis/*', message = "publish all", all = TRUE)
+wflow_publish("analysis/about.Rmd", message = "1. update about")
+wflow_publish("analysis/*", message = "add 参数化RMarkdown 文档", all = T)
+
+wflow_open('analysis/rmd-template.Rmd')
+
+# custom ------------------------------------------------------------------
+
+wflow_open('analysis/about.Rmd')
+wflow_open('README.Rmd', project = NULL)

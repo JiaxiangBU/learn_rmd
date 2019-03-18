@@ -1,0 +1,60 @@
+---
+title: "参数化RMarkdown 文档"
+author: "Jiaxiang Li"
+date: "2019-03-19"
+output: workflowr::wflow_html
+---
+
+参考 [www](https://www.jla-data.net/eng/parametrized-r-markdown-reports/)
+在 yaml 模块，`#`可以作为评论记号，而不执行。
+
+```{r}
+library(rmarkdown)
+suppressMessages(library(tidyverse))
+species_list <- iris$Species %>% unique()
+```
+
+```{r}
+args(render)
+```
+
+未成功。 
+ 
+```{r eval=F}
+library(glue)
+species_list %>% 
+    map(render,
+        input = 'rmd-template.Rmd',
+        params = list(species = .),
+        output_format = 'html_document',
+        output_file = glue("{.}.html"),
+        output_dir = '../output',
+        quiet = T,
+        encoding = 'UTF-8'
+        )
+```
+
+```{r eval=F}
+library(rmarkdown)
+
+flowers <- unique(iris$Species) # setosa, versicolor, virginica - you know them all, don't you?
+
+for (i in seq_along(flowers)) {
+  myIris <- flowers[i]  # my species - to be reused as 1) parameter & 2) file name
+  render("report-template.Rmd", # the template
+          params = list(species = myIris), # value of myIris passed to the species parameter
+          output_file = paste(myIris, '.pdf', sep = ''), # name of the output file - species name and pdf extension
+          quiet = T,
+          encoding = 'UTF-8')
+```
+
+```
+错误: Incomplete expression: 
+for (i in seq_along(flowers)) {
+  myIris <- flowers[i]  # my species - to be reused as 1) parameter & 2) file name
+  render("report-template.Rmd", # the template
+          # params = list(species = myIris), # value of myIris passed to the species parameter
+          # output_file = paste(myIris, '.pdf', sep = ''), # name of the output file - species name and pdf extension
+          # quiet = T,
+          encoding = 'UTF-8')
+```

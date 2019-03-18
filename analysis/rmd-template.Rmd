@@ -1,0 +1,15 @@
+---
+title: "iris: `r params$species`"
+author: "Jiaxiang Li"
+date: "2019-03-19"
+output: github_document
+params:
+    species: "setosa" # 默认值
+---
+
+```{r}
+suppressMessages(library(tidyverse))
+iris %>% 
+    filter(Species == params$species)
+```
+
