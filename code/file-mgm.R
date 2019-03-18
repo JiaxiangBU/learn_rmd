@@ -12,3 +12,5 @@ dir_info(".", type = 'file', regexp = '\\.R?md$') %>%
 dir_delete("sql")
 
 wflow_status()
+
+wflow_git_commit("analysis/*",message = "transfer all into analysis")
