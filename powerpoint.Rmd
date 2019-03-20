@@ -1,0 +1,17 @@
+---
+author: Jiaxiang Li
+date: "`r Sys.Date()`"
+output: github_document
+---
+
+参考 [bookdown](https://bookdown.org/yihui/rmarkdown/powerpoint-presentation.html)
+学习做PPT，可以插入模板
+
+todo 如何增加 caption 的序号呢？
+字体大小
+
+rmarkdown PowerPoint caption reference
+
+但是复现的时候，非常快，不需要陷入粘贴数据、图片的泥沼。
+
+而且现在生成 ppt 更加稳定了。
