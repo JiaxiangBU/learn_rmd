@@ -2,6 +2,12 @@
 
 1. add ppt related
 
+### 2019-03-19 01:42:48
+
+1. add workflowr proj
+1. update about
+1. add 参数化RMarkdown 文档
+
 ### 2019-02-02 16:59:16
 
 1. add kableExtra 新功能展示
