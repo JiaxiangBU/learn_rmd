@@ -1,0 +1,22 @@
+---
+title: "result as-is"
+author: "Jiaxiang Li"
+date: "2019-03-21"
+output: workflowr::wflow_html
+---
+
+## Introduction
+
+参考 [bookdown](https://bookdown.org/yihui/rmarkdown/r-code.html)
+
+>
+`results`: When set to `'hide'`, text output will be hidden; when set to `'asis'`, text output is written “as-is”, e.g., you can write out raw Markdown text from R code (like `cat('**Markdown** is cool.\n'))`. By default, text output will be wrapped in verbatim elements (typically plain code blocks).
+
+```{r results='asis'}
+suppressMessages(library(tidyverse))
+text <- "1. 测试\n"
+rep(text,2) %>% 
+    str_flatten("") %>% 
+    cat
+```
+
