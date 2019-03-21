@@ -6,4 +6,37 @@ output:
     toc: false
 ---
 
-Welcome to my research website.
+```{r echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
+library(fs)
+library(glue)
+library(tidyverse)
+root <- 'https://jiaxiangbu.github.io/learn_rmd'
+title_regexp <- glue("<title>([\\p{Han}A-z\\.\\s-]+)</title>", 
+                     .open = '<<', 
+                     .close = '>>')
+dir_info("docs/", type = 'file', regexp = '\\.html$') %>% 
+    mutate(
+        url = basename(path),
+        url = file.path(root,url)
+    ) %>% 
+    mutate(
+        name = map(path,~ read_lines(.) %>% 
+                       str_subset(title_regexp) %>% 
+                       str_match_all(title_regexp) 
+        )
+    ) %>% 
+    unnest() %>% 
+    mutate(
+        name = map_chr(name, ~.[,2])
+    ) %>% 
+    select(url, name, everything()) %>% 
+    mutate(
+        link = glue("1. [{name}]({url})")
+    ) %>% 
+    summarise(
+        str_flatten(link, '\n')
+    ) %>% 
+    pull %>% 
+    cat
+```
+
