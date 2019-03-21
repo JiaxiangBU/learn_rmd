@@ -21,7 +21,7 @@ wflow_status()
 
 wflow_git_commit("analysis/about.Rmd", message = "1. update about")
 
-wflow_publish("analysis/about.Rmd", message = "1. update about")
+wflow_publish("analysis/param-rmd.Rmd", message = "1. update")
 wflow_publish("analysis/*", message = "add 参数化RMarkdown 文档", all = T)
 
 wflow_open('analysis/rmd-template.Rmd')
