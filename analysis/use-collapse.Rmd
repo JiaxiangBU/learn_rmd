@@ -1,0 +1,28 @@
+---
+title: "use-collapse"
+author: "Jiaxiang Li"
+date: "2019-03-21"
+output: workflowr::wflow_html
+---
+
+## Introduction
+
+```{r}
+1 + 1
+1 + 2
+```
+
+设置 `collapse=TRUE` 后，
+
+```{r collapse=TRUE}
+1 + 1
+1 + 2
+```
+
+但是在 `workflow` 环境下就失效了，提交了问题 [Github Issue 153](https://github.com/jdblischak/workflowr/issues/153)
+
+```{r}
+library(webshot)
+webshot(url = "file:///D:/work/learn_rmd/docs/use-collapse.html", file = 'collapse-fail-workflowr.png')
+```
+
