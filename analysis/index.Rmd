@@ -14,7 +14,7 @@ root <- 'https://jiaxiangbu.github.io/learn_rmd'
 title_regexp <- glue("<title>([\\p{Han}A-z\\.\\s-]+)</title>", 
                      .open = '<<', 
                      .close = '>>')
-dir_info("docs/", type = 'file', regexp = '\\.html$') %>% 
+dir_info("../docs/", type = 'file', regexp = '\\.html$') %>% 
     mutate(
         url = basename(path),
         url = file.path(root,url)
@@ -37,6 +37,7 @@ dir_info("docs/", type = 'file', regexp = '\\.html$') %>%
         str_flatten(link, '\n')
     ) %>% 
     pull %>% 
-    cat
+    clipr::write_clip()
+message('The table of content of your project is on the clipboard.')
 ```
 
