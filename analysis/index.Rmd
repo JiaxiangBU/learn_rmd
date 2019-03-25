@@ -6,38 +6,49 @@ output:
     toc: false
 ---
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
-library(fs)
-library(glue)
-library(tidyverse)
-root <- 'https://jiaxiangbu.github.io/learn_rmd'
-title_regexp <- glue("<title>([\\p{Han}A-z\\.\\s-]+)</title>", 
-                     .open = '<<', 
-                     .close = '>>')
-dir_info("../docs/", type = 'file', regexp = '\\.html$') %>% 
-    mutate(
-        url = basename(path),
-        url = file.path(root,url)
-    ) %>% 
-    mutate(
-        name = map(path,~ read_lines(.) %>% 
-                       str_subset(title_regexp) %>% 
-                       str_match_all(title_regexp) 
-        )
-    ) %>% 
-    unnest() %>% 
-    mutate(
-        name = map_chr(name, ~.[,2])
-    ) %>% 
-    select(url, name, everything()) %>% 
-    mutate(
-        link = glue("1. [{name}]({url})")
-    ) %>% 
-    summarise(
-        str_flatten(link, '\n')
-    ) %>% 
-    pull %>% 
+```{r}
+source(here::here("R/load.R"))
+```
+
+
+```{r}
+wflow_toc <- function(gh_url = "https://jdblischak.github.io", proj_url = "workflowr") {
+  root <- file.path(gh_url,proj_url)
+  title_regexp <- glue::glue("<title>([\\p{Han}A-z\\.\\s-]+)</title>",
+                             .open = '<<',
+                             .close = '>>')
+  fs::dir_info(here::here("docs"), type = 'file', regexp = '\\.html$') %>%
+    dplyr::mutate(
+      url = basename(path),
+      url = file.path(root,url)
+    ) %>%
+    dplyr::mutate(
+      name = purrr::map(path,~ readr::read_lines(.) %>%
+                          stringr::str_subset(title_regexp) %>%
+                          stringr::str_match_all(title_regexp)
+      )
+    ) %>%
+    tidyr::unnest() %>%
+    dplyr::mutate(
+      name = purrr::map_chr(name, ~.[,2])
+    ) %>%
+    dplyr::select(url, name, dplyr::everything()) %>%
+    dplyr::mutate(
+      link = glue::glue("1. [{name}]({url})")
+    ) %>%
+    .$link %>%
+    # dplyr::summarise(
+    #   value = stringr::str_flatten(link, '\n')
+    # ) %>%
+    # Error: Column `stringr::str_flatten(link, "\n")` must be length 1 (a summary value), not 0
+    # dplyr::pull %>%
     clipr::write_clip()
-message('The table of content of your project is on the clipboard.')
+  message('The table of content of your project is on the clipboard.')
+
+}
+```
+
+```{r}
+wflow_toc()
 ```
 
