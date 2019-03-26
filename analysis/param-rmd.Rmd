@@ -5,6 +5,7 @@ date: "2019-03-19"
 output: workflowr::wflow_html
 ---
 
+[github](https://github.com/jenniferthompson/ParamRmdExample) 是一个 minimal example。
 参考 [jla-data](https://www.jla-data.net/eng/parametrized-r-markdown-reports/) 和
 [nsaunders](https://nsaunders.wordpress.com/2019/03/04/using-parameters-in-rmarkdown/)
 在 yaml 模块，`#`可以作为评论记号，而不执行。
