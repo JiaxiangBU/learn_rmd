@@ -1,5 +1,5 @@
 ---
-title: "参数化RMarkdown 文档"
+title: "参数化 RMarkdown 文档"
 author: "Jiaxiang Li"
 date: "2019-03-19"
 output: workflowr::wflow_html
@@ -24,9 +24,8 @@ args(render)
 ```{r eval=F}
 library(glue)
 species_list %>% 
-    map(render,
+    map(~render(params = list(species = .)),
         input = 'rmd-template.Rmd',
-        params = list(species = .),
         output_format = 'html_document',
         output_file = glue("{.}.html"),
         output_dir = '../output',
@@ -59,3 +58,47 @@ for (i in seq_along(flowers)) {
           # quiet = T,
           encoding = 'UTF-8')
 ```
+
+
+参考 [rmarkdown](https://rmarkdown.rstudio.com/lesson-6.html)
+
+```{r eval=F}
+render("5-parameters.Rmd", params = list(data = "aleutians"))
+```
+
+这样就非常方便
+
+我突然想起来，这就是 DataExplorer 的实现方式。
+因此只要 base 在 Rmd 模板进行编写就可以了。 
+
+还可以 knit with params，有UI 这一步没有问题。
+
+## 常见报错
+
+```
+Error: params object already exists in knit environment so can't be overwritten by render params
+```
+
+参考 [Stack Overflow](https://stackoverflow.com/a/32028424/8625228)
+因为 `params` 这个对象该环境中已经有了，我更喜欢这个答案，参考[Stack Overflow](https://stackoverflow.com/a/42104149/8625228)
+
+```{r eval=F}
+rmarkdown::render("test.Rmd", params = list(name = "Jordan"), envir = new.env() )
+```
+
+```
+> source("R/load.R")
+> render("jd-template.Rmd",params = list(name = '同学', email = 'example@example.com'),
++        output_format = 'github_document',output_dir = 'test-person'
++        )
+
+
+processing file: jd-template.Rmd
+  |......................                                           |  33%
+   inline R code fragments
+
+Quitting from lines 2-86 (jd-template.Rmd) 
+Error in nchar(input) : invalid multibyte string, element 1
+```
+
+需要设置 `encoding = 'UTF-8'`
