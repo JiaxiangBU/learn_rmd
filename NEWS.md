@@ -1,3 +1,8 @@
+### 2019-03-28 23:43:20
+
+1. add kableExtra folder
+1. add as_image rmd
+
 ### 2019-03-24 16:47:44
 
 1. update toc

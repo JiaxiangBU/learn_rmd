@@ -1,0 +1,26 @@
+---
+title: "kableExtra 表格保存为图片"
+author: "Jiaxiang Li"
+date: "2019-03-21"
+output: workflowr::wflow_html
+---
+
+参考 [Github Issue 477251410](https://github.com/haozhu233/kableExtra/issues/365#issuecomment-477251410) 和
+[haozhu](https://haozhu233.github.io/kableExtra/save_kable_and_as_image.html)
+表格保存为图片，利于格式分享。
+
+```{r}
+library(kableExtra)
+
+kable(mtcars, "latex", booktabs = T) %>%
+    kable_styling(latex_options = c("striped", "scale_down")) %>%
+    row_spec(1, color = "red") %>% 
+    kable_as_image()
+```
+
+```{r}
+suppressMessages(library(tidyverse))
+getNamespaceExports("kableExtra") %>% str_subset("as_image")
+packageVersion("kableExtra")
+```
+
