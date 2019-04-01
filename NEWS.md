@@ -1,3 +1,7 @@
+### 2019-04-02 01:09:21
+
+1. update toc functions
+
 ### 2019-03-28 23:43:20
 
 1. add kableExtra folder

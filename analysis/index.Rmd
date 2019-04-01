@@ -12,39 +12,28 @@ source(here::here("R/load.R"))
 
 
 ```{r}
-wflow_toc <- function(gh_url = "https://jdblischak.github.io", proj_url = "workflowr") {
-  root <- file.path(gh_url,proj_url)
-  title_regexp <- glue::glue("<title>([\\p{Han}A-z\\.\\s-]+)</title>",
-                             .open = '<<',
-                             .close = '>>')
-  fs::dir_info(here::here("docs"), type = 'file', regexp = '\\.html$') %>%
-    dplyr::mutate(
-      url = basename(path),
-      url = file.path(root,url)
-    ) %>%
-    dplyr::mutate(
-      name = purrr::map(path,~ readr::read_lines(.) %>%
-                          stringr::str_subset(title_regexp) %>%
-                          stringr::str_match_all(title_regexp)
-      )
-    ) %>%
+wflow_toc <- function(analysis_dir = "analysis", docs_dir = "docs") {
+  s <- wflow_status()
+  s$status %>%
+    tibble::rownames_to_column(var = 'rmd_path') %>%
+    dplyr::filter(published) %>%
+
+    dplyr::mutate(html_path = map_chr(rmd_path, workflowr:::to_html, outdir = s$docs),
+                  html_path = map_chr(html_path, fs::path_file)) %>%
+
+    dplyr::mutate(name = purrr::map(rmd_path,~ rmarkdown::yaml_front_matter(.)$title)) %>%
+    filter(!map_lgl(name, is_null)) %>%
     tidyr::unnest() %>%
+
     dplyr::mutate(
-      name = purrr::map_chr(name, ~.[,2])
+      name = ifelse(is.na(name), html_path, name)
     ) %>%
-    dplyr::select(url, name, dplyr::everything()) %>%
     dplyr::mutate(
-      link = glue::glue("1. [{name}]({url})")
+      link = glue::glue("1. [{name}]({html_path})")
     ) %>%
     .$link %>%
-    # dplyr::summarise(
-    #   value = stringr::str_flatten(link, '\n')
-    # ) %>%
-    # Error: Column `stringr::str_flatten(link, "\n")` must be length 1 (a summary value), not 0
-    # dplyr::pull %>%
     clipr::write_clip()
   message('The table of content of your project is on the clipboard.')
-
 }
 ```
 
@@ -52,3 +41,13 @@ wflow_toc <- function(gh_url = "https://jdblischak.github.io", proj_url = "workf
 wflow_toc()
 ```
 
+1. [About](about.html)
+1. [result as-is](as-is.html)
+1. [Home](index.html)
+1. [License](license.html)
+1. [参数化 RMarkdown 文档](param-rmd.html)
+1. [在 Rmd 中使用 SQL](rmd-sql.html)
+1. [iris: `r params$species`](rmd-template.html)
+1. [内部链接功能](unsort.html)
+1. [use-collapse](use-collapse.html)
+1. [yaml.load 的使用心得](yaml_load.html)
