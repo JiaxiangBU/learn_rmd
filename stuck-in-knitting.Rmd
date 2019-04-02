@@ -1,0 +1,10 @@
+---
+title: knit 卡住的原因
+output: github_document
+---
+
+>
+1. 如果用户留存低，那么首次登录很可能都是新增用户，因此66行为信息都很少，这在之前的样本表的[EDA结果](../rating/submission_view/opd_ppd_66_rating_20190313_wyq.html)中*Missing Data Profile*显示，66行为变量缺失率都很高。
+        
+1. 有链接那么就会卡住，换成绝对链接
+1. 有英文就卡住，主要是用了`*`表示斜体。

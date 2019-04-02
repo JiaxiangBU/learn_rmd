@@ -15,3 +15,11 @@ rmarkdown PowerPoint caption reference
 但是复现的时候，非常快，不需要陷入粘贴数据、图片的泥沼。
 
 而且现在生成 ppt 更加稳定了。
+
+multi-rows
+https://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc
+
+fontsize
+https://stackoverflow.com/questions/30446905/rmarkdown-font-size-and-header
+
+目前感觉 PPT 做起来还有点吃力，我得快快设置 font size 等
