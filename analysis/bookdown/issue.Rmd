@@ -1,0 +1,37 @@
+
+bookdown 下建立 `analysis`
+
+这样分离的好处的是，可以直接 knit ，看单个的问题，因为会看到效果，
+然后再复制到 root
+
+_output 也可以修改
+bookdown
+
+book2tidyverse 就是例子。
+
+
+```
+! Missing $ inserted.
+<inserted text> 
+                $
+l.35 \newblock round_
+                     any equivalent for dplyr? 
+Here is how much of TeX's memory you used:
+ 30994 strings out of 494950
+ 599729 string characters out of 6177311
+ 653001 words of memory out of 5000000
+ 34493 multiletter control sequences out of 15000+600000
+ 561435 words of font info for 102 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 57i,8n,132p,505b,931s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+错误: Failed to compile bookdown.tex. See bookdown.log for more info.
+Please delete bookdown.Rmd after you finish debugging the error.
+停止执行
+
+Exited with status 1.
+```
+
+我猜是 unsort 的bug
+
+先剔除
