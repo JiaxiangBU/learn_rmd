@@ -1,0 +1,27 @@
+---
+title: 发现 load 太多，容易出现以下 bug。
+author: "Jiaxiang Li"
+date: "2019-03-19"
+output: workflowr::wflow_html
+---
+
+
+```
+Attaching package: 'xfun'
+
+The following objects are masked from 'package:base':
+
+    attr, isFALSE
+
+
+Attaching package: 'glue'
+
+The following object is masked from 'package:dplyr':
+
+    collapse
+
+Error in base::attr(..., exact = TRUE) : 
+  ��ʽ����"exact"�ж����֮���Ӧ��ʵ�ʲ���
+Calls: sourceWithProgress -> attr
+ִֹͣ��
+```

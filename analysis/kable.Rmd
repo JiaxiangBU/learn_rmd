@@ -1,0 +1,16 @@
+---
+title: kable 适用于所有的 output
+output: 
+  github_document: 
+    df_print: kable
+---
+
+```
+---
+output: 
+  github_document: 
+    df_print: kable
+---
+```
+
+方便。
