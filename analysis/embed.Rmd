@@ -1,0 +1,17 @@
+
+参考 [Stack Overflow](https://stackoverflow.com/a/9976309/8625228) 进行设置宽度，但是未成功。
+
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+
+<iframe src="https://jiaxiangli.netlify.com/" frameborder="0" scrolling="yes" onload="resizeIframe(this)" />
+<iframe src="https://jiaxiangli.netlify.com/" 
+        onload="this.style.height=this.contentDocument.body.scrollHeight +'px';">
+</iframe>
+
+`<iframe src="https://www.datavizforall.org/embed/index.html"></iframe>`
+<iframe src="https://jiaxiangli.netlify.com/"></iframe>
+https://datavizforall.org/embed.html
