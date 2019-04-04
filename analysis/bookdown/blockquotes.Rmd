@@ -1,0 +1,20 @@
+---
+title: "bookdown blockquotes"
+author: "Jiaxiang Li"
+date: "2019-03-21"
+output: workflowr::wflow_html
+---
+
+```
+> "I thoroughly disapprove of duels. If a man should challenge me,
+  I would take him kindly and forgivingly by the hand and lead him
+  to a quiet place and kill him."
+>
+> --- Mark Twain
+```
+
+>
+The actual output (we customized the style for blockquotes in this book):
+
+
+因此可以使用。
