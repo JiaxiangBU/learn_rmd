@@ -1,0 +1,21 @@
+---
+title: "表格加入标题"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+---
+
+```{r}
+library(knitr)
+```
+
+
+```{r}
+kable(head(iris), format = "html", caption = "Title of the table")
+```
+
+```{r}
+# R Markdown/Github Markdown tables
+kable(head(mtcars[, 1:5]), format = "markdown")
+```
