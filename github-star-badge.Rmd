@@ -1,3 +1,5 @@
 
+参考 [github](https://github.com/ddavison/github-badges)
+
 1. add 少量贡献包 [Xgboost](https://github.com/dmlc/xgboost) [![star this repo](http://githubbadges.com/star.svg?user=dmlc&repo=xgboost)](https://github.com/dmlc/xgboost)
 1. add 少量贡献包 [kableExtra](https://github.com/haozhu233/kableExtra) [![star this repo](http://githubbadges.com/star.svg?user=haozhu233&repo=kableExtra)](https://github.com/haozhu233/kableExtra)
