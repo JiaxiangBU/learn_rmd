@@ -1,3 +1,7 @@
+### 2019-04-07 16:43:23
+
+1. add Use R chunk option child
+
 ### 2019-04-07 11:37:14
 
 1. add no space left on device

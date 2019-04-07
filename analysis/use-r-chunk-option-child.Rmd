@@ -1,0 +1,29 @@
+---
+title: "Use R chunk option child"
+author: "Jiaxiang Li"
+date: "`r Sys.Date()`"
+output: workflowr::wflow_html
+---
+
+参考[R Markdown Cookbook](https://dr-harper.github.io/rmarkdown-cookbook/multi-file-documents.html)
+
+>
+With larger R Markdown projects, it can be useful to split the document into smaller files which are easier to handle than a single, massive `'.Rmd` document. Also, we may also have generic components which we wish to use across all of our analyses, and rather than copying and pasting the same code across for each report.
+
+1. 创建各个小的文档
+1. 不要重复粘贴代码
+
+这两点深得我心。
+
+>
+There is a legacy of using child documents when creating longer documents, as bookdown was only released in 2016. As such, there is some confusion over which should be used when. In general, if you are wishing to reuse a component across multiple documents, it is recommended to use child documents. However, if you are wanting to write a book and split it into multiple files (preferably one per chapter), bookdown provides a lot of extra functionality and is generally preferred.
+
+child 这种方式非常好用，我可以尝试。
+以下做测试。
+
+```{r, child = "about.Rmd"}
+```
+
+
+这个问题在 workflowr 是一个问题，但是已经被解决。
+https://github.com/jdblischak/workflowr/issues/111
