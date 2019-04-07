@@ -1,0 +1,16 @@
+---
+title: "no space left on device"
+author: "Jiaxiang Li"
+date: "`r Sys.Date()`"
+output: workflowr::wflow_html
+---
+
+```
+> blogdown:::serve_site()
+Total in 4326 ms 
+Error: Error copying static files: write /Users/vija/Downloads/work/blog_181126/public/about_files/grViz-binding/lib/mermaid/dist/mermaid.css: no space left on device
+To stop the server, run servr::daemon_stop("140572298819464") or restart your R session
+Serving the directory /Users/vija/Downloads/work/blog_181126 at http://127.0.0.1:4321
+```
+
+「No space left on device」的意思是没有剩余空间了。
