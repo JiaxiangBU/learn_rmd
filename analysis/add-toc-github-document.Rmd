@@ -1,0 +1,22 @@
+---
+title: 在 github_document 中使用目录
+author: "Jiaxiang Li"
+date: "2019-04-11"
+output: workflowr::wflow_html
+---
+
+## Introduction
+
+
+参考 [RStudio Community](https://community.rstudio.com/t/yaml-option-toc-doesnt-work-for-rmarkdown-github-document/18757)，替换成 `md_document`
+
+````
+---
+output: 
+    md_document:
+        df_print: tibble
+        toc: true
+        toc_depth: 2
+bibliography: add.bib
+---
+````

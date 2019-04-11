@@ -1,3 +1,7 @@
+### 2019-04-11 11:28:23
+
+1. add 在 github_document 中使用目录
+
 ### 2019-04-07 16:43:23
 
 1. add Use R chunk option child
