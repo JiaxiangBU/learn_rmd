@@ -1,0 +1,22 @@
+---
+bibliography: add.bib
+---
+
+>
+... considering programs to be works of literature
+[@Knuth1984]
+>
+Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.
+[@Knuth1984]
+
+文学编程 (Literate Programming) 虽然还是不是特别清楚，但不是 cmd line，而是作为解释性的叙述。
+
+>
+他访问过很多成名的程序员。他对系统的阅读 code 持否定意见。我对「系统的」阅读的定义是，本身没有任何目的，希望像消费一本小说那样消费一个 code base，期待自动的获得知识。虽然我花过很多时间读 Linux kernel 和 Lua，但是每次读一定要给自己定一些探索小问题的目标。我觉得 literate program 并不是为了工程上的，以扩展原有系统为具体目的的阅读代码准备的，而是希望 code 成为能够被「系统化」（文学化）阅读的东西。这个我持否定态度。
+[冯东](https://www.zhihu.com/question/26978956/answer/73576593)
+
+>
+这听起来就像在拿着剪刀浆糊在弄程序。虽然我个人还真有点喜欢这一套，但是，这种东西实际上会造成两方面的问题：代码不好维护；代码容易写的很ad hoc(特别的)。
+因为这种写软件的方法是自底而上的办法，中间歪一点最终就成比萨斜塔了。
+
+这个也是我的想法。
