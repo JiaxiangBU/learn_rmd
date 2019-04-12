@@ -1,0 +1,14 @@
+---
+title: "speak notes"
+author: "李家翔"
+date: "2019/4/13"
+output: powerpoint_presentation
+---
+
+::: notes
+This is a speaker note.
+
+- Use basic Markdown
+- like this list
+- *and inline formatting*
+:::
