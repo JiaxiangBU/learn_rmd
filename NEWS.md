@@ -1,3 +1,7 @@
+### 2019-04-15 10:44:58
+
+1. add 在同一文件夹中分享 bib
+
 ### 2019-04-13 00:55:57
 
 1. add powerpoint related notes
