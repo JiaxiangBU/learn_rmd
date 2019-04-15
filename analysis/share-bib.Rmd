@@ -1,0 +1,32 @@
+# 在同一文件夹中分享 bib
+
+In the `_output.yaml`
+
+```
+github_document:
+  df_print: kable
+  pandoc_args: ["--bibliography=../add.bib"]
+```
+
+In the `_site.yml`，参考 [github](https://github.com/JiaxiangBU/test-workflowr/blob/master/analysis/_site.yml)
+
+```
+name: "test-workflowr"
+output_dir: ../docs
+navbar:
+  title: "test-workflowr"
+  left:
+  - text: Home
+    href: index.html
+  - text: About
+    href: about.html
+  - text: License
+    href: license.html
+output:
+  workflowr::wflow_html:
+    toc: yes
+    toc_float: yes
+    theme: cosmo
+    highlight: textmate
+    pandoc_args: ["--bibliography=add.bib"]
+```

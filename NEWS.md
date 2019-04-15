@@ -1,3 +1,12 @@
+### 2019-04-16 00:19:14
+
+merge
+
+### 2019-04-15 10:44:58
+
+1. add 在同一文件夹中分享 bib
+1. add pandoc_args.Rmd
+
 ### 2019-04-13 00:55:57
 
 1. add powerpoint related notes

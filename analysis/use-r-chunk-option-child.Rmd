@@ -27,3 +27,8 @@ child 这种方式非常好用，我可以尝试。
 
 这个问题在 workflowr 是一个问题，但是已经被解决。
 https://github.com/jdblischak/workflowr/issues/111
+
+并且，可以利用 here::here 函数
+
+```r,child=here::here("zhenglianhu/06-02-topic-modeling-display.Rmd")
+```
