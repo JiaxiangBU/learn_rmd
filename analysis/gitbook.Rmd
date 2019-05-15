@@ -1,0 +1,8 @@
+有空研究下 gitbook 的参数
+
+```{r}
+?bookdown:::gitbook
+```
+
+`split_by`可以分开，不然一个 html 太大了。	
+`split_bib`也要分开，不然太长了。
