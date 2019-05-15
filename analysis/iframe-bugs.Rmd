@@ -1,0 +1,46 @@
+一般博客、静态网页，想要插入一个静态网页，最好的方法是使用 JavaScript 的`iframe`，但是我目前在 blogdown 的配置下出现问题，主要是因为尺寸太小。
+
+![](https://user-images.githubusercontent.com/15884785/57705816-21c1d080-7697-11e9-8574-f873fe909b18.png)
+
+可以在 `iframe` 的基础上改变参数，如
+
+```javascript
+<iframe src="https://jiaxiangbu.github.io/r_code/analysis/import-data-learning-notes.html" width="100%" height="800px"></iframe>
+```
+
+这里需要注意设定的参数是
+
+1. `width="100%"`
+1. `height="800px"`
+
+可以替代的 R 代码为
+
+```rmarkdown
+## ```{r,out.width='100%', out.extra='style="display:block;"'}
+## knitr::include_url('https://jiaxiangbu.github.io/tutoring/jinxiaosong/t-sne-theory.html', height = '800px')
+## ```
+```
+
+这里故意加入一个参数 `out.extra='style="display:block;"'` 是为了避免报错。
+详细见
+
+1. https://github.com/yihui/knitr/commit/7ce809e0fbc62cd390b5936286e79e602c60f2bc
+1. https://github.com/yihui/knitr/issues/1691
+1. https://github.com/rstudio/blogdown/issues/32#issuecomment-275032071
+1. https://stackoverflow.com/questions/55941316/knitrinclude-url-ignored-in-output
+```
+out.extra NULL A character string of extra options for figures to be passed to LaTex or HTML.
+```
+[www.rstudio.com](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+
+
+否则会产生报错
+
+```r
+Error in enc2utf8(x) : argument is not a character vector
+```
+
+
+最后产生的效果是
+
+![](https://user-images.githubusercontent.com/15884785/57705978-69485c80-7697-11e9-87d0-bf91bd0f3189.png)
