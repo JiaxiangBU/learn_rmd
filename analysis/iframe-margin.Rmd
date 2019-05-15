@@ -1,0 +1,8 @@
+跟随 [iframe-bugs](iframe-bugs) 的问题，目前需要全页面的展示插入的网站，一般考虑两个参数
+
+```
+<iframe src="https://jiaxiangbu.github.io/r_code/analysis/import-data-learning-notes.html" width="100%" height="800px" style="position:absolute; left:0px"></iframe>
+```
+
+1. 调整 `style="position:absolute;"`参数，参考[Stack Overflow](https://stackoverflow.com/a/37044377/8625228)
+1. 调整 `left` 参数，参考[Stack Overflow](https://stackoverflow.com/questions/25651894/move-iframe-to-the-right-or-shift-content-inside-iframe-to-the-left)
