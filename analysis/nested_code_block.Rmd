@@ -1,0 +1,10 @@
+```{r echo=FALSE, results='asis'}
+gluedown::md_fence(
+"```{r out.width=c('25%', '25%', '25%', '25%'), fig.show='hold'}
+library(magrittr)
+boxplot(1:10)
+plot(rnorm(10))
+plot(rnorm(10))
+plot(rnorm(10))
+```", char = "~", info = "")
+```

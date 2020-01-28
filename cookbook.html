@@ -133,17 +133,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2" data-path=""><a href="#嵌套引用"><i class="fa fa-check"></i><b>2</b> 嵌套引用</a></li>
 <li class="chapter" data-level="3" data-path=""><a href="#github-star-badges"><i class="fa fa-check"></i><b>3</b> GitHub Star Badges</a></li>
 <li class="chapter" data-level="4" data-path=""><a href="#内部链接功能"><i class="fa fa-check"></i><b>4</b> 内部链接功能</a></li>
-<li class="chapter" data-level="" data-path=""><a href="#附录"><i class="fa fa-check"></i>附录</a><ul>
-<li class="chapter" data-level="4.1" data-path=""><a href="#skip-a-line"><i class="fa fa-check"></i><b>4.1</b> Skip a line</a></li>
-<li class="chapter" data-level="4.2" data-path=""><a href="#center-an-image"><i class="fa fa-check"></i><b>4.2</b> Center an image</a></li>
-<li class="chapter" data-level="4.3" data-path=""><a href="#white-space-around-img"><i class="fa fa-check"></i><b>4.3</b> White space around img</a></li>
-<li class="chapter" data-level="4.4" data-path=""><a href="#footer-and-header"><i class="fa fa-check"></i><b>4.4</b> Footer and header</a></li>
-<li class="chapter" data-level="4.5" data-path=""><a href="#figincol"><i class="fa fa-check"></i><b>4.5</b> figures in columns</a></li>
-<li class="chapter" data-level="4.6" data-path=""><a href="#several-columns"><i class="fa fa-check"></i><b>4.6</b> Several columns</a></li>
-<li class="chapter" data-level="4.7" data-path=""><a href="#hide-code"><i class="fa fa-check"></i><b>4.7</b> Hide code</a></li>
-<li class="chapter" data-level="4.8" data-path=""><a href="#inlink"><i class="fa fa-check"></i><b>4.8</b> Internal link</a></li>
-<li class="chapter" data-level="4.9" data-path=""><a href="#compile-in-a-website"><i class="fa fa-check"></i><b>4.9</b> Compile in a website</a></li>
+<li class="chapter" data-level="5" data-path=""><a href="#html-tips"><i class="fa fa-check"></i><b>5</b> HTML Tips</a><ul>
+<li class="chapter" data-level="5.1" data-path=""><a href="#skip-a-line"><i class="fa fa-check"></i><b>5.1</b> Skip a line</a></li>
+<li class="chapter" data-level="5.2" data-path=""><a href="#center-an-image"><i class="fa fa-check"></i><b>5.2</b> Center an image</a></li>
+<li class="chapter" data-level="5.3" data-path=""><a href="#white-space-around-img"><i class="fa fa-check"></i><b>5.3</b> White space around img</a></li>
+<li class="chapter" data-level="5.4" data-path=""><a href="#footer-and-header"><i class="fa fa-check"></i><b>5.4</b> Footer and header</a></li>
+<li class="chapter" data-level="5.5" data-path=""><a href="#figincol"><i class="fa fa-check"></i><b>5.5</b> figures in columns</a></li>
+<li class="chapter" data-level="5.6" data-path=""><a href="#several-columns"><i class="fa fa-check"></i><b>5.6</b> Several columns</a></li>
+<li class="chapter" data-level="5.7" data-path=""><a href="#hide-code"><i class="fa fa-check"></i><b>5.7</b> Hide code</a></li>
+<li class="chapter" data-level="5.8" data-path=""><a href="#inlink"><i class="fa fa-check"></i><b>5.8</b> Internal link</a></li>
+<li class="chapter" data-level="5.9" data-path=""><a href="#compile-in-a-website"><i class="fa fa-check"></i><b>5.9</b> Compile in a website</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path=""><a href="#附录"><i class="fa fa-check"></i>附录</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#参考文献"><i class="fa fa-check"></i>参考文献</a></li>
 </ul>
 
@@ -175,6 +176,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>相关问题提交到
 <a class="github-button" href="https://github.com/JiaxiangBU/tutoring2/issues" data-show-count="true" aria-label="Issue JiaxiangBU/tutoring on GitHub">Issue</a></li>
 </ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
 <div id="fenced-code-blocks" class="section level1">
 <h1><span class="header-section-number">1</span> Fenced code blocks</h1>
 <p>参考 <a href="https://github.com/carwin/markdown-styleguide" class="uri">https://github.com/carwin/markdown-styleguide</a></p>
@@ -204,13 +206,25 @@ list and because it follows a fenced code block.
     
     ```
 ```</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/nested_code_block.png&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/nested_code_block.png&quot;</span>)</a></code></pre></div>
 <div class="figure"><span id="fig:unnamed-chunk-2"></span>
 <img src="figure/nested_code_block.png" alt="否则 RStudio IDE 会错误识别。" width="530" />
 <p class="caption">
 Figure 2.1: 否则 RStudio IDE 会错误识别。
 </p>
 </div>
+<p>第二种方法</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">readr<span class="op">::</span><span class="kw">read_file</span>(<span class="st">&quot;analysis/nested_code_block.Rmd&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>gluedown<span class="op">::</span><span class="kw">md_text</span>()</a></code></pre></div>
+<pre><code>## ```{r echo=FALSE, results=&#39;asis&#39;}
+## gluedown::md_fence(
+## &quot;```{r out.width=c(&#39;25%&#39;, &#39;25%&#39;, &#39;25%&#39;, &#39;25%&#39;), fig.show=&#39;hold&#39;}
+## library(magrittr)
+## boxplot(1:10)
+## plot(rnorm(10))
+## plot(rnorm(10))
+## plot(rnorm(10))
+## ```&quot;, char = &quot;~&quot;, info = &quot;&quot;)
+## ```</code></pre>
 </div>
 <div id="github-star-badges" class="section level1">
 <h1><span class="header-section-number">3</span> GitHub Star Badges</h1>
@@ -223,16 +237,16 @@ Figure 2.1: 否则 RStudio IDE 会错误识别。
 </div>
 <div id="内部链接功能" class="section level1">
 <h1><span class="header-section-number">4</span> 内部链接功能</h1>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/redirection.png&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/redirection.png&quot;</span>)</a></code></pre></div>
 <p><img src="figure/redirection.png" width="746" /></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/redirection_result.png&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/redirection_result.png&quot;</span>)</a></code></pre></div>
 <p><img src="figure/redirection_result.png" width="387" /></p>
 <p>这样就可以替代 印象笔记 的<a href="https://www.yinxiang.com/blog/blog/2018/06/01/evernote-note-link/">内部链接</a>功能。</p>
 </div>
-<div id="附录" class="section level1 unnumbered">
-<h1>附录</h1>
+<div id="html-tips" class="section level1">
+<h1><span class="header-section-number">5</span> HTML Tips</h1>
 <div id="skip-a-line" class="section level2">
-<h2><span class="header-section-number">4.1</span> Skip a line</h2>
+<h2><span class="header-section-number">5.1</span> Skip a line</h2>
 <pre><code>A first sentence
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 A seconde sentence</code></pre>
@@ -241,20 +255,20 @@ A seconde sentence</code></pre>
 A seconde sentence</p>
 </div>
 <div id="center-an-image" class="section level2">
-<h2><span class="header-section-number">4.2</span> Center an image</h2>
+<h2><span class="header-section-number">5.2</span> Center an image</h2>
 <pre><code>&lt;center&gt;
 ![FigName](logo_r_graph_gallery.jpg)
 &lt;/center&gt;</code></pre>
 <p>只需要略懂<code>&lt;&gt;</code>标记语言。</p>
 </div>
 <div id="white-space-around-img" class="section level2">
-<h2><span class="header-section-number">4.3</span> White space around img</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;../analysis/collapse-fail-workflowr.png&quot;</span>)</a></code></pre></div>
+<h2><span class="header-section-number">5.3</span> White space around img</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;../analysis/collapse-fail-workflowr.png&quot;</span>)</a></code></pre></div>
 <p><img src="../analysis/collapse-fail-workflowr.png" /><!-- --></p>
 <p><code>fig.asp=5</code> 还不懂。</p>
 </div>
 <div id="footer-and-header" class="section level2">
-<h2><span class="header-section-number">4.4</span> Footer and header</h2>
+<h2><span class="header-section-number">5.4</span> Footer and header</h2>
 <pre><code>&amp;nbsp;
 &lt;hr /&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;A work by &lt;a href=&quot;https://github.com/holtzy/&quot;&gt;Yan Holtz&lt;/a&gt;&lt;/p&gt;
@@ -275,17 +289,24 @@ A seconde sentence</p>
 <p><a href="https://github.com/JiaxiangBU/learn_rmd/issues/1" class="uri">https://github.com/JiaxiangBU/learn_rmd/issues/1</a></p>
 </div>
 <div id="figincol" class="section level2">
-<h2><span class="header-section-number">4.5</span> figures in columns</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">library</span>(magrittr)</a>
-<a class="sourceLine" id="cb10-2" title="2"><span class="kw">boxplot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb10-3" title="3"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a>
-<a class="sourceLine" id="cb10-4" title="4"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a>
-<a class="sourceLine" id="cb10-5" title="5"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a></code></pre></div>
-<p><img src="cookbook_files/figure-html/unnamed-chunk-8-1.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-8-2.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-8-3.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-8-4.png" width="25%" /></p>
+<h2><span class="header-section-number">5.5</span> figures in columns</h2>
+<pre><code>```{r out.width=c(&#39;25%&#39;, &#39;25%&#39;, &#39;25%&#39;, &#39;25%&#39;), fig.show=&#39;hold&#39;}
+library(magrittr)
+boxplot(1:10)
+plot(rnorm(10))
+plot(rnorm(10))
+plot(rnorm(10))
+```</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">library</span>(magrittr)</a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="kw">boxplot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb14-3" title="3"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a>
+<a class="sourceLine" id="cb14-4" title="4"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a>
+<a class="sourceLine" id="cb14-5" title="5"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a></code></pre></div>
+<p><img src="cookbook_files/figure-html/unnamed-chunk-10-1.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-10-2.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-10-3.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-10-4.png" width="25%" /></p>
 <p><a href="https://github.com/JiaxiangBU/learn_rmd/issues/2" class="uri">https://github.com/JiaxiangBU/learn_rmd/issues/2</a></p>
 </div>
 <div id="several-columns" class="section level2">
-<h2><span class="header-section-number">4.6</span> Several columns</h2>
+<h2><span class="header-section-number">5.6</span> Several columns</h2>
 <p>感觉比 <a href="#figincol">figures in columns</a></p>
 <div class="row">
 <div class="col-md-4">
@@ -317,18 +338,18 @@ ggplot( mtcars, aes(x=mpg)) + geom_histogram(fill=&quot;skyblue&quot;, alpha=0.5
 <p><a href="https://github.com/JiaxiangBU/learn_rmd/issues/3" class="uri">https://github.com/JiaxiangBU/learn_rmd/issues/3</a></p>
 </div>
 <div id="hide-code" class="section level2">
-<h2><span class="header-section-number">4.7</span> Hide code</h2>
+<h2><span class="header-section-number">5.7</span> Hide code</h2>
 <pre><code>output:
   html_document:
     code_folding: &quot;hide&quot;</code></pre>
 <p>这算是给一个选择。</p>
 </div>
 <div id="inlink" class="section level2">
-<h2><span class="header-section-number">4.8</span> Internal link</h2>
+<h2><span class="header-section-number">5.8</span> Internal link</h2>
 <p><a href="#skip-a-line">Skip a line</a></p>
 </div>
 <div id="compile-in-a-website" class="section level2">
-<h2><span class="header-section-number">4.9</span> Compile in a website</h2>
+<h2><span class="header-section-number">5.9</span> Compile in a website</h2>
 <p><code>_site.yml</code> 其中的文字</p>
 <pre><code>name: &quot;my-website&quot;
 navbar:
@@ -339,9 +360,12 @@ navbar:
     - text: &quot;About&quot;
       href: about.html</code></pre>
 <p>通过</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1">rmarkdown<span class="op">::</span><span class="kw">render_site</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1">rmarkdown<span class="op">::</span><span class="kw">render_site</span>()</a></code></pre></div>
 <p>很快的建立了 有nav bar 的网站，workflowr 也是在这个基础上发展的。</p>
 </div>
+</div>
+<div id="附录" class="section level1 unnumbered">
+<h1>附录</h1>
 </div>
 <div id="参考文献" class="section level1 unnumbered">
 <h1>参考文献</h1>
