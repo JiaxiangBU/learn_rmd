@@ -3,8 +3,4 @@
 
 # learn\_rmd
 
-记录 RMarkdown 使用的相关问题。
-
-可以参考
-
-[未整理笔记](unsort.md)
+  - [cookbook](cookbook.html)
