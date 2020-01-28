@@ -1,0 +1,72 @@
+---
+title: RMarkdown Cookbook
+author: 李家翔
+date: "`r Sys.Date()`"
+output: 
+    bookdown::gitbook:
+        split_by: none
+        split_bib: TRUE
+        df_print: paged
+bibliography: refs/add.bib
+---
+
+```{r setup,echo = FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+1. 使用 RMarkdown 的 `child` 参数，进行文档拼接。
+1. 这样拼接以后的笔记方便复习。
+1. 相关问题提交到
+    <a class="github-button" href="https://github.com/JiaxiangBU/tutoring2/issues" data-show-count="true" aria-label="Issue JiaxiangBU/tutoring on GitHub">Issue</a>
+
+# Fenced code blocks
+
+参考 https://github.com/carwin/markdown-styleguide
+
+
+    ```
+      - This list item contains a fenced code block.
+      - Let's show how it might interact with a list.
+
+        ```
+        .code-example {
+          property: value;
+        }
+        ```
+
+    There is a newline above this paragraph because it is both the end of a
+    list and because it follows a fenced code block.
+    ```
+
+# 嵌套引用
+
+要注意缩进。
+
+
+    ```
+        ```
+        
+            ```
+            1
+            ```
+        
+        ```
+    ```
+
+```{r fig.cap="否则 RStudio IDE 会错误识别。"}
+knitr::include_graphics("figure/nested_code_block.png")
+```
+
+
+# GitHub Star Badges
+
+```{r,child="analysis/github-star-badge.Rmd"}
+```
+
+
+# 附录 {-}
+
+# 参考文献 {-}
