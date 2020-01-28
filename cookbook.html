@@ -132,7 +132,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path=""><a href="#fenced-code-blocks"><i class="fa fa-check"></i><b>1</b> Fenced code blocks</a></li>
 <li class="chapter" data-level="2" data-path=""><a href="#嵌套引用"><i class="fa fa-check"></i><b>2</b> 嵌套引用</a></li>
 <li class="chapter" data-level="3" data-path=""><a href="#github-star-badges"><i class="fa fa-check"></i><b>3</b> GitHub Star Badges</a></li>
-<li class="chapter" data-level="" data-path=""><a href="#附录"><i class="fa fa-check"></i>附录</a></li>
+<li class="chapter" data-level="4" data-path=""><a href="#内部链接功能"><i class="fa fa-check"></i><b>4</b> 内部链接功能</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#附录"><i class="fa fa-check"></i>附录</a><ul>
+<li class="chapter" data-level="4.1" data-path=""><a href="#skip-a-line"><i class="fa fa-check"></i><b>4.1</b> Skip a line</a></li>
+<li class="chapter" data-level="4.2" data-path=""><a href="#center-an-image"><i class="fa fa-check"></i><b>4.2</b> Center an image</a></li>
+<li class="chapter" data-level="4.3" data-path=""><a href="#white-space-around-img"><i class="fa fa-check"></i><b>4.3</b> White space around img</a></li>
+<li class="chapter" data-level="4.4" data-path=""><a href="#footer-and-header"><i class="fa fa-check"></i><b>4.4</b> Footer and header</a></li>
+<li class="chapter" data-level="4.5" data-path=""><a href="#figincol"><i class="fa fa-check"></i><b>4.5</b> figures in columns</a></li>
+<li class="chapter" data-level="4.6" data-path=""><a href="#several-columns"><i class="fa fa-check"></i><b>4.6</b> Several columns</a></li>
+<li class="chapter" data-level="4.7" data-path=""><a href="#hide-code"><i class="fa fa-check"></i><b>4.7</b> Hide code</a></li>
+<li class="chapter" data-level="4.8" data-path=""><a href="#inlink"><i class="fa fa-check"></i><b>4.8</b> Internal link</a></li>
+<li class="chapter" data-level="4.9" data-path=""><a href="#compile-in-a-website"><i class="fa fa-check"></i><b>4.9</b> Compile in a website</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path=""><a href="#参考文献"><i class="fa fa-check"></i>参考文献</a></li>
 </ul>
 
@@ -210,8 +221,127 @@ Figure 2.1: 否则 RStudio IDE 会错误识别。
 </ol>
 <p>在 notesdown 上面增加内容</p>
 </div>
+<div id="内部链接功能" class="section level1">
+<h1><span class="header-section-number">4</span> 内部链接功能</h1>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/redirection.png&quot;</span>)</a></code></pre></div>
+<p><img src="figure/redirection.png" width="746" /></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/redirection_result.png&quot;</span>)</a></code></pre></div>
+<p><img src="figure/redirection_result.png" width="387" /></p>
+<p>这样就可以替代 印象笔记 的<a href="https://www.yinxiang.com/blog/blog/2018/06/01/evernote-note-link/">内部链接</a>功能。</p>
+</div>
 <div id="附录" class="section level1 unnumbered">
 <h1>附录</h1>
+<div id="skip-a-line" class="section level2">
+<h2><span class="header-section-number">4.1</span> Skip a line</h2>
+<pre><code>A first sentence
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+A seconde sentence</code></pre>
+<p>A first sentence
+<br><br><br><br>
+A seconde sentence</p>
+</div>
+<div id="center-an-image" class="section level2">
+<h2><span class="header-section-number">4.2</span> Center an image</h2>
+<pre><code>&lt;center&gt;
+![FigName](logo_r_graph_gallery.jpg)
+&lt;/center&gt;</code></pre>
+<p>只需要略懂<code>&lt;&gt;</code>标记语言。</p>
+</div>
+<div id="white-space-around-img" class="section level2">
+<h2><span class="header-section-number">4.3</span> White space around img</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;../analysis/collapse-fail-workflowr.png&quot;</span>)</a></code></pre></div>
+<p><img src="../analysis/collapse-fail-workflowr.png" /><!-- --></p>
+<p><code>fig.asp=5</code> 还不懂。</p>
+</div>
+<div id="footer-and-header" class="section level2">
+<h2><span class="header-section-number">4.4</span> Footer and header</h2>
+<pre><code>&amp;nbsp;
+&lt;hr /&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;A work by &lt;a href=&quot;https://github.com/holtzy/&quot;&gt;Yan Holtz&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: #808080;&quot;&gt;&lt;em&gt;Yan.holtz.data@gmail.com&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css&quot;&gt;
+
+&lt;!-- Add font awesome icons --&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;
+    &lt;a href=&quot;https://twitter.com/r_graph_gallery?lang=en&quot; class=&quot;fa fa-twitter&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://www.linkedin.com/in/yan-holtz-2477534a/&quot; class=&quot;fa fa-linkedin&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://github.com/holtzy/&quot; class=&quot;fa fa-github&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&amp;nbsp;</code></pre>
+<p>但是会报错</p>
+<p><a href="https://github.com/JiaxiangBU/learn_rmd/issues/1" class="uri">https://github.com/JiaxiangBU/learn_rmd/issues/1</a></p>
+</div>
+<div id="figincol" class="section level2">
+<h2><span class="header-section-number">4.5</span> figures in columns</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">library</span>(magrittr)</a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="kw">boxplot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb10-3" title="3"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a>
+<a class="sourceLine" id="cb10-4" title="4"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a>
+<a class="sourceLine" id="cb10-5" title="5"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a></code></pre></div>
+<p><img src="cookbook_files/figure-html/unnamed-chunk-8-1.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-8-2.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-8-3.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-8-4.png" width="25%" /></p>
+<p><a href="https://github.com/JiaxiangBU/learn_rmd/issues/2" class="uri">https://github.com/JiaxiangBU/learn_rmd/issues/2</a></p>
+</div>
+<div id="several-columns" class="section level2">
+<h2><span class="header-section-number">4.6</span> Several columns</h2>
+<p>感觉比 <a href="#figincol">figures in columns</a></p>
+<div class="row">
+<div class="col-md-4">
+<p><br><br>Since R Markdown use the <a href="https://getbootstrap.com/docs/4.0/layout/grid/">bootstrap framework</a> under the hood. It is possible to benefit its powerful grid system. Basically, you can consider that your row is divided in 12 subunits of same width. You can then choose to use only a few of this subunits.</p>
+</div>
+<div class="col-md-4">
+<p><br><br>Here, I use 3 subunits of size 4 (4x3=12). The last column is used for a plot. You can read more about the grid system <a href="bootstrap%20grid%20system">here</a>. I got this result showing the following code in my R Markdown document.</p>
+</div>
+<div class="col-md-4">
+<p><code>{r, message=FALSE, echo=FALSE} ggplot( mtcars, aes(x=mpg)) + geom_histogram(fill="skyblue", alpha=0.5) + theme_minimal()</code></p>
+</div>
+</div>
+<pre><code>&lt;div class = &quot;row&quot;&gt;
+  
+&lt;div class = &quot;col-md-4&quot;&gt;
+&lt;br&gt;&lt;br&gt;Since R Markdown use the [bootstrap framework](https://getbootstrap.com/docs/4.0/layout/grid/) under the hood. It is possible to benefit its powerful grid system. Basically, you can consider that your row is divided in 12 subunits of same width. You can then choose to use only a few of this subunits.
+&lt;/div&gt;
+  
+&lt;div class = &quot;col-md-4&quot;&gt;
+&lt;br&gt;&lt;br&gt;Here, I use 3 subunits of size 4 (4x3=12). The last column is used for a plot. You can read more about the grid system [here](bootstrap grid system). I got this result showing the following code in my R Markdown document.
+&lt;/div&gt;
+  
+&lt;div class = &quot;col-md-4&quot;&gt;
+``{r, message=FALSE, echo=FALSE}
+ggplot( mtcars, aes(x=mpg)) + geom_histogram(fill=&quot;skyblue&quot;, alpha=0.5) + theme_minimal()
+``
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p><a href="https://github.com/JiaxiangBU/learn_rmd/issues/3" class="uri">https://github.com/JiaxiangBU/learn_rmd/issues/3</a></p>
+</div>
+<div id="hide-code" class="section level2">
+<h2><span class="header-section-number">4.7</span> Hide code</h2>
+<pre><code>output:
+  html_document:
+    code_folding: &quot;hide&quot;</code></pre>
+<p>这算是给一个选择。</p>
+</div>
+<div id="inlink" class="section level2">
+<h2><span class="header-section-number">4.8</span> Internal link</h2>
+<p><a href="#skip-a-line">Skip a line</a></p>
+</div>
+<div id="compile-in-a-website" class="section level2">
+<h2><span class="header-section-number">4.9</span> Compile in a website</h2>
+<p><code>_site.yml</code> 其中的文字</p>
+<pre><code>name: &quot;my-website&quot;
+navbar:
+  title: &quot;My Website&quot;
+  left:
+    - text: &quot;Home&quot;
+      href: index.html
+    - text: &quot;About&quot;
+      href: about.html</code></pre>
+<p>通过</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1">rmarkdown<span class="op">::</span><span class="kw">render_site</span>()</a></code></pre></div>
+<p>很快的建立了 有nav bar 的网站，workflowr 也是在这个基础上发展的。</p>
+</div>
 </div>
 <div id="参考文献" class="section level1 unnumbered">
 <h1>参考文献</h1>

@@ -66,7 +66,16 @@ knitr::include_graphics("figure/nested_code_block.png")
 ```{r,child="analysis/github-star-badge.Rmd"}
 ```
 
+# 内部链接功能
+
+```{r,child="analysis/unsort.Rmd"}
+```
+
 
 # 附录 {-}
+
+```{r,child="analysis-2/tips4rmd.Rmd"}
+```
+
 
 # 参考文献 {-}
