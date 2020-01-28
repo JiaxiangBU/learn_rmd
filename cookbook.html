@@ -144,6 +144,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.8" data-path=""><a href="#inlink"><i class="fa fa-check"></i><b>5.8</b> Internal link</a></li>
 <li class="chapter" data-level="5.9" data-path=""><a href="#compile-in-a-website"><i class="fa fa-check"></i><b>5.9</b> Compile in a website</a></li>
 </ul></li>
+<li class="chapter" data-level="6" data-path=""><a href="#add-toc-github-document"><i class="fa fa-check"></i><b>6</b> add-toc-github-document</a><ul>
+<li class="chapter" data-level="6.1" data-path=""><a href="#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path=""><a href="#as-is"><i class="fa fa-check"></i><b>7</b> as-is</a><ul>
+<li class="chapter" data-level="7.1" data-path=""><a href="#introduction-1"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path=""><a href="#embed"><i class="fa fa-check"></i><b>8</b> embed</a></li>
+<li class="chapter" data-level="9" data-path=""><a href="#gitbook"><i class="fa fa-check"></i><b>9</b> gitbook</a></li>
+<li class="chapter" data-level="10" data-path=""><a href="#github-star-badge"><i class="fa fa-check"></i><b>10</b> github-star-badge</a></li>
+<li class="chapter" data-level="11" data-path=""><a href="#iframe-bugs"><i class="fa fa-check"></i><b>11</b> iframe-bugs</a></li>
+<li class="chapter" data-level="12" data-path=""><a href="#iframe-margin"><i class="fa fa-check"></i><b>12</b> iframe-margin</a></li>
+<li class="chapter" data-level="13" data-path=""><a href="#kable-add-title"><i class="fa fa-check"></i><b>13</b> kable-add-title</a></li>
+<li class="chapter" data-level="14" data-path=""><a href="#kable"><i class="fa fa-check"></i><b>14</b> kable</a></li>
+<li class="chapter" data-level="15" data-path=""><a href="#license"><i class="fa fa-check"></i><b>15</b> license</a></li>
+<li class="chapter" data-level="16" data-path=""><a href="#literate-prog"><i class="fa fa-check"></i><b>16</b> literate-prog</a></li>
+<li class="chapter" data-level="17" data-path=""><a href="#load-more-weakness"><i class="fa fa-check"></i><b>17</b> load-more-weakness</a></li>
+<li class="chapter" data-level="18" data-path=""><a href="#no-space-left-on-device"><i class="fa fa-check"></i><b>18</b> no-space-left-on-device</a></li>
+<li class="chapter" data-level="19" data-path=""><a href="#pandoc_args"><i class="fa fa-check"></i><b>19</b> pandoc_args</a></li>
+<li class="chapter" data-level="20" data-path=""><a href="#powerpoint"><i class="fa fa-check"></i><b>20</b> powerpoint</a></li>
+<li class="chapter" data-level="21" data-path=""><a href="#rmd-sql"><i class="fa fa-check"></i><b>21</b> rmd-sql</a></li>
+<li class="chapter" data-level="22" data-path=""><a href="#share-bib"><i class="fa fa-check"></i><b>22</b> share-bib</a></li>
+<li class="chapter" data-level="23" data-path=""><a href="#在同一文件夹中分享-bib"><i class="fa fa-check"></i><b>23</b> 在同一文件夹中分享 bib</a></li>
+<li class="chapter" data-level="24" data-path=""><a href="#stuck-in-knitting"><i class="fa fa-check"></i><b>24</b> stuck-in-knitting</a></li>
+<li class="chapter" data-level="25" data-path=""><a href="#unsort"><i class="fa fa-check"></i><b>25</b> unsort</a></li>
+<li class="chapter" data-level="26" data-path=""><a href="#use-collapse"><i class="fa fa-check"></i><b>26</b> use-collapse</a><ul>
+<li class="chapter" data-level="26.1" data-path=""><a href="#introduction-2"><i class="fa fa-check"></i><b>26.1</b> Introduction</a></li>
+</ul></li>
+<li class="chapter" data-level="27" data-path=""><a href="#use-r-chunk-option-child"><i class="fa fa-check"></i><b>27</b> use-r-chunk-option-child</a></li>
+<li class="chapter" data-level="28" data-path=""><a href="#yaml_load"><i class="fa fa-check"></i><b>28</b> yaml_load</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#附录"><i class="fa fa-check"></i>附录</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#参考文献"><i class="fa fa-check"></i>参考文献</a></li>
 </ul>
@@ -207,14 +236,14 @@ list and because it follows a fenced code block.
     ```
 ```</code></pre>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/nested_code_block.png&quot;</span>)</a></code></pre></div>
-<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<div class="figure"><span id="fig:unnamed-chunk-3"></span>
 <img src="figure/nested_code_block.png" alt="否则 RStudio IDE 会错误识别。" width="530" />
 <p class="caption">
 Figure 2.1: 否则 RStudio IDE 会错误识别。
 </p>
 </div>
 <p>第二种方法</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">readr<span class="op">::</span><span class="kw">read_file</span>(<span class="st">&quot;analysis/nested_code_block.Rmd&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>gluedown<span class="op">::</span><span class="kw">md_text</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">readr<span class="op">::</span><span class="kw">read_file</span>(<span class="st">&quot;template/nested_code_block.Rmd&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>gluedown<span class="op">::</span><span class="kw">md_text</span>()</a></code></pre></div>
 <pre><code>## ```{r echo=FALSE, results=&#39;asis&#39;}
 ## gluedown::md_fence(
 ## &quot;```{r out.width=c(&#39;25%&#39;, &#39;25%&#39;, &#39;25%&#39;, &#39;25%&#39;), fig.show=&#39;hold&#39;}
@@ -302,7 +331,7 @@ plot(rnorm(10))
 <a class="sourceLine" id="cb14-3" title="3"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a>
 <a class="sourceLine" id="cb14-4" title="4"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a>
 <a class="sourceLine" id="cb14-5" title="5"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a></code></pre></div>
-<p><img src="cookbook_files/figure-html/unnamed-chunk-10-1.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-10-2.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-10-3.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-10-4.png" width="25%" /></p>
+<p><img src="cookbook_files/figure-html/unnamed-chunk-12-1.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-12-2.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-12-3.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-12-4.png" width="25%" /></p>
 <p><a href="https://github.com/JiaxiangBU/learn_rmd/issues/2" class="uri">https://github.com/JiaxiangBU/learn_rmd/issues/2</a></p>
 </div>
 <div id="several-columns" class="section level2">
@@ -362,7 +391,792 @@ navbar:
 <p>通过</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1">rmarkdown<span class="op">::</span><span class="kw">render_site</span>()</a></code></pre></div>
 <p>很快的建立了 有nav bar 的网站，workflowr 也是在这个基础上发展的。</p>
+<!-- 这里加入 misc -->
+<!-- write_tmp -->
 </div>
+</div>
+<div id="add-toc-github-document" class="section level1">
+<h1><span class="header-section-number">6</span> add-toc-github-document</h1>
+<div id="introduction" class="section level2">
+<h2><span class="header-section-number">6.1</span> Introduction</h2>
+<p>参考 <a href="https://community.rstudio.com/t/yaml-option-toc-doesnt-work-for-rmarkdown-github-document/18757">RStudio Community</a>，替换成 <code>md_document</code></p>
+<pre><code>---
+output: 
+    md_document:
+        df_print: tibble
+        toc: true
+        toc_depth: 2
+bibliography: add.bib
+---</code></pre>
+</div>
+</div>
+<div id="as-is" class="section level1">
+<h1><span class="header-section-number">7</span> as-is</h1>
+<div id="introduction-1" class="section level2">
+<h2><span class="header-section-number">7.1</span> Introduction</h2>
+<p>参考 <a href="https://bookdown.org/yihui/rmarkdown/r-code.html">bookdown</a></p>
+<blockquote>
+<p><code>results</code>: When set to <code>'hide'</code>, text output will be hidden; when set to <code>'asis'</code>, text output is written “as-is”, e.g., you can write out raw Markdown text from R code (like <code>cat('**Markdown** is cool.\n'))</code>. By default, text output will be wrapped in verbatim elements (typically plain code blocks).</p>
+</blockquote>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">suppressMessages</span>(<span class="kw">library</span>(tidyverse))</a>
+<a class="sourceLine" id="cb20-2" title="2">text &lt;-<span class="st"> &quot;1. 测试</span><span class="ch">\n</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb20-3" title="3"><span class="kw">rep</span>(text,<span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb20-4" title="4"><span class="st">    </span><span class="kw">str_flatten</span>(<span class="st">&quot;&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb20-5" title="5"><span class="st">    </span>cat</a></code></pre></div>
+<ol style="list-style-type: decimal">
+<li>测试</li>
+<li>测试</li>
+</ol>
+</div>
+</div>
+<div id="embed" class="section level1">
+<h1><span class="header-section-number">8</span> embed</h1>
+<p>参考 <a href="https://stackoverflow.com/a/9976309/8625228">Stack Overflow</a> 进行设置宽度，但是未成功。</p>
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+<iframe src="https://jiaxiangli.netlify.com/" frameborder="0" scrolling="yes" onload="resizeIframe(this)"></iframe>
+<iframe src="https://jiaxiangli.netlify.com/" onload="this.style.height=this.contentDocument.body.scrollHeight +&#39;px&#39;;">
+</iframe>
+<code>&lt;iframe src="https://www.datavizforall.org/embed/index.html"&gt;&lt;/iframe&gt;</code>
+<iframe src="https://jiaxiangli.netlify.com/">
+</iframe>
+<p><a href="https://datavizforall.org/embed.html" class="uri">https://datavizforall.org/embed.html</a></p>
+<iframe name="Jiaxiang Li" src="https://jiaxiangli.netlify.com/about/" style="height: 100%; width: 100%;" frameborder="0" scrolling="yes" id="iframe">
+…
+</iframe>
+<p>注意这里不插入</p>
+<pre><code>...&lt;/iframe&gt;</code></pre>
+<p>那么下面的文字是不能显示的。</p>
+</div>
+<div id="gitbook" class="section level1">
+<h1><span class="header-section-number">9</span> gitbook</h1>
+<p>有空研究下 gitbook 的参数</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1">?bookdown<span class="op">:::</span>gitbook</a></code></pre></div>
+<p><code>split_by</code>可以分开，不然一个 html 太大了。<br />
+<code>split_bib</code>也要分开，不然太长了。</p>
+</div>
+<div id="github-star-badge" class="section level1">
+<h1><span class="header-section-number">10</span> github-star-badge</h1>
+<p>参考 <a href="https://github.com/ddavison/github-badges">github</a></p>
+<ol style="list-style-type: decimal">
+<li>add 少量贡献包 <a href="https://github.com/dmlc/xgboost">Xgboost</a> <a href="https://github.com/dmlc/xgboost"><img src="http://githubbadges.com/star.svg?user=dmlc&amp;repo=xgboost" alt="star this repo" /></a></li>
+<li>add 少量贡献包 <a href="https://github.com/haozhu233/kableExtra">kableExtra</a> <a href="https://github.com/haozhu233/kableExtra"><img src="http://githubbadges.com/star.svg?user=haozhu233&amp;repo=kableExtra" alt="star this repo" /></a></li>
+</ol>
+<p>在 notesdown 上面增加内容</p>
+</div>
+<div id="iframe-bugs" class="section level1">
+<h1><span class="header-section-number">11</span> iframe-bugs</h1>
+<p>一般博客、静态网页，想要插入一个静态网页，最好的方法是使用 JavaScript 的<code>iframe</code>，但是我目前在 blogdown 的配置下出现问题，主要是因为尺寸太小。</p>
+<p><img src="https://user-images.githubusercontent.com/15884785/57705816-21c1d080-7697-11e9-8574-f873fe909b18.png" /></p>
+<p>可以在 <code>iframe</code> 的基础上改变参数，如</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb23-1" title="1"><span class="op">&lt;</span>iframe src<span class="op">=</span><span class="st">&quot;https://jiaxiangbu.github.io/r_code/analysis/import-data-learning-notes.html&quot;</span> width<span class="op">=</span><span class="st">&quot;100%&quot;</span> height<span class="op">=</span><span class="st">&quot;800px&quot;</span><span class="op">&gt;</span>&lt;/iframe<span class="op">&gt;</span></a></code></pre></div>
+<p>这里需要注意设定的参数是</p>
+<ol style="list-style-type: decimal">
+<li><code>width="100%"</code></li>
+<li><code>height="800px"</code></li>
+</ol>
+<p>可以替代的 R 代码为</p>
+<pre class="rmarkdown"><code>## ```{r,out.width=&#39;100%&#39;, out.extra=&#39;style=&quot;display:block;&quot;&#39;}
+## knitr::include_url(&#39;https://jiaxiangbu.github.io/tutoring/jinxiaosong/t-sne-theory.html&#39;, height = &#39;800px&#39;)
+## ```</code></pre>
+<p>这里故意加入一个参数 <code>out.extra='style="display:block;"'</code> 是为了避免报错。
+详细见</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://github.com/yihui/knitr/commit/7ce809e0fbc62cd390b5936286e79e602c60f2bc" class="uri">https://github.com/yihui/knitr/commit/7ce809e0fbc62cd390b5936286e79e602c60f2bc</a></li>
+<li><a href="https://github.com/yihui/knitr/issues/1691" class="uri">https://github.com/yihui/knitr/issues/1691</a></li>
+<li><a href="https://github.com/rstudio/blogdown/issues/32#issuecomment-275032071" class="uri">https://github.com/rstudio/blogdown/issues/32#issuecomment-275032071</a></li>
+<li><a href="https://stackoverflow.com/questions/55941316/knitrinclude-url-ignored-in-output" class="uri">https://stackoverflow.com/questions/55941316/knitrinclude-url-ignored-in-output</a></li>
+</ol>
+<pre><code>out.extra NULL A character string of extra options for figures to be passed to LaTex or HTML.</code></pre>
+<p><a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">www.rstudio.com</a></p>
+<p>否则会产生报错</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1">Error <span class="cf">in</span> <span class="kw">enc2utf8</span>(x) <span class="op">:</span><span class="st"> </span>argument is not a character vector</a></code></pre></div>
+<p>最后产生的效果是</p>
+<p><img src="https://user-images.githubusercontent.com/15884785/57705978-69485c80-7697-11e9-87d0-bf91bd0f3189.png" /></p>
+</div>
+<div id="iframe-margin" class="section level1">
+<h1><span class="header-section-number">12</span> iframe-margin</h1>
+<p>跟随 <a href="iframe-bugs">iframe-bugs</a> 的问题，目前需要全页面的展示插入的网站，一般考虑两个参数</p>
+<pre><code>&lt;iframe src=&quot;https://jiaxiangbu.github.io/r_code/analysis/import-data-learning-notes.html&quot; width=&quot;100%&quot; height=&quot;800px&quot; style=&quot;position:absolute; left:0px&quot;&gt;&lt;/iframe&gt;</code></pre>
+<ol style="list-style-type: decimal">
+<li>调整 <code>style="position:absolute;"</code>参数，参考<a href="https://stackoverflow.com/a/37044377/8625228">Stack Overflow</a></li>
+<li>调整 <code>left</code> 参数，参考<a href="https://stackoverflow.com/questions/25651894/move-iframe-to-the-right-or-shift-content-inside-iframe-to-the-left">Stack Overflow</a></li>
+</ol>
+</div>
+<div id="kable-add-title" class="section level1">
+<h1><span class="header-section-number">13</span> kable-add-title</h1>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">library</span>(knitr)</a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1"><span class="kw">kable</span>(<span class="kw">head</span>(iris), <span class="dt">format =</span> <span class="st">&quot;html&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;Title of the table&quot;</span>)</a></code></pre></div>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-38">Table 13.1: </span>Title of the table
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Sepal.Length
+</th>
+<th style="text-align:right;">
+Sepal.Width
+</th>
+<th style="text-align:right;">
+Petal.Length
+</th>
+<th style="text-align:right;">
+Petal.Width
+</th>
+<th style="text-align:left;">
+Species
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+5.1
+</td>
+<td style="text-align:right;">
+3.5
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.9
+</td>
+<td style="text-align:right;">
+3.0
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.7
+</td>
+<td style="text-align:right;">
+3.2
+</td>
+<td style="text-align:right;">
+1.3
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.6
+</td>
+<td style="text-align:right;">
+3.1
+</td>
+<td style="text-align:right;">
+1.5
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.0
+</td>
+<td style="text-align:right;">
+3.6
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.4
+</td>
+<td style="text-align:right;">
+3.9
+</td>
+<td style="text-align:right;">
+1.7
+</td>
+<td style="text-align:right;">
+0.4
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1"><span class="co"># R Markdown/Github Markdown tables</span></a>
+<a class="sourceLine" id="cb30-2" title="2"><span class="kw">kable</span>(<span class="kw">head</span>(mtcars[, <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]), <span class="dt">format =</span> <span class="st">&quot;markdown&quot;</span>)</a></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">mpg</th>
+<th align="right">cyl</th>
+<th align="right">disp</th>
+<th align="right">hp</th>
+<th align="right">drat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Mazda RX4</td>
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160</td>
+<td align="right">110</td>
+<td align="right">3.90</td>
+</tr>
+<tr class="even">
+<td align="left">Mazda RX4 Wag</td>
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160</td>
+<td align="right">110</td>
+<td align="right">3.90</td>
+</tr>
+<tr class="odd">
+<td align="left">Datsun 710</td>
+<td align="right">22.8</td>
+<td align="right">4</td>
+<td align="right">108</td>
+<td align="right">93</td>
+<td align="right">3.85</td>
+</tr>
+<tr class="even">
+<td align="left">Hornet 4 Drive</td>
+<td align="right">21.4</td>
+<td align="right">6</td>
+<td align="right">258</td>
+<td align="right">110</td>
+<td align="right">3.08</td>
+</tr>
+<tr class="odd">
+<td align="left">Hornet Sportabout</td>
+<td align="right">18.7</td>
+<td align="right">8</td>
+<td align="right">360</td>
+<td align="right">175</td>
+<td align="right">3.15</td>
+</tr>
+<tr class="even">
+<td align="left">Valiant</td>
+<td align="right">18.1</td>
+<td align="right">6</td>
+<td align="right">225</td>
+<td align="right">105</td>
+<td align="right">2.76</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="kable" class="section level1">
+<h1><span class="header-section-number">14</span> kable</h1>
+<pre><code>---
+output: 
+  github_document: 
+    df_print: kable
+---</code></pre>
+<p>方便。</p>
+</div>
+<div id="license" class="section level1">
+<h1><span class="header-section-number">15</span> license</h1>
+<p>What license are you using for your code? See <a href="http://choosealicense.com/">choosealicense.com</a> for
+help deciding. It’s a convention to save a file <code>LICENSE</code> in the root of your
+Git repo that contains the license text.</p>
+<p>What license are you using for the written content on your site? It is
+traditional to choose a <a href="https://creativecommons.org/choose/">Creative Commons</a> license for this type of content.</p>
+<p>How should others cite your work? It’s a convention to save a file <code>CITATION</code>
+in the root of your Git repo that contains the citation information.</p>
+</div>
+<div id="literate-prog" class="section level1">
+<h1><span class="header-section-number">16</span> literate-prog</h1>
+<blockquote>
+<p>… considering programs to be works of literature
+<span class="citation">(<span class="citeproc-not-found" data-reference-id="Knuth1984"><strong>???</strong></span>)</span></p>
+<p>Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.
+<span class="citation">(<span class="citeproc-not-found" data-reference-id="Knuth1984"><strong>???</strong></span>)</span></p>
+</blockquote>
+<p>文学编程 (Literate Programming) 虽然还是不是特别清楚，但不是 cmd line，而是作为解释性的叙述。</p>
+<blockquote>
+<p>他访问过很多成名的程序员。他对系统的阅读 code 持否定意见。我对「系统的」阅读的定义是，本身没有任何目的，希望像消费一本小说那样消费一个 code base，期待自动的获得知识。虽然我花过很多时间读 Linux kernel 和 Lua，但是每次读一定要给自己定一些探索小问题的目标。我觉得 literate program 并不是为了工程上的，以扩展原有系统为具体目的的阅读代码准备的，而是希望 code 成为能够被「系统化」（文学化）阅读的东西。这个我持否定态度。
+<a href="https://www.zhihu.com/question/26978956/answer/73576593">冯东</a></p>
+</blockquote>
+<blockquote>
+<p>这听起来就像在拿着剪刀浆糊在弄程序。虽然我个人还真有点喜欢这一套，但是，这种东西实际上会造成两方面的问题：代码不好维护；代码容易写的很ad hoc(特别的)。
+因为这种写软件的方法是自底而上的办法，中间歪一点最终就成比萨斜塔了。</p>
+</blockquote>
+<p>这个也是我的想法。</p>
+</div>
+<div id="load-more-weakness" class="section level1">
+<h1><span class="header-section-number">17</span> load-more-weakness</h1>
+<pre><code>Attaching package: &#39;xfun&#39;
+
+The following objects are masked from &#39;package:base&#39;:
+
+    attr, isFALSE
+
+
+Attaching package: &#39;glue&#39;
+
+The following object is masked from &#39;package:dplyr&#39;:
+
+    collapse
+
+Error in base::attr(..., exact = TRUE) : 
+  ��ʽ����&quot;exact&quot;�ж����֮���Ӧ��ʵ�ʲ���
+Calls: sourceWithProgress -&gt; attr
+ִֹͣ��</code></pre>
+</div>
+<div id="no-space-left-on-device" class="section level1">
+<h1><span class="header-section-number">18</span> no-space-left-on-device</h1>
+<pre><code>&gt; blogdown:::serve_site()
+Total in 4326 ms 
+Error: Error copying static files: write /Users/vija/Downloads/work/blog_181126/public/about_files/grViz-binding/lib/mermaid/dist/mermaid.css: no space left on device
+To stop the server, run servr::daemon_stop(&quot;140572298819464&quot;) or restart your R session
+Serving the directory /Users/vija/Downloads/work/blog_181126 at http://127.0.0.1:4321</code></pre>
+<p>「No space left on device」的意思是没有剩余空间了。</p>
+</div>
+<div id="pandoc_args" class="section level1">
+<h1><span class="header-section-number">19</span> pandoc_args</h1>
+<pre><code>&gt;pandoc --help
+pandoc [OPTIONS] [FILES]
+  -f FORMAT, -r FORMAT  --from=FORMAT, --read=FORMAT
+  -t FORMAT, -w FORMAT  --to=FORMAT, --write=FORMAT
+  -o FILENAME           --output=FILENAME
+                        --data-dir=DIRECTORY
+  -R                    --parse-raw
+  -S                    --smart
+                        --old-dashes
+                        --base-header-level=NUMBER
+                        --indented-code-classes=STRING
+  -F PROGRAM            --filter=PROGRAM
+                        --normalize
+  -p                    --preserve-tabs
+                        --tab-stop=NUMBER
+                        --track-changes=accept|reject|all
+                        --file-scope
+                        --extract-media=PATH
+  -s                    --standalone
+                        --template=FILENAME
+  -M KEY[:VALUE]        --metadata=KEY[:VALUE]
+  -V KEY[:VALUE]        --variable=KEY[:VALUE]
+  -D FORMAT             --print-default-template=FORMAT
+                        --print-default-data-file=FILE
+                        --dpi=NUMBER
+                        --no-wrap
+                        --wrap=auto|none|preserve
+                        --columns=NUMBER
+                        --toc, --table-of-contents
+                        --toc-depth=NUMBER
+                        --no-highlight
+                        --highlight-style=STYLE
+  -H FILENAME           --include-in-header=FILENAME
+  -B FILENAME           --include-before-body=FILENAME
+  -A FILENAME           --include-after-body=FILENAME
+                        --self-contained
+                        --html-q-tags
+                        --ascii
+                        --reference-links
+                        --reference-location=block|section|document
+                        --atx-headers
+                        --chapters
+                        --top-level-division=section|chapter|part
+  -N                    --number-sections
+                        --number-offset=NUMBERS
+                        --no-tex-ligatures
+                        --listings
+  -i                    --incremental
+                        --slide-level=NUMBER
+                        --section-divs
+                        --default-image-extension=extension
+                        --email-obfuscation=none|javascript|references
+                        --id-prefix=STRING
+  -T STRING             --title-prefix=STRING
+  -c URL                --css=URL
+                        --reference-odt=FILENAME
+                        --reference-docx=FILENAME
+                        --epub-stylesheet=FILENAME
+                        --epub-cover-image=FILENAME
+                        --epub-metadata=FILENAME
+                        --epub-embed-font=FILE
+                        --epub-chapter-level=NUMBER
+                        --latex-engine=PROGRAM
+                        --latex-engine-opt=STRING
+                        --bibliography=FILE
+                        --csl=FILE
+                        --citation-abbreviations=FILE
+                        --natbib
+                        --biblatex
+  -m[URL]               --latexmathml[=URL], --asciimathml[=URL]
+                        --mathml[=URL]
+                        --mimetex[=URL]
+                        --webtex[=URL]
+                        --jsmath[=URL]
+                        --mathjax[=URL]
+                        --katex[=URL]
+                        --katex-stylesheet=URL
+                        --gladtex
+                        --trace
+                        --dump-args
+                        --ignore-args
+                        --verbose
+                        --bash-completion
+                        --list-input-formats
+                        --list-output-formats
+                        --list-extensions
+                        --list-highlight-languages
+                        --list-highlight-styles
+  -v                    --version
+  -h                    --help</code></pre>
+</div>
+<div id="powerpoint" class="section level1">
+<h1><span class="header-section-number">20</span> powerpoint</h1>
+<p>参考 <a href="https://bookdown.org/yihui/rmarkdown/powerpoint-presentation.html">bookdown</a>
+学习做PPT，可以插入模板</p>
+<p>todo 如何增加 caption 的序号呢？
+字体大小</p>
+<p>rmarkdown PowerPoint caption reference</p>
+<p>但是复现的时候，非常快，不需要陷入粘贴数据、图片的泥沼。</p>
+<p>而且现在生成 ppt 更加稳定了。</p>
+<p>multi-rows
+<a href="https://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc" class="uri">https://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc</a></p>
+<p>fontsize
+<a href="https://stackoverflow.com/questions/30446905/rmarkdown-font-size-and-header" class="uri">https://stackoverflow.com/questions/30446905/rmarkdown-font-size-and-header</a></p>
+<p>目前感觉 PPT 做起来还有点吃力，我得快快设置 font size 等</p>
+</div>
+<div id="rmd-sql" class="section level1">
+<h1><span class="header-section-number">21</span> rmd-sql</h1>
+<p>参考<a href="https://bookdown.org/yihui/rmarkdown/language-engines.html#sql">bookdown</a></p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1"><span class="kw">library</span>(DBI)</a>
+<a class="sourceLine" id="cb35-2" title="2">con &lt;-<span class="st"> </span><span class="kw">dbConnect</span>(RSQLite<span class="op">::</span><span class="kw">SQLite</span>(), <span class="st">&quot;:memory:&quot;</span>)</a>
+<a class="sourceLine" id="cb35-3" title="3"><span class="kw">dbWriteTable</span>(con, <span class="st">&quot;mtcars&quot;</span>, mtcars)</a>
+<a class="sourceLine" id="cb35-4" title="4"><span class="kw">library</span>(glue)</a>
+<a class="sourceLine" id="cb35-5" title="5">tbl &lt;-<span class="st"> &quot;mtcars&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb36-1" title="1"><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> `mtcars` <span class="kw">where</span> gear <span class="kw">IN</span> (<span class="dv">3</span>, <span class="dv">4</span>)</a></code></pre></div>
+<div class="knitsql-table">
+<table>
+<caption><span id="tab:unnamed-chunk-41">Table 21.1: </span>Displaying records 1 - 10</caption>
+<thead>
+<tr class="header">
+<th align="right">mpg</th>
+<th align="right">cyl</th>
+<th align="right">disp</th>
+<th align="right">hp</th>
+<th align="right">drat</th>
+<th align="right">wt</th>
+<th align="right">qsec</th>
+<th align="right">vs</th>
+<th align="right">am</th>
+<th align="right">gear</th>
+<th align="right">carb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160.0</td>
+<td align="right">110</td>
+<td align="right">3.90</td>
+<td align="right">2.620</td>
+<td align="right">16.46</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160.0</td>
+<td align="right">110</td>
+<td align="right">3.90</td>
+<td align="right">2.875</td>
+<td align="right">17.02</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="right">22.8</td>
+<td align="right">4</td>
+<td align="right">108.0</td>
+<td align="right">93</td>
+<td align="right">3.85</td>
+<td align="right">2.320</td>
+<td align="right">18.61</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">21.4</td>
+<td align="right">6</td>
+<td align="right">258.0</td>
+<td align="right">110</td>
+<td align="right">3.08</td>
+<td align="right">3.215</td>
+<td align="right">19.44</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">18.7</td>
+<td align="right">8</td>
+<td align="right">360.0</td>
+<td align="right">175</td>
+<td align="right">3.15</td>
+<td align="right">3.440</td>
+<td align="right">17.02</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">18.1</td>
+<td align="right">6</td>
+<td align="right">225.0</td>
+<td align="right">105</td>
+<td align="right">2.76</td>
+<td align="right">3.460</td>
+<td align="right">20.22</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">14.3</td>
+<td align="right">8</td>
+<td align="right">360.0</td>
+<td align="right">245</td>
+<td align="right">3.21</td>
+<td align="right">3.570</td>
+<td align="right">15.84</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="right">24.4</td>
+<td align="right">4</td>
+<td align="right">146.7</td>
+<td align="right">62</td>
+<td align="right">3.69</td>
+<td align="right">3.190</td>
+<td align="right">20.00</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">4</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="right">22.8</td>
+<td align="right">4</td>
+<td align="right">140.8</td>
+<td align="right">95</td>
+<td align="right">3.92</td>
+<td align="right">3.150</td>
+<td align="right">22.90</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">4</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">19.2</td>
+<td align="right">6</td>
+<td align="right">167.6</td>
+<td align="right">123</td>
+<td align="right">3.92</td>
+<td align="right">3.440</td>
+<td align="right">18.30</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">4</td>
+<td align="right">4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="share-bib" class="section level1">
+<h1><span class="header-section-number">22</span> share-bib</h1>
+</div>
+<div id="在同一文件夹中分享-bib" class="section level1">
+<h1><span class="header-section-number">23</span> 在同一文件夹中分享 bib</h1>
+<p>In the <code>_output.yaml</code></p>
+<pre><code>github_document:
+  df_print: kable
+  pandoc_args: [&quot;--bibliography=../add.bib&quot;]</code></pre>
+<p>In the <code>_site.yml</code>，参考 <a href="https://github.com/JiaxiangBU/test-workflowr/blob/master/analysis/_site.yml">github</a></p>
+<pre><code>name: &quot;test-workflowr&quot;
+output_dir: ../docs
+navbar:
+  title: &quot;test-workflowr&quot;
+  left:
+  - text: Home
+    href: index.html
+  - text: About
+    href: about.html
+  - text: License
+    href: license.html
+output:
+  workflowr::wflow_html:
+    toc: yes
+    toc_float: yes
+    theme: cosmo
+    highlight: textmate
+    pandoc_args: [&quot;--bibliography=add.bib&quot;]</code></pre>
+</div>
+<div id="stuck-in-knitting" class="section level1">
+<h1><span class="header-section-number">24</span> stuck-in-knitting</h1>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>如果用户留存低，那么首次登录很可能都是新增用户，因此66行为信息都很少，这在之前的样本表的<a href="../rating/submission_view/opd_ppd_66_rating_20190313_wyq.html">EDA结果</a>中<em>Missing Data Profile</em>显示，66行为变量缺失率都很高。</li>
+</ol>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li>有链接那么就会卡住，换成绝对链接</li>
+<li>有英文就卡住，主要是用了<code>*</code>表示斜体。</li>
+</ol>
+</div>
+<div id="unsort" class="section level1">
+<h1><span class="header-section-number">25</span> unsort</h1>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/redirection.png&quot;</span>)</a></code></pre></div>
+<p><img src="figure/redirection.png" width="746" /></p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/redirection_result.png&quot;</span>)</a></code></pre></div>
+<p><img src="figure/redirection_result.png" width="387" /></p>
+<p>这样就可以替代 印象笔记 的<a href="https://www.yinxiang.com/blog/blog/2018/06/01/evernote-note-link/">内部链接</a>功能。</p>
+</div>
+<div id="use-collapse" class="section level1">
+<h1><span class="header-section-number">26</span> use-collapse</h1>
+<div id="introduction-2" class="section level2">
+<h2><span class="header-section-number">26.1</span> Introduction</h2>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" title="1"><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1"><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<p>设置 <code>collapse=TRUE</code> 后，</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" title="1"><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb45-2" title="2"><span class="co">## [1] 2</span></a>
+<a class="sourceLine" id="cb45-3" title="3"><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb45-4" title="4"><span class="co">## [1] 3</span></a></code></pre></div>
+<p>但是在 <code>workflow</code> 环境下就失效了，提交了问题 <a href="https://github.com/jdblischak/workflowr/issues/153">Github Issue 153</a></p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">library</span>(webshot)</a>
+<a class="sourceLine" id="cb46-2" title="2"><span class="kw">webshot</span>(<span class="dt">url =</span> <span class="st">&quot;file:///D:/work/learn_rmd/docs/use-collapse.html&quot;</span>, <span class="dt">file =</span> <span class="st">&#39;collapse-fail-workflowr.png&#39;</span>)</a></code></pre></div>
+<p><img src="cookbook_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+</div>
+</div>
+<div id="use-r-chunk-option-child" class="section level1">
+<h1><span class="header-section-number">27</span> use-r-chunk-option-child</h1>
+<p>参考<a href="https://dr-harper.github.io/rmarkdown-cookbook/multi-file-documents.html">R Markdown Cookbook</a></p>
+<blockquote>
+<p>With larger R Markdown projects, it can be useful to split the document into smaller files which are easier to handle than a single, massive <code>'.Rmd</code> document. Also, we may also have generic components which we wish to use across all of our analyses, and rather than copying and pasting the same code across for each report.</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li>创建各个小的文档</li>
+<li>不要重复粘贴代码</li>
+</ol>
+<p>这两点深得我心。</p>
+<blockquote>
+<p>There is a legacy of using child documents when creating longer documents, as bookdown was only released in 2016. As such, there is some confusion over which should be used when. In general, if you are wishing to reuse a component across multiple documents, it is recommended to use child documents. However, if you are wanting to write a book and split it into multiple files (preferably one per chapter), bookdown provides a lot of extra functionality and is generally preferred.</p>
+</blockquote>
+<p>child 这种方式非常好用，我可以尝试。
+以下做测试。</p>
+<p>这个问题在 workflowr 是一个问题，但是已经被解决。
+<a href="https://github.com/jdblischak/workflowr/issues/111" class="uri">https://github.com/jdblischak/workflowr/issues/111</a></p>
+<p>并且，可以利用 here::here 函数</p>
+<pre class="r,child=here::here(&quot;zhenglianhu/06-02-topic-modeling-display.rmd&quot;)"><code></code></pre>
+</div>
+<div id="yaml_load" class="section level1">
+<h1><span class="header-section-number">28</span> yaml_load</h1>
+<p>针对 yaml 的问题，我在<a href="https://stackoverflow.com/a/54283191/8625228">Stack Overflow</a>写了一个相关答案。</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" title="1"><span class="kw">library</span>(yaml)</a>
+<a class="sourceLine" id="cb48-2" title="2"><span class="kw">library</span>(magrittr)</a>
+<a class="sourceLine" id="cb48-3" title="3"><span class="kw">library</span>(readr)</a>
+<a class="sourceLine" id="cb48-4" title="4"><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb48-5" title="5"><span class="st">---</span></a>
+<a class="sourceLine" id="cb48-6" title="6"><span class="st">title: &#39;This is a title&#39;</span></a>
+<a class="sourceLine" id="cb48-7" title="7"><span class="st">output: github_document</span></a>
+<a class="sourceLine" id="cb48-8" title="8"><span class="st">---</span></a>
+<a class="sourceLine" id="cb48-9" title="9"></a>
+<a class="sourceLine" id="cb48-10" title="10"><span class="st">some content</span></a>
+<a class="sourceLine" id="cb48-11" title="11"><span class="st">&quot;</span> <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb48-12" title="12"><span class="st">    </span><span class="kw">yaml.load</span>()</a></code></pre></div>
+<pre><code>## $title
+## [1] &quot;This is a title&quot;
+## 
+## $output
+## [1] &quot;github_document&quot;</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" title="1">text &lt;-<span class="st"> &quot;</span></a>
+<a class="sourceLine" id="cb50-2" title="2"><span class="st">---</span></a>
+<a class="sourceLine" id="cb50-3" title="3"><span class="st">title: &#39;This is a title&#39;</span></a>
+<a class="sourceLine" id="cb50-4" title="4"><span class="st">output: github_document</span></a>
+<a class="sourceLine" id="cb50-5" title="5"><span class="st">---</span></a>
+<a class="sourceLine" id="cb50-6" title="6"></a>
+<a class="sourceLine" id="cb50-7" title="7"><span class="st">some content</span></a>
+<a class="sourceLine" id="cb50-8" title="8"><span class="st">some content: some content</span></a>
+<a class="sourceLine" id="cb50-9" title="9"><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb50-10" title="10"><span class="kw">library</span>(xfun)</a>
+<a class="sourceLine" id="cb50-11" title="11">yaml_content &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb50-12" title="12"><span class="st">    </span><span class="kw">read_lines</span>(text,<span class="dt">n_max =</span> <span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb50-13" title="13"><span class="st">    </span><span class="kw">yaml.load</span>()</a>
+<a class="sourceLine" id="cb50-14" title="14">yaml_content</a></code></pre></div>
+<pre><code>## $title
+## [1] &quot;This is a title&quot;
+## 
+## $output
+## [1] &quot;github_document&quot;</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" title="1">yaml_content<span class="op">$</span>title</a></code></pre></div>
+<pre><code>## [1] &quot;This is a title&quot;</code></pre>
+<ol style="list-style-type: decimal">
+<li>处理成 list 格式</li>
+<li>忽略非 yaml 字段，如<code>some content</code></li>
+</ol>
+<p>但是当正文中含有 key-value pair 时，<code>yaml.load</code>会报错，因此需要限制 block 的行数。</p>
+<pre><code>Error in yaml::yaml.load(.) : Scanner error: mapping values are not allowed in this context at line 18, column 7</code></pre>
+<p>参考<a href="https://stackoverflow.com/a/52174427/8625228">Stack Overflow</a>，是因为<code>line 18</code>中<code>remote: Enumerating objects: 28, done.</code>出现了两个<code>:</code>，因此如何避免这种情况呢？选择第二个 <code>---</code>前的情况。</p>
 </div>
 <div id="附录" class="section level1 unnumbered">
 <h1>附录</h1>

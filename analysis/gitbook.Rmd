@@ -1,6 +1,6 @@
 有空研究下 gitbook 的参数
 
-```{r}
+```r
 ?bookdown:::gitbook
 ```
 

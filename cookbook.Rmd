@@ -10,7 +10,7 @@ output:
 bibliography: refs/add.bib
 ---
 
-```{r setup,echo = FALSE}
+```{r echo = FALSE}
 knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 ```
 
@@ -68,7 +68,7 @@ knitr::include_graphics("figure/nested_code_block.png")
 第二种方法
 
 ```{r}
-readr::read_file("analysis/nested_code_block.Rmd") %>% gluedown::md_text()
+readr::read_file("template/nested_code_block.Rmd") %>% gluedown::md_text()
 ```
 
 
@@ -89,6 +89,15 @@ readr::read_file("analysis/nested_code_block.Rmd") %>% gluedown::md_text()
 
 ```{r,child="analysis-2/tips4rmd.Rmd"}
 ```
+
+<!-- 这里加入 misc -->
+
+<!-- write_tmp -->
+
+```{r,child="tmp/child_list.Rmd"}
+```
+
+
 
 # 附录 {-}
 

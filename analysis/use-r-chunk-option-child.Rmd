@@ -21,10 +21,6 @@ There is a legacy of using child documents when creating longer documents, as bo
 child 这种方式非常好用，我可以尝试。
 以下做测试。
 
-```{r, child = "about.Rmd"}
-```
-
-
 这个问题在 workflowr 是一个问题，但是已经被解决。
 https://github.com/jdblischak/workflowr/issues/111
 
