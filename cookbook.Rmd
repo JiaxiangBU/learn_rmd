@@ -90,6 +90,31 @@ readr::read_file("template/nested_code_block.Rmd") %>% gluedown::md_text()
 ```{r,child="analysis-2/tips4rmd.Rmd"}
 ```
 
+# 公式加上编号
+
+参考 https://github.com/nealxun/ForecastingPrinciplePractices/blob/master/11-advanced.Rmd
+
+```
+\begin{align}
+\label{var1a}
+  y_{1,t} &= c_1+\phi _{11,1}y_{1,t-1}+\phi _{12,1}y_{2,t-1}+e_{1,t} (\#eq:var1a)\\
+  y_{2,t} &= c_2+\phi _{21,1}y_{1,t-1}+\phi _{22,1}y_{2,t-1}+e_{2,t} (\#eq:var1b)
+\end{align}
+```
+
+\begin{align}
+\label{var1a}
+  y_{1,t} &= c_1+\phi _{11,1}y_{1,t-1}+\phi _{12,1}y_{2,t-1}+e_{1,t} (\#eq:var1a)\\
+  y_{2,t} &= c_2+\phi _{21,1}y_{1,t-1}+\phi _{22,1}y_{2,t-1}+e_{2,t} (\#eq:var1b)
+\end{align}
+
+就是必须这样写 `$$` 别加，然后下面可以引用公式
+
+```
+\@ref(eq:var1a) 和 \@ref(eq:var1b)
+```
+\@ref(eq:var1a) 和 \@ref(eq:var1b)
+
 <!-- 这里加入 misc -->
 
 <!-- write_tmp -->
