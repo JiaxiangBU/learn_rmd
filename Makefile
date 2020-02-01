@@ -1,4 +1,4 @@
-all: render all cookbook
+all: cookbook
 
 cookbook:
 	
