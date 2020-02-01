@@ -118,6 +118,8 @@ readr::read_file("template/nested_code_block.Rmd") %>% gluedown::md_text()
 
 # 让 output 保存到特定的文件夹
 
+参考 https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html
+
 比如在 `analysis` 文件夹中产生两个文件夹
 
 1. `analysis/_site.yml`，内容为`output_dir: ../output`
