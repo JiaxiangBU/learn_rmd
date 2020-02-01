@@ -7,7 +7,7 @@ output:
         split_by: none
         split_bib: TRUE
         df_print: paged
-bibliography: refs/add.bib
+bibliography: [refs/add.bib, analysis/add.bib]
 ---
 
 ```{r echo = FALSE}
@@ -143,13 +143,101 @@ nothing added to commit but untracked files present (use "git add" to track)
 以 `analysis/test-output-dir.Rmd` 为例，当通过快捷键 Ctrl + Shift + K render 文件时，产出 `output/test-output-dir.md` 的位置在设定的路径`output`。
 
 
+# 类似 nbdev 写函数功能
+
+Actually, I find 'dot' is one of the engines which 'knitr' support.
+
+``` r
+library(magrittr)
+#> Warning: 程辑包'magrittr'是用R版本3.6.1 来建造的
+names(knitr::knit_engines$get()) %>% 
+    sort()
+#>  [1] "asis"      "asy"       "awk"       "bash"      "block"     "block2"   
+#>  [7] "c"         "cat"       "coffee"    "css"       "dot"       "fortran"  
+#> [13] "fortran95" "gawk"      "go"        "groovy"    "haskell"   "highlight"
+#> [19] "js"        "julia"     "lein"      "mysql"     "node"      "octave"   
+#> [25] "perl"      "psql"      "python"    "Rcpp"      "Rscript"   "ruby"     
+#> [31] "sas"       "sass"      "scala"     "scss"      "sed"       "sh"       
+#> [37] "sql"       "stan"      "stata"     "tikz"      "zsh"
+```
+
+<sup>Created on 2020-02-02 by the [reprex package](https://reprex.tidyverse.org) (v0.3.0)</sup>
+
+However, I don't find any source to run dot just like python, Julia.
+I think there is another way to do it.
+Use the chunk to preview dot code and use another r chunk to display the dot output.
+
+```{r}
+readr::read_lines("output/use-cat.Rmd")
+```
+
+
+The temporal file `"sample.dot"` is optional, you can use a temp file by `fs::path_temp`.
+Here, 'cat' is also one of the engines 'knitr' supports. Here are the notes to introduce it.
+
+https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html
+
+以下是实现效果。
+
+```{cat, engine.opts=list(file = 'output/sample.dot')}
+digraph course {
+rankdir = LR
+node [shape = box, style=filled]
+layout = dot
+compound =true
+#color = crimson
+
+a -> b
+c -> d
+}
+```
+
+```{r}
+DiagrammeR::grViz("output/sample.dot")
+```
+
+# spin_child
+
+参考
+https://community.rstudio.com/t/how-to-write-r-script-into-rmd-as-functioning-code-chunk/37453/3?u=econkid
+
+`knitr::spin_child("analysis.R")`
+
+# pretty print
+
+参考
+https://stackoverflow.com/questions/24524594/pretty-print-sql-code-from-separate-file-with-knitr
+
+```{r}
+cat("```sql
+`r xfun::file_string('mycode.sql')`
+```")
+```
+
+直接找到 exe。
+
+# engine.path
+
+```{r}
+cat("```{python, engine.path = 'D:\\install\\miniconda\\Scripts\\ipython3.exe'}
+import sys
+print(sys.version)
+```")
+```
+
+
+<!-- 分割线 -->
+<!-- 分割线 -->
+<!-- 分割线 -->
+<!-- 分割线 -->
+<!-- 分割线 -->
+
 <!-- 这里加入 misc -->
 
 <!-- write_tmp -->
 
 ```{r,child="tmp/child_list.Rmd"}
 ```
-
 
 
 # 附录 {-}

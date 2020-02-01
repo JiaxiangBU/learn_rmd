@@ -1,0 +1,10 @@
+digraph course {
+rankdir = LR
+node [shape = box, style=filled]
+layout = dot
+compound =true
+#color = crimson
+
+a -> b
+c -> d
+}

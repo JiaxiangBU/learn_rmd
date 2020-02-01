@@ -1,0 +1,16 @@
+```{cat, engine.opts=list(file = 'sample.dot')}
+digraph course {
+rankdir = LR
+node [shape = box, style=filled]
+layout = dot
+compound =true
+#color = crimson
+
+a -> b
+c -> d
+}
+```
+
+```{r}
+DiagrammeR::grViz("sample.dot")
+```
