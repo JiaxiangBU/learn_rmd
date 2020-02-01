@@ -115,6 +115,32 @@ readr::read_file("template/nested_code_block.Rmd") %>% gluedown::md_text()
 ```
 \@ref(eq:var1a) 和 \@ref(eq:var1b)
 
+
+# 让 output 保存到特定的文件夹
+
+比如在 `analysis` 文件夹中产生两个文件夹
+
+1. `analysis/_site.yml`，内容为`output_dir: ../output`
+1. `analysis/index.Rmd`，这是空文件
+
+```bash
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	analysis/_site.yml
+	analysis/index.Rmd
+	analysis/test-output-dir.Rmd
+	output/test-output-dir.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+以 `analysis/test-output-dir.Rmd` 为例，当通过快捷键 Ctrl + Shift + K render 文件时，产出 `output/test-output-dir.md` 的位置在设定的路径`output`。
+
+
 <!-- 这里加入 misc -->
 
 <!-- write_tmp -->
