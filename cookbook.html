@@ -482,8 +482,8 @@ Here, ‘cat’ is also one of the engines ‘knitr’ supports. Here are the no
 <p><a href="https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html</a></p>
 <p>以下是实现效果。</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">DiagrammeR<span class="op">::</span><span class="kw">grViz</span>(<span class="st">&quot;output/sample.dot&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-aaafc59d6cfe85a36db5" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-aaafc59d6cfe85a36db5">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ec07875bcb877780c56f" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ec07875bcb877780c56f">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="spin_child" class="section level1">
 <h1><span class="header-section-number">9</span> spin_child</h1>
@@ -501,7 +501,6 @@ Here, ‘cat’ is also one of the engines ‘knitr’ supports. Here are the no
 <pre><code>## ```sql
 ## `r xfun::file_string(&#39;mycode.sql&#39;)`
 ## ```</code></pre>
-<p>直接找到 exe。</p>
 </div>
 <div id="engine.path" class="section level1">
 <h1><span class="header-section-number">11</span> engine.path</h1>
@@ -513,6 +512,8 @@ Here, ‘cat’ is also one of the engines ‘knitr’ supports. Here are the no
 ## import sys
 ## print(sys.version)
 ## ```</code></pre>
+<p>直接找到 exe。
+<code>'D:\\install\\miniconda\\Scripts\\ipython3.exe'</code> 注意要双逸出符号</p>
 <!-- 分割线 -->
 <!-- 分割线 -->
 <!-- 分割线 -->

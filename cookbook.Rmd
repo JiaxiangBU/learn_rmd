@@ -214,7 +214,6 @@ cat("```sql
 ```")
 ```
 
-直接找到 exe。
 
 # engine.path
 
@@ -225,6 +224,8 @@ print(sys.version)
 ```")
 ```
 
+直接找到 exe。
+`'D:\\install\\miniconda\\Scripts\\ipython3.exe'` 注意要双逸出符号
 
 <!-- 分割线 -->
 <!-- 分割线 -->
