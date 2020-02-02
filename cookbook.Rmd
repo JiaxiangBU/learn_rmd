@@ -227,6 +227,21 @@ print(sys.version)
 直接找到 exe。
 `'D:\\install\\miniconda\\Scripts\\ipython3.exe'` 注意要双逸出符号
 
+# direct use dot
+
+I find the solution on a yihui's [post](https://yihui.org/knitr/demo/engines/).
+See the example ['dot.Rmd'](https://github.com/yihui/knitr-examples/blob/master/057-engine-dot.Rmd) host on GitHub.
+
+Here, the code is written in RMarkdown.
+
+The output is here https://github.com/yihui/knitr-examples/blob/master/057-engine-dot.md
+
+<iframe src="https://github.com/yihui/knitr-examples/blob/master/057-engine-dot.Rmd" width="100%" height="800px"></iframe>
+
+
+因此我回复了这个问题
+https://community.rstudio.com/t/dot-in-rmarkdown/51311/4
+
 <!-- 分割线 -->
 <!-- 分割线 -->
 <!-- 分割线 -->
@@ -239,6 +254,8 @@ print(sys.version)
 
 ```{r,child="tmp/child_list.Rmd"}
 ```
+
+
 
 
 # 附录 {-}
