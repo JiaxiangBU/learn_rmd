@@ -1,0 +1,26 @@
+## caption 默认在下
+
+```{r, fig.cap='图片的 caption'}
+knitr::include_graphics(rep("../figure/bug-toc.png", 3))
+```
+
+## caption 不重复
+
+`fig.show = "hold"`
+
+    ```{r, fig.cap='图片的 caption', fig.show = "hold"}`r ''`
+    knitr::include_graphics(rep("../figure/bug-toc.png", 3))
+    ```
+    
+```{r, fig.cap='图片的 caption', fig.show = "hold"}
+knitr::include_graphics(rep("../figure/bug-toc.png", 3))
+```
+
+## caption 在上
+
+`fig.topcaption = TRUE`
+
+```{r, fig.cap='图片的 caption', fig.topcaption = TRUE}
+knitr::include_graphics(rep("../figure/bug-toc.png", 3))
+```
+

@@ -85,6 +85,10 @@ knitr::include_graphics("figure/bug-toc.png")
 knitr::include_graphics("figure/nested_code_block.png")
 ```
 
+或者存到文档里面，进行 read
+参考 [rmd-template]，并且需要注意加上`comment=""`，方便复制。
+
+
 # GitHub Star Badges
 
 ```{r,child="analysis/github-star-badge.Rmd"}
@@ -274,6 +278,18 @@ qplot(carat, price, data=diamonds, color=cut)+
 
 目前测试，只支持 ggplot2
 
+# Caption
+
+```{r,child="analysis/caption.Rmd"}
+```
+
+# cross reference
+
+参考 https://bookdown.org/yihui/bookdown/cross-references.html
+
+[A plain text]
+
+
 <!-- 分割线 -->
 <!-- 分割线 -->
 <!-- 分割线 -->
@@ -286,6 +302,10 @@ qplot(carat, price, data=diamonds, color=cut)+
 
 ```{r,child="tmp/child_list.Rmd"}
 ```
+
+```{r,child="tmp/line_list.Rmd"}
+```
+
 
 
 
