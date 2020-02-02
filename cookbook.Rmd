@@ -242,6 +242,28 @@ The output is here https://github.com/yihui/knitr-examples/blob/master/057-engin
 因此我回复了这个问题
 https://community.rstudio.com/t/dot-in-rmarkdown/51311/4
 
+
+# R 代码模块引用
+
+参考 http://stackoverflow.com/q/14802183/559676
+源代码参考 https://github.com/yihui/knitr-examples/blob/master/083-ggplot2-reference.Rmd
+
+
+```{r my-layout, eval=FALSE}
+theme (legend.text = element_text(size = 12, angle=45))+
+  theme (legend.position = "bottom")
+```
+
+Now we can use `<<>>` to reference it.
+
+```{r test-a, message=FALSE}
+library(ggplot2)
+qplot(carat, price, data=diamonds, color=cut)+
+  <<my-layout>>
+```
+
+目前测试，只支持 ggplot2
+
 <!-- 分割线 -->
 <!-- 分割线 -->
 <!-- 分割线 -->
