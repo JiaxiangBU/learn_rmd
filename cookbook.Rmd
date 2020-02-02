@@ -46,34 +46,44 @@ library(tidyverse)
     list and because it follows a fenced code block.
     ```
 
-# 嵌套引用
+# display chunk
+
+参考 https://github.com/yihui/knitr-examples/blob/master/065-rmd-chunk.Rmd
+
+> Sometimes we do not want to evaluate a chunk, and we just want to include a chunk literally, e.g. when writing tutorials.
+> The R code chunks in these examples are still identified by **knitr**. **If we do not want to evaluate the code at all**, there is another approach, which is to break the chunk syntax by adding an **empty string** as _inline R code_.
+
+也就是说，在```` ```{r} ````后面增加`''`即可。
+
+    ```{r eval=TRUE}`r ''`
+    n = 10
+    rnorm(x)
+    ```
+
+```{r fig.cap='如果不缩进的话，目录会产生问题。'}
+knitr::include_graphics("figure/bug-toc.png")
+```
+
+没有变成 chunk 是因为没有缩进。
+
+> it is indented by 4 spaces because we want to show it in a preformatted block in the HTML output
+
+
+    ```{r eval=TRUE}`r ''`
+    n = 10
+    rnorm(x)
+    ```
+
+
+这就是 Zero Width Space 也是一种方法，一般不容易手动加入。
+
 
 要注意缩进。
 
 
-    ```
-        ```
-        
-            ```
-            1
-            ```
-        
-        ```
-    ```
-
 ```{r fig.cap="否则 RStudio IDE 会错误识别。"}
 knitr::include_graphics("figure/nested_code_block.png")
 ```
-
-第二种方法
-
-```{r}
-readr::read_file("template/nested_code_block.Rmd") %>% gluedown::md_text()
-```
-
-
-
-
 
 # GitHub Star Badges
 

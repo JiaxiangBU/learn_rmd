@@ -134,7 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path=""><a href="#fenced-code-blocks"><i class="fa fa-check"></i><b>1</b> Fenced code blocks</a></li>
-<li class="chapter" data-level="2" data-path=""><a href="#嵌套引用"><i class="fa fa-check"></i><b>2</b> 嵌套引用</a></li>
+<li class="chapter" data-level="2" data-path=""><a href="#display-chunk"><i class="fa fa-check"></i><b>2</b> display chunk</a></li>
 <li class="chapter" data-level="3" data-path=""><a href="#github-star-badges"><i class="fa fa-check"></i><b>3</b> GitHub Star Badges</a></li>
 <li class="chapter" data-level="4" data-path=""><a href="#内部链接功能"><i class="fa fa-check"></i><b>4</b> 内部链接功能</a></li>
 <li class="chapter" data-level="5" data-path=""><a href="#html-tips"><i class="fa fa-check"></i><b>5</b> HTML Tips</a><ul>
@@ -235,37 +235,42 @@ There is a newline above this paragraph because it is both the end of a
 list and because it follows a fenced code block.
 ```</code></pre>
 </div>
-<div id="嵌套引用" class="section level1">
-<h1><span class="header-section-number">2</span> 嵌套引用</h1>
-<p>要注意缩进。</p>
-<pre><code>```
-    ```
-    
-        ```
-        1
-        ```
-    
-    ```
+<div id="display-chunk" class="section level1">
+<h1><span class="header-section-number">2</span> display chunk</h1>
+<p>参考 <a href="https://github.com/yihui/knitr-examples/blob/master/065-rmd-chunk.Rmd" class="uri">https://github.com/yihui/knitr-examples/blob/master/065-rmd-chunk.Rmd</a></p>
+<blockquote>
+<p>Sometimes we do not want to evaluate a chunk, and we just want to include a chunk literally, e.g. when writing tutorials.
+The R code chunks in these examples are still identified by <strong>knitr</strong>. <strong>If we do not want to evaluate the code at all</strong>, there is another approach, which is to break the chunk syntax by adding an <strong>empty string</strong> as <em>inline R code</em>.</p>
+</blockquote>
+<p>也就是说，在<code>```{r}</code>后面增加<code>''</code>即可。</p>
+<pre><code>```{r eval=TRUE}
+n = 10
+rnorm(x)
 ```</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/nested_code_block.png&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/bug-toc.png&quot;</span>)</a></code></pre></div>
 <div class="figure"><span id="fig:unnamed-chunk-3"></span>
-<img src="figure/nested_code_block.png" alt="否则 RStudio IDE 会错误识别。" width="530" />
+<img src="figure/bug-toc.png" alt="如果不缩进的话，目录会产生问题。" width="156" />
 <p class="caption">
-Figure 2.1: 否则 RStudio IDE 会错误识别。
+Figure 2.1: 如果不缩进的话，目录会产生问题。
 </p>
 </div>
-<p>第二种方法</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">readr<span class="op">::</span><span class="kw">read_file</span>(<span class="st">&quot;template/nested_code_block.Rmd&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>gluedown<span class="op">::</span><span class="kw">md_text</span>()</a></code></pre></div>
-<pre><code>## ```{r echo=FALSE, results=&#39;asis&#39;}
-## gluedown::md_fence(
-## &quot;```{r out.width=c(&#39;25%&#39;, &#39;25%&#39;, &#39;25%&#39;, &#39;25%&#39;), fig.show=&#39;hold&#39;}
-## library(magrittr)
-## boxplot(1:10)
-## plot(rnorm(10))
-## plot(rnorm(10))
-## plot(rnorm(10))
-## ```&quot;, char = &quot;~&quot;, info = &quot;&quot;)
-## ```</code></pre>
+<p>没有变成 chunk 是因为没有缩进。</p>
+<blockquote>
+<p>it is indented by 4 spaces because we want to show it in a preformatted block in the HTML output</p>
+</blockquote>
+<pre><code>```{r eval=TRUE}
+n = 10
+rnorm(x)
+```</code></pre>
+<p>这就是 Zero Width Space 也是一种方法，一般不容易手动加入。</p>
+<p>要注意缩进。</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/nested_code_block.png&quot;</span>)</a></code></pre></div>
+<div class="figure"><span id="fig:unnamed-chunk-4"></span>
+<img src="figure/nested_code_block.png" alt="否则 RStudio IDE 会错误识别。" width="530" />
+<p class="caption">
+Figure 2.2: 否则 RStudio IDE 会错误识别。
+</p>
+</div>
 </div>
 <div id="github-star-badges" class="section level1">
 <h1><span class="header-section-number">3</span> GitHub Star Badges</h1>
@@ -484,8 +489,8 @@ Here, ‘cat’ is also one of the engines ‘knitr’ supports. Here are the no
 <p><a href="https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html</a></p>
 <p>以下是实现效果。</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">DiagrammeR<span class="op">::</span><span class="kw">grViz</span>(<span class="st">&quot;output/sample.dot&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-cb8c561b2e0d33efae2a" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cb8c561b2e0d33efae2a">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-0af53dd0af364e069a4c" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0af53dd0af364e069a4c">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="spin_child" class="section level1">
 <h1><span class="header-section-number">9</span> spin_child</h1>
