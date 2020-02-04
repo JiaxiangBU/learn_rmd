@@ -24,7 +24,7 @@
 <meta name="author" content="李家翔" />
 
 
-<meta name="date" content="2020-02-02" />
+<meta name="date" content="2020-02-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -214,7 +214,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">RMarkdown Cookbook</h1>
 <p class="author"><em>李家翔</em></p>
-<p class="date"><em>2020-02-02</em></p>
+<p class="date"><em>2020-02-04</em></p>
 </div>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -432,7 +432,8 @@ navbar:
   y_{1,t} &amp;= c_1+\phi _{11,1}y_{1,t-1}+\phi _{12,1}y_{2,t-1}+e_{1,t} \tag{6.1}\\
   y_{2,t} &amp;= c_2+\phi _{21,1}y_{1,t-1}+\phi _{22,1}y_{2,t-1}+e_{2,t} \tag{6.2}
 \end{align}\]</span></p>
-<p>就是必须这样写 <code>$$</code> 别加，然后下面可以引用公式</p>
+<p><del>就是必须这样写 <code>$$</code> 别加，然后下面可以引用公式</del>
+而是要多加上<code>\begin{align}</code>和<code>\end{align}</code></p>
 <pre><code>\@ref(eq:var1a) 和 \@ref(eq:var1b)</code></pre>
 <p><a href="#eq:var1a">(6.1)</a> 和 <a href="#eq:var1b">(6.2)</a></p>
 </div>
@@ -498,8 +499,8 @@ Here, ‘cat’ is also one of the engines ‘knitr’ supports. Here are the no
 <p><a href="https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html</a></p>
 <p>以下是实现效果。</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">DiagrammeR<span class="op">::</span><span class="kw">grViz</span>(<span class="st">&quot;output/sample.dot&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-e571b91b6f125f1043bf" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e571b91b6f125f1043bf">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b9f1ae1e91792949f169" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b9f1ae1e91792949f169">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="spin_child" class="section level1">
 <h1><span class="header-section-number">9</span> spin_child</h1>

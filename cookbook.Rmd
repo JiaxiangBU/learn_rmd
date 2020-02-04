@@ -122,7 +122,8 @@ knitr::include_graphics("figure/nested_code_block.png")
   y_{2,t} &= c_2+\phi _{21,1}y_{1,t-1}+\phi _{22,1}y_{2,t-1}+e_{2,t} (\#eq:var1b)
 \end{align}
 
-就是必须这样写 `$$` 别加，然后下面可以引用公式
+~~就是必须这样写 `$$` 别加，然后下面可以引用公式~~
+而是要多加上`\begin{align}`和`\end{align}`
 
 ```
 \@ref(eq:var1a) 和 \@ref(eq:var1b)
