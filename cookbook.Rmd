@@ -137,8 +137,10 @@ knitr::include_graphics("figure/nested_code_block.png")
 
 比如在 `analysis` 文件夹中产生两个文件夹
 
+1. `analysis/index.Rmd`，这是空文件。
+    `index.Rmd` 先 knit 得到 `output/index.html`。
 1. `analysis/_site.yml`，内容为`output_dir: ../output`
-1. `analysis/index.Rmd`，这是空文件
+
 
 ```bash
 On branch master
