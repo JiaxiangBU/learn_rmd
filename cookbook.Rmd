@@ -308,7 +308,25 @@ qplot(carat, price, data=diamonds, color=cut)+
 ```
 
 
+# 自定义 comment 的符号
 
+    ```{r comment=''}`r ''`
+    print(1:5)
+    ```
+    
+    ```{r comment='##'}`r ''`
+    print(1:5)
+    ```
+
+```{r comment=''}
+print(1:5)
+```
+
+```{r comment='##'}
+print(1:5)
+```
+
+这样前面就没有`##`了。
 
 
 # 附录 {-}
