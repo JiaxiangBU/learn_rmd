@@ -24,7 +24,7 @@
 <meta name="author" content="李家翔" />
 
 
-<meta name="date" content="2020-02-05" />
+<meta name="date" content="2020-02-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -193,6 +193,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="38" data-path=""><a href="#param-rmd"><i class="fa fa-check"></i><b>38</b> Param Rmd</a></li>
 <li class="chapter" data-level="39" data-path=""><a href="#rmd-template"><i class="fa fa-check"></i><b>39</b> Rmd Template</a></li>
 <li class="chapter" data-level="40" data-path=""><a href="#自定义-comment-的符号"><i class="fa fa-check"></i><b>40</b> 自定义 comment 的符号</a></li>
+<li class="chapter" data-level="41" data-path=""><a href="#写"><i class="fa fa-check"></i><b>41</b> 写 <code>@</code></a></li>
 <li class="chapter" data-level="" data-path=""><a href="#附录"><i class="fa fa-check"></i>附录</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#参考文献"><i class="fa fa-check"></i>参考文献</a></li>
 </ul>
@@ -215,7 +216,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">RMarkdown Cookbook</h1>
 <p class="author"><em>李家翔</em></p>
-<p class="date"><em>2020-02-05</em></p>
+<p class="date"><em>2020-02-18</em></p>
 </div>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -501,8 +502,8 @@ Here, ‘cat’ is also one of the engines ‘knitr’ supports. Here are the no
 <p><a href="https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html</a></p>
 <p>以下是实现效果。</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">DiagrammeR<span class="op">::</span><span class="kw">grViz</span>(<span class="st">&quot;output/sample.dot&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-dcab25a21e530d33949a" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-dcab25a21e530d33949a">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4578111a2fd56b590504" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4578111a2fd56b590504">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="spin_child" class="section level1">
 <h1><span class="header-section-number">9</span> spin_child</h1>
@@ -1549,6 +1550,10 @@ iris %&gt;%
 <div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" title="1"><span class="kw">print</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</a></code></pre></div>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
 <p>这样前面就没有<code>##</code>了。</p>
+</div>
+<div id="写" class="section level1">
+<h1><span class="header-section-number">41</span> 写 <code>@</code></h1>
+<p><code>\@LeiLei-Miao</code> 这样 render 的时候，就不会识别为 bibtex</p>
 </div>
 <div id="附录" class="section level1 unnumbered">
 <h1>附录</h1>
