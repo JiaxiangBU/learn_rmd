@@ -24,7 +24,7 @@
 <meta name="author" content="李家翔" />
 
 
-<meta name="date" content="2020-02-18" />
+<meta name="date" content="2020-02-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,6 +194,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="39" data-path=""><a href="#rmd-template"><i class="fa fa-check"></i><b>39</b> Rmd Template</a></li>
 <li class="chapter" data-level="40" data-path=""><a href="#自定义-comment-的符号"><i class="fa fa-check"></i><b>40</b> 自定义 comment 的符号</a></li>
 <li class="chapter" data-level="41" data-path=""><a href="#写"><i class="fa fa-check"></i><b>41</b> 写 <code>@</code></a></li>
+<li class="chapter" data-level="42" data-path=""><a href="#markdown-构建-table"><i class="fa fa-check"></i><b>42</b> markdown 构建 table</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#附录"><i class="fa fa-check"></i>附录</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#参考文献"><i class="fa fa-check"></i>参考文献</a></li>
 </ul>
@@ -216,7 +217,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">RMarkdown Cookbook</h1>
 <p class="author"><em>李家翔</em></p>
-<p class="date"><em>2020-02-18</em></p>
+<p class="date"><em>2020-02-21</em></p>
 </div>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -502,8 +503,8 @@ Here, ‘cat’ is also one of the engines ‘knitr’ supports. Here are the no
 <p><a href="https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html</a></p>
 <p>以下是实现效果。</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">DiagrammeR<span class="op">::</span><span class="kw">grViz</span>(<span class="st">&quot;output/sample.dot&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-4578111a2fd56b590504" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4578111a2fd56b590504">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c41cb5e4e6e57cb2901a" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c41cb5e4e6e57cb2901a">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="spin_child" class="section level1">
 <h1><span class="header-section-number">9</span> spin_child</h1>
@@ -1554,6 +1555,121 @@ iris %&gt;%
 <div id="写" class="section level1">
 <h1><span class="header-section-number">41</span> 写 <code>@</code></h1>
 <p><code>\@LeiLei-Miao</code> 这样 render 的时候，就不会识别为 bibtex</p>
+</div>
+<div id="markdown-构建-table" class="section level1">
+<h1><span class="header-section-number">42</span> markdown 构建 table</h1>
+<div class="sourceCode" id="cb80"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb80-1" title="1">|                  |  mpg| cyl| disp|  hp| drat|    wt|  qsec| vs| am| gear| carb|</a>
+<a class="sourceLine" id="cb80-2" title="2">|:-----------------|----:|---:|----:|---:|----:|-----:|-----:|--:|--:|----:|----:|</a>
+<a class="sourceLine" id="cb80-3" title="3">|Mazda RX4         | 21.0|   6|  160| 110| 3.90| 2.620| 16.46|  0|  1|    4|    4|</a>
+<a class="sourceLine" id="cb80-4" title="4">|Mazda RX4 Wag     | 21.0|   6|  160| 110| 3.90| 2.875| 17.02|  0|  1|    4|    4|</a>
+<a class="sourceLine" id="cb80-5" title="5">|Datsun 710        | 22.8|   4|  108|  93| 3.85| 2.320| 18.61|  1|  1|    4|    1|</a>
+<a class="sourceLine" id="cb80-6" title="6">|Hornet 4 Drive    | 21.4|   6|  258| 110| 3.08| 3.215| 19.44|  1|  0|    3|    1|</a>
+<a class="sourceLine" id="cb80-7" title="7">|Hornet Sportabout | 18.7|   8|  360| 175| 3.15| 3.440| 17.02|  0|  0|    3|    2|</a>
+<a class="sourceLine" id="cb80-8" title="8">|Valiant           | 18.1|   6|  225| 105| 2.76| 3.460| 20.22|  1|  0|    3|    1|</a></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">mpg</th>
+<th align="right">cyl</th>
+<th align="right">disp</th>
+<th align="right">hp</th>
+<th align="right">drat</th>
+<th align="right">wt</th>
+<th align="right">qsec</th>
+<th align="right">vs</th>
+<th align="right">am</th>
+<th align="right">gear</th>
+<th align="right">carb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Mazda RX4</td>
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160</td>
+<td align="right">110</td>
+<td align="right">3.90</td>
+<td align="right">2.620</td>
+<td align="right">16.46</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="left">Mazda RX4 Wag</td>
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160</td>
+<td align="right">110</td>
+<td align="right">3.90</td>
+<td align="right">2.875</td>
+<td align="right">17.02</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">Datsun 710</td>
+<td align="right">22.8</td>
+<td align="right">4</td>
+<td align="right">108</td>
+<td align="right">93</td>
+<td align="right">3.85</td>
+<td align="right">2.320</td>
+<td align="right">18.61</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Hornet 4 Drive</td>
+<td align="right">21.4</td>
+<td align="right">6</td>
+<td align="right">258</td>
+<td align="right">110</td>
+<td align="right">3.08</td>
+<td align="right">3.215</td>
+<td align="right">19.44</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Hornet Sportabout</td>
+<td align="right">18.7</td>
+<td align="right">8</td>
+<td align="right">360</td>
+<td align="right">175</td>
+<td align="right">3.15</td>
+<td align="right">3.440</td>
+<td align="right">17.02</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">Valiant</td>
+<td align="right">18.1</td>
+<td align="right">6</td>
+<td align="right">225</td>
+<td align="right">105</td>
+<td align="right">2.76</td>
+<td align="right">3.460</td>
+<td align="right">20.22</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="附录" class="section level1 unnumbered">
 <h1>附录</h1>
