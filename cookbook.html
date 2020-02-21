@@ -195,6 +195,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="40" data-path=""><a href="#自定义-comment-的符号"><i class="fa fa-check"></i><b>40</b> 自定义 comment 的符号</a></li>
 <li class="chapter" data-level="41" data-path=""><a href="#写"><i class="fa fa-check"></i><b>41</b> 写 <code>@</code></a></li>
 <li class="chapter" data-level="42" data-path=""><a href="#markdown-构建-table"><i class="fa fa-check"></i><b>42</b> markdown 构建 table</a></li>
+<li class="chapter" data-level="43" data-path=""><a href="#data.frame-to-markdown-table"><i class="fa fa-check"></i><b>43</b> data.frame to markdown table</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#附录"><i class="fa fa-check"></i>附录</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#参考文献"><i class="fa fa-check"></i>参考文献</a></li>
 </ul>
@@ -360,7 +361,7 @@ plot(rnorm(10))
 <a class="sourceLine" id="cb14-3" title="3"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a>
 <a class="sourceLine" id="cb14-4" title="4"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a>
 <a class="sourceLine" id="cb14-5" title="5"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a></code></pre></div>
-<p><img src="cookbook_files/figure-html/unnamed-chunk-21-1.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-21-2.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-21-3.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-21-4.png" width="25%" /></p>
+<p><img src="cookbook_files/figure-html/unnamed-chunk-23-1.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-23-2.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-23-3.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-23-4.png" width="25%" /></p>
 <p><a href="https://github.com/JiaxiangBU/learn_rmd/issues/2" class="uri">https://github.com/JiaxiangBU/learn_rmd/issues/2</a></p>
 </div>
 <div id="several-columns" class="section level2">
@@ -503,8 +504,8 @@ Here, ‘cat’ is also one of the engines ‘knitr’ supports. Here are the no
 <p><a href="https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html</a></p>
 <p>以下是实现效果。</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">DiagrammeR<span class="op">::</span><span class="kw">grViz</span>(<span class="st">&quot;output/sample.dot&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-c41cb5e4e6e57cb2901a" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c41cb5e4e6e57cb2901a">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-48b5a04dc14ce995e32d" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-48b5a04dc14ce995e32d">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="spin_child" class="section level1">
 <h1><span class="header-section-number">9</span> spin_child</h1>
@@ -566,19 +567,19 @@ See the example <a href="https://github.com/yihui/knitr-examples/blob/master/057
 <div id="caption-默认在下" class="section level2">
 <h2><span class="header-section-number">14.1</span> caption 默认在下</h2>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="kw">rep</span>(<span class="st">&quot;../figure/bug-toc.png&quot;</span>, <span class="dv">3</span>))</a></code></pre></div>
-<div class="figure"><span id="fig:unnamed-chunk-231"></span>
+<div class="figure"><span id="fig:unnamed-chunk-251"></span>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 <p class="caption">
 Figure 14.1: 图片的 caption
 </p>
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-232"></span>
+<div class="figure"><span id="fig:unnamed-chunk-252"></span>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 <p class="caption">
 Figure 14.2: 图片的 caption
 </p>
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-233"></span>
+<div class="figure"><span id="fig:unnamed-chunk-253"></span>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 <p class="caption">
 Figure 14.3: 图片的 caption
@@ -592,7 +593,7 @@ Figure 14.3: 图片的 caption
 knitr::include_graphics(rep(&quot;../figure/bug-toc.png&quot;, 3))
 ```</code></pre>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="kw">rep</span>(<span class="st">&quot;../figure/bug-toc.png&quot;</span>, <span class="dv">3</span>))</a></code></pre></div>
-<div class="figure"><span id="fig:unnamed-chunk-24"></span>
+<div class="figure"><span id="fig:unnamed-chunk-26"></span>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  /><img src="../figure/bug-toc.png" alt="图片的 caption"  /><img src="../figure/bug-toc.png" alt="图片的 caption"  />
 <p class="caption">
 Figure 14.4: 图片的 caption
@@ -603,19 +604,19 @@ Figure 14.4: 图片的 caption
 <h2><span class="header-section-number">14.3</span> caption 在上</h2>
 <p><code>fig.topcaption = TRUE</code></p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="kw">rep</span>(<span class="st">&quot;../figure/bug-toc.png&quot;</span>, <span class="dv">3</span>))</a></code></pre></div>
-<div class="figure"><span id="fig:unnamed-chunk-251"></span>
+<div class="figure"><span id="fig:unnamed-chunk-271"></span>
 <p class="caption">
 Figure 14.5: 图片的 caption
 </p>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-252"></span>
+<div class="figure"><span id="fig:unnamed-chunk-272"></span>
 <p class="caption">
 Figure 14.6: 图片的 caption
 </p>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-253"></span>
+<div class="figure"><span id="fig:unnamed-chunk-273"></span>
 <p class="caption">
 Figure 14.7: 图片的 caption
 </p>
@@ -743,7 +744,7 @@ bibliography: add.bib
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">kable</span>(<span class="kw">head</span>(iris), <span class="dt">format =</span> <span class="st">&quot;html&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;Title of the table&quot;</span>)</a></code></pre></div>
 <table>
 <caption>
-<span id="tab:unnamed-chunk-48">Table 22.1: </span>Title of the table
+<span id="tab:unnamed-chunk-50">Table 22.1: </span>Title of the table
 </caption>
 <thead>
 <tr>
@@ -1120,7 +1121,7 @@ pandoc [OPTIONS] [FILES]
 <div class="sourceCode" id="cb53"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb53-1" title="1"><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> `mtcars` <span class="kw">where</span> gear <span class="kw">IN</span> (<span class="dv">3</span>, <span class="dv">4</span>)</a></code></pre></div>
 <div class="knitsql-table">
 <table>
-<caption><span id="tab:unnamed-chunk-51">Table 30.1: </span>Displaying records 1 - 10</caption>
+<caption><span id="tab:unnamed-chunk-53">Table 30.1: </span>Displaying records 1 - 10</caption>
 <thead>
 <tr class="header">
 <th align="right">mpg</th>
@@ -1328,7 +1329,7 @@ output:
 <p>但是在 <code>workflow</code> 环境下就失效了，提交了问题 <a href="https://github.com/jdblischak/workflowr/issues/153">Github Issue 153</a></p>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" title="1"><span class="kw">library</span>(webshot)</a>
 <a class="sourceLine" id="cb61-2" title="2"><span class="kw">webshot</span>(<span class="dt">url =</span> <span class="st">&quot;file:///D:/work/learn_rmd/docs/use-collapse.html&quot;</span>, <span class="dt">file =</span> <span class="st">&#39;collapse-fail-workflowr.png&#39;</span>)</a></code></pre></div>
-<p><img src="cookbook_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<p><img src="cookbook_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
 </div>
 </div>
 <div id="use-r-chunk-option-child" class="section level1">
@@ -1670,6 +1671,133 @@ iris %&gt;%
 </tr>
 </tbody>
 </table>
+</div>
+<div id="data.frame-to-markdown-table" class="section level1">
+<h1><span class="header-section-number">43</span> data.frame to markdown table</h1>
+<p>例如表格</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" title="1"><span class="kw">library</span>(magrittr)</a>
+<a class="sourceLine" id="cb81-2" title="2">df &lt;-<span class="st"> </span>mtcars <span class="op">%&gt;%</span><span class="st"> </span>head</a>
+<a class="sourceLine" id="cb81-3" title="3">df</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["mpg"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["cyl"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["disp"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["hp"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["drat"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["wt"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["qsec"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["vs"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["am"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["gear"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["carb"],"name":[11],"type":["dbl"],"align":["right"]}],"data":[{"1":"21.0","2":"6","3":"160","4":"110","5":"3.90","6":"2.620","7":"16.46","8":"0","9":"1","10":"4","11":"4","_rn_":"Mazda RX4"},{"1":"21.0","2":"6","3":"160","4":"110","5":"3.90","6":"2.875","7":"17.02","8":"0","9":"1","10":"4","11":"4","_rn_":"Mazda RX4 Wag"},{"1":"22.8","2":"4","3":"108","4":"93","5":"3.85","6":"2.320","7":"18.61","8":"1","9":"1","10":"4","11":"1","_rn_":"Datsun 710"},{"1":"21.4","2":"6","3":"258","4":"110","5":"3.08","6":"3.215","7":"19.44","8":"1","9":"0","10":"3","11":"1","_rn_":"Hornet 4 Drive"},{"1":"18.7","2":"8","3":"360","4":"175","5":"3.15","6":"3.440","7":"17.02","8":"0","9":"0","10":"3","11":"2","_rn_":"Hornet Sportabout"},{"1":"18.1","2":"6","3":"225","4":"105","5":"2.76","6":"3.460","7":"20.22","8":"1","9":"0","10":"3","11":"1","_rn_":"Valiant"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" title="1">df <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="st">&quot;markdown&quot;</span>)</a></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">mpg</th>
+<th align="right">cyl</th>
+<th align="right">disp</th>
+<th align="right">hp</th>
+<th align="right">drat</th>
+<th align="right">wt</th>
+<th align="right">qsec</th>
+<th align="right">vs</th>
+<th align="right">am</th>
+<th align="right">gear</th>
+<th align="right">carb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Mazda RX4</td>
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160</td>
+<td align="right">110</td>
+<td align="right">3.90</td>
+<td align="right">2.620</td>
+<td align="right">16.46</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="left">Mazda RX4 Wag</td>
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160</td>
+<td align="right">110</td>
+<td align="right">3.90</td>
+<td align="right">2.875</td>
+<td align="right">17.02</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">Datsun 710</td>
+<td align="right">22.8</td>
+<td align="right">4</td>
+<td align="right">108</td>
+<td align="right">93</td>
+<td align="right">3.85</td>
+<td align="right">2.320</td>
+<td align="right">18.61</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Hornet 4 Drive</td>
+<td align="right">21.4</td>
+<td align="right">6</td>
+<td align="right">258</td>
+<td align="right">110</td>
+<td align="right">3.08</td>
+<td align="right">3.215</td>
+<td align="right">19.44</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Hornet Sportabout</td>
+<td align="right">18.7</td>
+<td align="right">8</td>
+<td align="right">360</td>
+<td align="right">175</td>
+<td align="right">3.15</td>
+<td align="right">3.440</td>
+<td align="right">17.02</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">Valiant</td>
+<td align="right">18.1</td>
+<td align="right">6</td>
+<td align="right">225</td>
+<td align="right">105</td>
+<td align="right">2.76</td>
+<td align="right">3.460</td>
+<td align="right">20.22</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>这样的表格展示出来就是 markdown 了。</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb83-1" title="1">|                  |  mpg| cyl| disp|  hp| drat|    wt|  qsec| vs| am| gear| carb|</a>
+<a class="sourceLine" id="cb83-2" title="2">|:-----------------|----:|---:|----:|---:|----:|-----:|-----:|--:|--:|----:|----:|</a>
+<a class="sourceLine" id="cb83-3" title="3">|Mazda RX4         | 21.0|   6|  160| 110| 3.90| 2.620| 16.46|  0|  1|    4|    4|</a>
+<a class="sourceLine" id="cb83-4" title="4">|Mazda RX4 Wag     | 21.0|   6|  160| 110| 3.90| 2.875| 17.02|  0|  1|    4|    4|</a>
+<a class="sourceLine" id="cb83-5" title="5">|Datsun 710        | 22.8|   4|  108|  93| 3.85| 2.320| 18.61|  1|  1|    4|    1|</a>
+<a class="sourceLine" id="cb83-6" title="6">|Hornet 4 Drive    | 21.4|   6|  258| 110| 3.08| 3.215| 19.44|  1|  0|    3|    1|</a>
+<a class="sourceLine" id="cb83-7" title="7">|Hornet Sportabout | 18.7|   8|  360| 175| 3.15| 3.440| 17.02|  0|  0|    3|    2|</a>
+<a class="sourceLine" id="cb83-8" title="8">|Valiant           | 18.1|   6|  225| 105| 2.76| 3.460| 20.22|  1|  0|    3|    1|</a></code></pre></div>
+<p>方便 markdown 往 word、HTML等格式转换。</p>
 </div>
 <div id="附录" class="section level1 unnumbered">
 <h1>附录</h1>
