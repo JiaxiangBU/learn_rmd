@@ -24,7 +24,7 @@
 <meta name="author" content="李家翔" />
 
 
-<meta name="date" content="2020-02-21" />
+<meta name="date" content="2020-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -196,6 +196,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="41" data-path=""><a href="#写"><i class="fa fa-check"></i><b>41</b> 写 <code>@</code></a></li>
 <li class="chapter" data-level="42" data-path=""><a href="#markdown-构建-table"><i class="fa fa-check"></i><b>42</b> markdown 构建 table</a></li>
 <li class="chapter" data-level="43" data-path=""><a href="#data.frame-to-markdown-table"><i class="fa fa-check"></i><b>43</b> data.frame to markdown table</a></li>
+<li class="chapter" data-level="44" data-path=""><a href="#忽略报错"><i class="fa fa-check"></i><b>44</b> 忽略报错</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#附录"><i class="fa fa-check"></i>附录</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#参考文献"><i class="fa fa-check"></i>参考文献</a></li>
 </ul>
@@ -218,7 +219,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">RMarkdown Cookbook</h1>
 <p class="author"><em>李家翔</em></p>
-<p class="date"><em>2020-02-21</em></p>
+<p class="date"><em>2020-02-25</em></p>
 </div>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -504,8 +505,8 @@ Here, ‘cat’ is also one of the engines ‘knitr’ supports. Here are the no
 <p><a href="https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html</a></p>
 <p>以下是实现效果。</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">DiagrammeR<span class="op">::</span><span class="kw">grViz</span>(<span class="st">&quot;output/sample.dot&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-48b5a04dc14ce995e32d" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-48b5a04dc14ce995e32d">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-25af82e7e002be84608b" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-25af82e7e002be84608b">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="spin_child" class="section level1">
 <h1><span class="header-section-number">9</span> spin_child</h1>
@@ -1798,6 +1799,11 @@ iris %&gt;%
 <a class="sourceLine" id="cb83-7" title="7">|Hornet Sportabout | 18.7|   8|  360| 175| 3.15| 3.440| 17.02|  0|  0|    3|    2|</a>
 <a class="sourceLine" id="cb83-8" title="8">|Valiant           | 18.1|   6|  225| 105| 2.76| 3.460| 20.22|  1|  0|    3|    1|</a></code></pre></div>
 <p>方便 markdown 往 word、HTML等格式转换。</p>
+</div>
+<div id="忽略报错" class="section level1">
+<h1><span class="header-section-number">44</span> 忽略报错</h1>
+<p>参考 <a href="https://stackoverflow.com/questions/34280043/how-to-skip-error-checking-at-rmarkdown-compiling" class="uri">https://stackoverflow.com/questions/34280043/how-to-skip-error-checking-at-rmarkdown-compiling</a></p>
+<p>如果跑的时候想要忽略报错，或者要展示报错信息，可以加上<code>error=TRUE</code>。</p>
 </div>
 <div id="附录" class="section level1 unnumbered">
 <h1>附录</h1>

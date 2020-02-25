@@ -385,6 +385,12 @@ df %>% knitr::kable("markdown")
 
 方便 markdown 往 word、HTML等格式转换。
 
+# 忽略报错
+
+参考 https://stackoverflow.com/questions/34280043/how-to-skip-error-checking-at-rmarkdown-compiling
+
+如果跑的时候想要忽略报错，或者要展示报错信息，可以加上`error=TRUE`。
+
 
 # 附录 {-}
 
