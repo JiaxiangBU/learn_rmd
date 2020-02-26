@@ -391,6 +391,16 @@ df %>% knitr::kable("markdown")
 
 如果跑的时候想要忽略报错，或者要展示报错信息，可以加上`error=TRUE`。
 
+# 查看项目的 gitbook
+
+```r
+fs::dir_ls(
+    recurse = TRUE,
+    regexp = rebus::or("notes.Rmd$", "cookbook.Rmd$")
+)
+```
+
+
 
 # 附录 {-}
 
