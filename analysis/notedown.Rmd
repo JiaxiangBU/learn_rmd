@@ -1,0 +1,5 @@
+```bash
+notedown input.Rmd --knit > output.ipynb
+notedown index.md --run > index2.ipynb
+notedown index.md  > index2.ipynb
+```

@@ -24,7 +24,7 @@
 <meta name="author" content="李家翔" />
 
 
-<meta name="date" content="2020-02-26" />
+<meta name="date" content="2020-03-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -198,6 +198,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="43" data-path=""><a href="#data.frame-to-markdown-table"><i class="fa fa-check"></i><b>43</b> data.frame to markdown table</a></li>
 <li class="chapter" data-level="44" data-path=""><a href="#忽略报错"><i class="fa fa-check"></i><b>44</b> 忽略报错</a></li>
 <li class="chapter" data-level="45" data-path=""><a href="#查看项目的-gitbook"><i class="fa fa-check"></i><b>45</b> 查看项目的 gitbook</a></li>
+<li class="chapter" data-level="46" data-path=""><a href="#notedown"><i class="fa fa-check"></i><b>46</b> notedown</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#附录"><i class="fa fa-check"></i>附录</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#参考文献"><i class="fa fa-check"></i>参考文献</a></li>
 </ul>
@@ -220,7 +221,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">RMarkdown Cookbook</h1>
 <p class="author"><em>李家翔</em></p>
-<p class="date"><em>2020-02-26</em></p>
+<p class="date"><em>2020-03-03</em></p>
 </div>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -363,7 +364,7 @@ plot(rnorm(10))
 <a class="sourceLine" id="cb14-3" title="3"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a>
 <a class="sourceLine" id="cb14-4" title="4"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a>
 <a class="sourceLine" id="cb14-5" title="5"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a></code></pre></div>
-<p><img src="cookbook_files/figure-html/unnamed-chunk-23-1.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-23-2.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-23-3.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-23-4.png" width="25%" /></p>
+<p><img src="cookbook_files/figure-html/unnamed-chunk-24-1.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-24-2.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-24-3.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-24-4.png" width="25%" /></p>
 <p><a href="https://github.com/JiaxiangBU/learn_rmd/issues/2" class="uri">https://github.com/JiaxiangBU/learn_rmd/issues/2</a></p>
 </div>
 <div id="several-columns" class="section level2">
@@ -506,8 +507,8 @@ Here, ‘cat’ is also one of the engines ‘knitr’ supports. Here are the no
 <p><a href="https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html</a></p>
 <p>以下是实现效果。</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">DiagrammeR<span class="op">::</span><span class="kw">grViz</span>(<span class="st">&quot;output/sample.dot&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-7849e3d8837c7774cd63" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7849e3d8837c7774cd63">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-bdb98bd2378a0f848af2" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bdb98bd2378a0f848af2">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="spin_child" class="section level1">
 <h1><span class="header-section-number">9</span> spin_child</h1>
@@ -569,19 +570,19 @@ See the example <a href="https://github.com/yihui/knitr-examples/blob/master/057
 <div id="caption-默认在下" class="section level2">
 <h2><span class="header-section-number">14.1</span> caption 默认在下</h2>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="kw">rep</span>(<span class="st">&quot;../figure/bug-toc.png&quot;</span>, <span class="dv">3</span>))</a></code></pre></div>
-<div class="figure"><span id="fig:unnamed-chunk-251"></span>
+<div class="figure"><span id="fig:unnamed-chunk-261"></span>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 <p class="caption">
 Figure 14.1: 图片的 caption
 </p>
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-252"></span>
+<div class="figure"><span id="fig:unnamed-chunk-262"></span>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 <p class="caption">
 Figure 14.2: 图片的 caption
 </p>
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-253"></span>
+<div class="figure"><span id="fig:unnamed-chunk-263"></span>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 <p class="caption">
 Figure 14.3: 图片的 caption
@@ -595,7 +596,7 @@ Figure 14.3: 图片的 caption
 knitr::include_graphics(rep(&quot;../figure/bug-toc.png&quot;, 3))
 ```</code></pre>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="kw">rep</span>(<span class="st">&quot;../figure/bug-toc.png&quot;</span>, <span class="dv">3</span>))</a></code></pre></div>
-<div class="figure"><span id="fig:unnamed-chunk-26"></span>
+<div class="figure"><span id="fig:unnamed-chunk-27"></span>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  /><img src="../figure/bug-toc.png" alt="图片的 caption"  /><img src="../figure/bug-toc.png" alt="图片的 caption"  />
 <p class="caption">
 Figure 14.4: 图片的 caption
@@ -606,19 +607,19 @@ Figure 14.4: 图片的 caption
 <h2><span class="header-section-number">14.3</span> caption 在上</h2>
 <p><code>fig.topcaption = TRUE</code></p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="kw">rep</span>(<span class="st">&quot;../figure/bug-toc.png&quot;</span>, <span class="dv">3</span>))</a></code></pre></div>
-<div class="figure"><span id="fig:unnamed-chunk-271"></span>
+<div class="figure"><span id="fig:unnamed-chunk-281"></span>
 <p class="caption">
 Figure 14.5: 图片的 caption
 </p>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-272"></span>
+<div class="figure"><span id="fig:unnamed-chunk-282"></span>
 <p class="caption">
 Figure 14.6: 图片的 caption
 </p>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-273"></span>
+<div class="figure"><span id="fig:unnamed-chunk-283"></span>
 <p class="caption">
 Figure 14.7: 图片的 caption
 </p>
@@ -746,7 +747,7 @@ bibliography: add.bib
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">kable</span>(<span class="kw">head</span>(iris), <span class="dt">format =</span> <span class="st">&quot;html&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;Title of the table&quot;</span>)</a></code></pre></div>
 <table>
 <caption>
-<span id="tab:unnamed-chunk-50">Table 22.1: </span>Title of the table
+<span id="tab:unnamed-chunk-51">Table 22.1: </span>Title of the table
 </caption>
 <thead>
 <tr>
@@ -1123,7 +1124,7 @@ pandoc [OPTIONS] [FILES]
 <div class="sourceCode" id="cb53"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb53-1" title="1"><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> `mtcars` <span class="kw">where</span> gear <span class="kw">IN</span> (<span class="dv">3</span>, <span class="dv">4</span>)</a></code></pre></div>
 <div class="knitsql-table">
 <table>
-<caption><span id="tab:unnamed-chunk-53">Table 30.1: </span>Displaying records 1 - 10</caption>
+<caption><span id="tab:unnamed-chunk-54">Table 30.1: </span>Displaying records 1 - 10</caption>
 <thead>
 <tr class="header">
 <th align="right">mpg</th>
@@ -1331,7 +1332,7 @@ output:
 <p>但是在 <code>workflow</code> 环境下就失效了，提交了问题 <a href="https://github.com/jdblischak/workflowr/issues/153">Github Issue 153</a></p>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" title="1"><span class="kw">library</span>(webshot)</a>
 <a class="sourceLine" id="cb61-2" title="2"><span class="kw">webshot</span>(<span class="dt">url =</span> <span class="st">&quot;file:///D:/work/learn_rmd/docs/use-collapse.html&quot;</span>, <span class="dt">file =</span> <span class="st">&#39;collapse-fail-workflowr.png&#39;</span>)</a></code></pre></div>
-<p><img src="cookbook_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+<p><img src="cookbook_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
 </div>
 </div>
 <div id="use-r-chunk-option-child" class="section level1">
@@ -1812,6 +1813,12 @@ iris %&gt;%
 <a class="sourceLine" id="cb84-2" title="2">    <span class="dt">recurse =</span> <span class="ot">TRUE</span>,</a>
 <a class="sourceLine" id="cb84-3" title="3">    <span class="dt">regexp =</span> rebus<span class="op">::</span><span class="kw">or</span>(<span class="st">&quot;notes.Rmd$&quot;</span>, <span class="st">&quot;cookbook.Rmd$&quot;</span>)</a>
 <a class="sourceLine" id="cb84-4" title="4">)</a></code></pre></div>
+</div>
+<div id="notedown" class="section level1">
+<h1><span class="header-section-number">46</span> notedown</h1>
+<div class="sourceCode" id="cb85"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb85-1" title="1"><span class="ex">notedown</span> input.Rmd --knit <span class="op">&gt;</span> output.ipynb</a>
+<a class="sourceLine" id="cb85-2" title="2"><span class="ex">notedown</span> index.md --run <span class="op">&gt;</span> index2.ipynb</a>
+<a class="sourceLine" id="cb85-3" title="3"><span class="ex">notedown</span> index.md  <span class="op">&gt;</span> index2.ipynb</a></code></pre></div>
 </div>
 <div id="附录" class="section level1 unnumbered">
 <h1>附录</h1>
