@@ -408,6 +408,14 @@ fs::dir_ls(
 ```{r,child="analysis/notedown.Rmd"}
 ```
 
+# text reference
+    
+    See Theorem \@ref(thm:boring)
+    
+    ```{theorem, boring}
+    Here is my theorem.
+    ```
+
 
 # 附录 {-}
 

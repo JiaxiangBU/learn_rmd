@@ -24,7 +24,7 @@
 <meta name="author" content="李家翔" />
 
 
-<meta name="date" content="2020-03-03" />
+<meta name="date" content="2020-03-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -199,6 +199,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="44" data-path=""><a href="#忽略报错"><i class="fa fa-check"></i><b>44</b> 忽略报错</a></li>
 <li class="chapter" data-level="45" data-path=""><a href="#查看项目的-gitbook"><i class="fa fa-check"></i><b>45</b> 查看项目的 gitbook</a></li>
 <li class="chapter" data-level="46" data-path=""><a href="#notedown"><i class="fa fa-check"></i><b>46</b> notedown</a></li>
+<li class="chapter" data-level="47" data-path=""><a href="#text-reference"><i class="fa fa-check"></i><b>47</b> text reference</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#附录"><i class="fa fa-check"></i>附录</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#参考文献"><i class="fa fa-check"></i>参考文献</a></li>
 </ul>
@@ -221,7 +222,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">RMarkdown Cookbook</h1>
 <p class="author"><em>李家翔</em></p>
-<p class="date"><em>2020-03-03</em></p>
+<p class="date"><em>2020-03-08</em></p>
 </div>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -507,8 +508,8 @@ Here, ‘cat’ is also one of the engines ‘knitr’ supports. Here are the no
 <p><a href="https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html</a></p>
 <p>以下是实现效果。</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">DiagrammeR<span class="op">::</span><span class="kw">grViz</span>(<span class="st">&quot;output/sample.dot&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-bdb98bd2378a0f848af2" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-bdb98bd2378a0f848af2">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-344792f9ecdc2358cf44" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-344792f9ecdc2358cf44">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="spin_child" class="section level1">
 <h1><span class="header-section-number">9</span> spin_child</h1>
@@ -1819,6 +1820,15 @@ iris %&gt;%
 <div class="sourceCode" id="cb85"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb85-1" title="1"><span class="ex">notedown</span> input.Rmd --knit <span class="op">&gt;</span> output.ipynb</a>
 <a class="sourceLine" id="cb85-2" title="2"><span class="ex">notedown</span> index.md --run <span class="op">&gt;</span> index2.ipynb</a>
 <a class="sourceLine" id="cb85-3" title="3"><span class="ex">notedown</span> index.md  <span class="op">&gt;</span> index2.ipynb</a></code></pre></div>
+</div>
+<div id="text-reference" class="section level1">
+<h1><span class="header-section-number">47</span> text reference</h1>
+<p>See Theorem <a href="#thm:boring">47.1</a></p>
+
+<div class="theorem">
+<span id="thm:boring" class="theorem"><strong>Theorem 47.1  </strong></span>Here is my theorem.
+</div>
+
 </div>
 <div id="附录" class="section level1 unnumbered">
 <h1>附录</h1>
