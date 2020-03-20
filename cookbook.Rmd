@@ -419,6 +419,55 @@ fs::dir_ls(
 
 这里的 `boring`不可以加下划线`_`。
 
+
+# Highlight Table
+
+```{r}
+# remotes::install_github("atusy/ftExtra")
+# remotes::install_github('atusy/ftExtra', ref = 'shQuote')
+library(ftExtra)
+```
+
+```{r}
+(ftExtra_obj <-
+  data.frame(
+    x = c("**bold**", "*italic*"),
+    y = c("^superscript^", "~subscript~"),
+    z = c("***~ft~^Extra^** is*", "*Cool*"),
+    stringsAsFactors = FALSE
+  ) %>%
+  as_flextable() %>%
+  colformat_md())
+```
+
+It works well when I reinstall 'ftExtra'.
+
+```{r}
+iris %>%
+  head %>%
+  as_flextable() %>%
+  span_header()
+```
+
+Works again.
+
+```{r}
+library(dplyr, warn.conflicts = FALSE)
+iris %>%
+    group_by(Species) %>%
+    slice(1:2) %>%
+    as_flextable()
+```
+
+Works again.
+
+All examples in the README are reproducible. 
+
+```{r}
+class(ftExtra_obj);typeof(ftExtra_obj)
+```
+
+
 # 附录 {-}
 
 
