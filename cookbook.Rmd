@@ -6,7 +6,7 @@ output:
     bookdown::gitbook:
         split_by: none
         split_bib: TRUE
-        df_print: paged
+        df_print: kable
 bibliography: [refs/add.bib, analysis/add.bib]
 ---
 
@@ -465,6 +465,15 @@ All examples in the README are reproducible.
 
 ```{r}
 class(ftExtra_obj);typeof(ftExtra_obj)
+```
+
+# 并列表格
+
+参考 @Xie2017aligntbl
+
+```{r}
+tmp <- mtcars %>% select(1:3) %>% head()
+list(tmp,tmp) %>% kable()
 ```
 
 
