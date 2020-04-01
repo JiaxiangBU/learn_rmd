@@ -24,7 +24,7 @@
 <meta name="author" content="李家翔" />
 
 
-<meta name="date" content="2020-03-22" />
+<meta name="date" content="2020-04-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -224,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">RMarkdown Cookbook</h1>
 <p class="author"><em>李家翔</em></p>
-<p class="date"><em>2020-03-22</em></p>
+<p class="date"><em>2020-04-01</em></p>
 </div>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -510,8 +510,8 @@ Here, ‘cat’ is also one of the engines ‘knitr’ supports. Here are the no
 <p><a href="https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html</a></p>
 <p>以下是实现效果。</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">DiagrammeR<span class="op">::</span><span class="kw">grViz</span>(<span class="st">&quot;output/sample.dot&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-5e48441ca8d8c6c96eca" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5e48441ca8d8c6c96eca">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-5e1d3ce0349c302c3b8e" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5e1d3ce0349c302c3b8e">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="spin_child" class="section level1">
 <h1><span class="header-section-number">9</span> spin_child</h1>
@@ -1926,13 +1926,11 @@ iris %&gt;%
 </div>
 <div id="text-reference" class="section level1">
 <h1><span class="header-section-number">47</span> text reference</h1>
-<p>See Theorem <a href="#thm:boring">47.1</a></p>
-
-<div class="theorem">
-<span id="thm:boring" class="theorem"><strong>Theorem 47.1  </strong></span>Here is my theorem.
-</div>
-
+<p>See Theorem <code>\@ref(thm:boring)</code></p>
+<p><code>{theorem, boring}     Here is my theorem.</code></p>
 <p>这里的 <code>boring</code>不可以加下划线<code>_</code>。</p>
+<p><code>(ref:20200401231637-plot)</code></p>
+<p><code>{r 20200401231637-plot, echo=FALSE, fig.cap='(ref:20200401231637-plot)'}     knitr::include_graphics("figure/IMG_0288.png")</code></p>
 </div>
 <div id="highlight-table" class="section level1">
 <h1><span class="header-section-number">48</span> Highlight Table</h1>
