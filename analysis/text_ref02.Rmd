@@ -1,0 +1,5 @@
+(ref:20200401231637-plot) 一些 comments
+
+```{r 20200401231637-plot, echo=FALSE, fig.cap='(ref:20200401231637-plot)'}`r ''`
+knitr::include_graphics("figure/IMG_0288.png")
+```

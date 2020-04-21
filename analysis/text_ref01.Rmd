@@ -1,0 +1,5 @@
+See Theorem `\@ref(thm:boring)`
+
+```{theorem, boring}`r ''`
+Here is my theorem.
+```

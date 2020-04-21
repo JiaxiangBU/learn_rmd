@@ -410,20 +410,16 @@ fs::dir_ls(
 
 # text reference
     
-    See Theorem `\@ref(thm:boring)`
-    
-    ```{theorem, boring}`r ''`
-    Here is my theorem.
-    ```
-
+```{r echo=FALSE, comment=""}
+xfun::file_string("analysis/text_ref01.Rmd")
+```
 
 这里的 `boring`不可以加下划线`_`。
+    
+```{r echo=FALSE, comment=""}
+xfun::file_string("analysis/text_ref02.Rmd")
+```
 
-    `(ref:20200401231637-plot)`
-
-    ```{r 20200401231637-plot, echo=FALSE, fig.cap='(ref:20200401231637-plot)'}`r ''`
-    knitr::include_graphics("figure/IMG_0288.png")
-    ```
 
 # Highlight Table
 
