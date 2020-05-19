@@ -408,6 +408,10 @@ fs::dir_ls(
 ```{r,child="analysis/notedown.Rmd"}
 ```
 
+```{r,child="../learn_nbdev/analysis/convert_ipynb.Rmd"}
+```
+
+
 # text reference
     
 ```{r echo=FALSE, comment=""}
