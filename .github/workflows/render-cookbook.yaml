@@ -1,0 +1,29 @@
+on:
+  push:
+    paths:
+      - cookbook.Rmd
+
+name: Render Cookbook
+
+jobs:
+  render:
+    name: Render Cookbook
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-pandoc@v1
+      - uses: r-lib/actions/setup-tinytex@v1
+      - name: Install rmarkdown tidyverse ftExtra
+        run: Rscript -e 'install.packages("rmarkdown");install.packages("tidyverse");install.packages("ftExtra")'
+      - name: Install tinytex in session (necessary for newer OS X)
+        run: Rscript -e 'tinytex::install_tinytex()'
+      - name: Render my document to all types
+        run: Rscript -e 'rmarkdown::render("cookbook.Rmd", output_format = "all")'
+      - name: Render Gitbook
+        run: Rscript -e 'rmarkdown::render("cookbook.Rmd")'
+      - name: Commit results
+        run: |
+          git add .
+          git commit -m 'Build Cookbook' || echo "No changes to commit"
+          git push origin || echo "No changes to commit"

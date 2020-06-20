@@ -481,6 +481,11 @@ tmp <- mtcars %>% select(1:3) %>% head()
 list(tmp,tmp) %>% kable()
 ```
 
+# Rmd with GitHub Actions
+
+```{r,child="analysis/rmd_with_github_actions.Rmd"}
+```
+
 
 # 附录 {-}
 
