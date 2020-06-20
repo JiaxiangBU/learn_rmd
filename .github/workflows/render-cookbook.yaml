@@ -2,6 +2,7 @@ on:
   push:
     paths:
       - cookbook.Rmd
+      - .github/workflows/render-cookbook.yaml
 
 name: Render Cookbook
 
