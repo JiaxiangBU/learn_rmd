@@ -16,9 +16,9 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v1
       - uses: r-lib/actions/setup-tinytex@v1
       - name: Install rmarkdown tidyverse ftExtra
-        run: Rscript -e 'install.packages("rmarkdown");install.packages("tidyverse");install.packages("ftExtra");'
+        run: Rscript -e 'install.packages("rmarkdown");install.packages("tidyverse")'
       - name: Install workflowr
-        run: Rscript -e 'install.packages("workflowr")'
+        run: Rscript -e 'install.packages("workflowr");install.packages("ftExtra")'
       - name: Install tinytex in session (necessary for newer OS X)
         run: Rscript -e 'tinytex::install_tinytex()'
       - name: Render my document to all types
