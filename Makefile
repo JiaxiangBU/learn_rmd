@@ -12,3 +12,4 @@ clean:
 push:
 
 	Rscript code/push.R
+	git push
