@@ -11,7 +11,7 @@ bibliography: [refs/add.bib, analysis/add.bib]
 ---
 
 ```{r echo = FALSE}
-knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, error = FALSE)
 ```
 
 <!-- Place this tag in your head or just before your close body tag. -->
