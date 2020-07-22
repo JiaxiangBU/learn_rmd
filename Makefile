@@ -1,15 +1,28 @@
-all: cookbook clean push
+jupyter:
+
+	jupyter nbconvert --to markdown --output-dir . --NbConvertApp.output_files_dir=libs \
+	    ...
+
+	Rscript code/build-jupyter-notebook.R
 
 cookbook:
-	
-	Rscript analysis/write_tmp.R
+
 	Rscript code/build.R
-	
-clean: 
-	
-	rm tmp/*
-	
+
+readme:
+
+	Rscript code/build-readme.R
+
 push:
 
 	Rscript code/push.R
-	git push
+
+copy:
+
+	Rscript code/copy-md.R
+
+clean:
+
+	Rscript code/clean.R
+
+all: jupyter cookbook clean push
