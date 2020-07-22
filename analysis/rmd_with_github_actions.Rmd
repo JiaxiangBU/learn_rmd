@@ -5,7 +5,7 @@
 1. 修改本地文档，push 后等一会，CI就把 documents 建立好了。
 
 ```{r}
-fs::dir_tree("../rmd-with-ci/my-document")
+# fs::dir_tree("../rmd-with-ci/my-document")
 ```
 
 特别注意的是，在本地没有 latex 的时候也可以建立。

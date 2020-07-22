@@ -487,6 +487,20 @@ list(tmp,tmp) %>% kable()
 ```
 
 
+
+# use colorDF
+
+```{r,child="analysis/use-colorDF.Rmd"}
+```
+
+
+(ref:20200722165833-plot) 但是在 gitbook 里面显示不出来，被覆盖了。
+
+```{r 20200722165833-plot, echo=FALSE, fig.cap='(ref:20200722165833-plot)'}
+knitr::include_graphics('figure/20200722165803.png')
+```
+
+
 # 附录 {-}
 
 

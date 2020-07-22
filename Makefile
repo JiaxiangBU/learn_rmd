@@ -7,6 +7,7 @@ jupyter:
 
 cookbook:
 
+	Rscript analysis/write_tmp.R
 	Rscript code/build.R
 
 readme:
@@ -25,4 +26,4 @@ clean:
 
 	Rscript code/clean.R
 
-all: jupyter cookbook clean push
+all: cookbook push

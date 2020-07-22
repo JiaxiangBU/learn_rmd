@@ -1,0 +1,9 @@
+---
+output: bookdown::html_document2
+---
+
+```{r}
+library(colorDF)
+library(magrittr)
+mtcars %>% colorDF
+```
