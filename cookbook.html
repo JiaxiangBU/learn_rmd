@@ -24,7 +24,7 @@
 <meta name="author" content="李家翔" />
 
 
-<meta name="date" content="2020-07-22" />
+<meta name="date" content="2020-08-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -173,6 +173,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18" data-path=""><a href="#并列表格"><i class="fa fa-check"></i><b>18</b> 并列表格</a></li>
 <li class="chapter" data-level="19" data-path=""><a href="#rmd-with-github-actions"><i class="fa fa-check"></i><b>19</b> Rmd with GitHub Actions</a></li>
 <li class="chapter" data-level="20" data-path=""><a href="#use-colordf"><i class="fa fa-check"></i><b>20</b> use colorDF</a></li>
+<li class="chapter" data-level="21" data-path=""><a href="#文本交叉引用"><i class="fa fa-check"></i><b>21</b> 文本交叉引用</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#附录"><i class="fa fa-check"></i>附录</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#参考文献"><i class="fa fa-check"></i>参考文献</a></li>
 </ul>
@@ -195,7 +196,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">RMarkdown Cookbook</h1>
 <p class="author"><em>李家翔</em></p>
-<p class="date"><em>2020-07-22</em></p>
+<p class="date"><em>2020-08-10</em></p>
 </div>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -481,8 +482,8 @@ Here, ‘cat’ is also one of the engines ‘knitr’ supports. Here are the no
 <p><a href="https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html</a></p>
 <p>以下是实现效果。</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>DiagrammeR<span class="op">::</span><span class="kw">grViz</span>(<span class="st">&quot;output/sample.dot&quot;</span>)</span></code></pre></div>
-<div id="htmlwidget-a0d93e75f427ac9d756a" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a0d93e75f427ac9d756a">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8e1143e0d5585f118f4c" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8e1143e0d5585f118f4c">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="spin_child" class="section level1">
 <h1><span class="header-section-number">9</span> spin_child</h1>
@@ -2207,6 +2208,16 @@ notedown index.md  &gt; index2.ipynb
 Figure 20.1: 但是在 gitbook 里面显示不出来，被覆盖了。
 </p>
 </div>
+</div>
+<div id="文本交叉引用" class="section level1">
+<h1><span class="header-section-number">21</span> 文本交叉引用</h1>
+<pre><code>(ref:training-time) 作者在这里说明的训练时间减少，不是只加入 BN 后一个 epoch 时间减少，理论上加入了过多的参数，是会变慢的，但是整体 epochs 加总时间减少，因为可以采用更大的 alpha 了。 
+
+`(ref:training-time）
+</code></pre>
+
+<p>作者在这里说明的训练时间减少，不是只加入 BN 后一个 epoch 时间减少，理论上加入了过多的参数，是会变慢的，但是整体 epochs 加总时间减少，因为可以采用更大的 alpha 了。</p>
+<p>前面不要加入 <code>\@ref</code></p>
 </div>
 <div id="附录" class="section level1 unnumbered">
 <h1>附录</h1>

@@ -500,6 +500,21 @@ list(tmp,tmp) %>% kable()
 knitr::include_graphics('figure/20200722165803.png')
 ```
 
+# 文本交叉引用
+
+```
+(ref:training-time) 作者在这里说明的训练时间减少，不是只加入 BN 后一个 epoch 时间减少，理论上加入了过多的参数，是会变慢的，但是整体 epochs 加总时间减少，因为可以采用更大的 alpha 了。 
+
+`(ref:training-time）
+
+```
+
+(ref:training-time) 作者在这里说明的训练时间减少，不是只加入 BN 后一个 epoch 时间减少，理论上加入了过多的参数，是会变慢的，但是整体 epochs 加总时间减少，因为可以采用更大的 alpha 了。 
+
+(ref:training-time)
+
+前面不要加入 `\@ref`
+
 
 # 附录 {-}
 
