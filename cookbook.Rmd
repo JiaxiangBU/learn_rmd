@@ -516,6 +516,16 @@ knitr::include_graphics('figure/20200722165803.png')
 前面不要加入 `\@ref`
 
 
+
+# 多个 child 引用
+
+https://bookdown.org/yihui/rmarkdown-cookbook/child-document.html
+
+```{r, child=c('one.Rmd', 'two.Rmd')}`r ''`
+```
+
+
+
 # 附录 {-}
 
 

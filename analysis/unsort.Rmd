@@ -4,8 +4,8 @@ output: github_document
 ---
 
 ```{r}
-knitr::include_graphics("figure/redirection.png")
-knitr::include_graphics("figure/redirection_result.png")
+knitr::include_graphics("../figure/redirection.png")
+knitr::include_graphics("../figure/redirection_result.png")
 ```
 
 这样就可以替代 印象笔记 的[内部链接](https://www.yinxiang.com/blog/blog/2018/06/01/evernote-note-link/)功能。

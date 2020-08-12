@@ -24,7 +24,7 @@
 <meta name="author" content="李家翔" />
 
 
-<meta name="date" content="2020-08-10" />
+<meta name="date" content="2020-08-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -174,6 +174,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="19" data-path=""><a href="#rmd-with-github-actions"><i class="fa fa-check"></i><b>19</b> Rmd with GitHub Actions</a></li>
 <li class="chapter" data-level="20" data-path=""><a href="#use-colordf"><i class="fa fa-check"></i><b>20</b> use colorDF</a></li>
 <li class="chapter" data-level="21" data-path=""><a href="#文本交叉引用"><i class="fa fa-check"></i><b>21</b> 文本交叉引用</a></li>
+<li class="chapter" data-level="22" data-path=""><a href="#多个-child-引用"><i class="fa fa-check"></i><b>22</b> 多个 child 引用</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#附录"><i class="fa fa-check"></i>附录</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#参考文献"><i class="fa fa-check"></i>参考文献</a></li>
 </ul>
@@ -196,7 +197,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">RMarkdown Cookbook</h1>
 <p class="author"><em>李家翔</em></p>
-<p class="date"><em>2020-08-10</em></p>
+<p class="date"><em>2020-08-12</em></p>
 </div>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -274,10 +275,10 @@ Figure 2.2: 否则 RStudio IDE 会错误识别。
 </div>
 <div id="内部链接功能" class="section level1">
 <h1><span class="header-section-number">4</span> 内部链接功能</h1>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/redirection.png&quot;</span>)</span></code></pre></div>
-<p><img src="figure/redirection.png" width="746" /></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/redirection_result.png&quot;</span>)</span></code></pre></div>
-<p><img src="figure/redirection_result.png" width="387" /></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;../figure/redirection.png&quot;</span>)</span></code></pre></div>
+<p><img src="../figure/redirection.png" /><!-- --></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;../figure/redirection_result.png&quot;</span>)</span></code></pre></div>
+<p><img src="../figure/redirection_result.png" /><!-- --></p>
 <p>这样就可以替代 印象笔记 的<a href="https://www.yinxiang.com/blog/blog/2018/06/01/evernote-note-link/">内部链接</a>功能。</p>
 </div>
 <div id="html-tips" class="section level1">
@@ -482,8 +483,8 @@ Here, ‘cat’ is also one of the engines ‘knitr’ supports. Here are the no
 <p><a href="https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html</a></p>
 <p>以下是实现效果。</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>DiagrammeR<span class="op">::</span><span class="kw">grViz</span>(<span class="st">&quot;output/sample.dot&quot;</span>)</span></code></pre></div>
-<div id="htmlwidget-8e1143e0d5585f118f4c" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8e1143e0d5585f118f4c">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-2cd539ec53d9e85298ef" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2cd539ec53d9e85298ef">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="spin_child" class="section level1">
 <h1><span class="header-section-number">9</span> spin_child</h1>
@@ -545,19 +546,19 @@ See the example <a href="https://github.com/yihui/knitr-examples/blob/master/057
 <div id="caption-默认在下" class="section level2">
 <h2><span class="header-section-number">14.1</span> caption 默认在下</h2>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="kw">rep</span>(<span class="st">&quot;../figure/bug-toc.png&quot;</span>, <span class="dv">3</span>))</span></code></pre></div>
-<div class="figure"><span id="fig:unnamed-chunk-371"></span>
+<div class="figure"><span id="fig:unnamed-chunk-37-1"></span>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 <p class="caption">
 Figure 14.1: 图片的 caption
 </p>
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-372"></span>
+<div class="figure"><span id="fig:unnamed-chunk-37-2"></span>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 <p class="caption">
 Figure 14.2: 图片的 caption
 </p>
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-373"></span>
+<div class="figure"><span id="fig:unnamed-chunk-37-3"></span>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 <p class="caption">
 Figure 14.3: 图片的 caption
@@ -582,19 +583,19 @@ Figure 14.4: 图片的 caption
 <h2><span class="header-section-number">14.3</span> caption 在上</h2>
 <p><code>fig.topcaption = TRUE</code></p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="kw">rep</span>(<span class="st">&quot;../figure/bug-toc.png&quot;</span>, <span class="dv">3</span>))</span></code></pre></div>
-<div class="figure"><span id="fig:unnamed-chunk-391"></span>
+<div class="figure"><span id="fig:unnamed-chunk-39-1"></span>
 <p class="caption">
 Figure 14.5: 图片的 caption
 </p>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-392"></span>
+<div class="figure"><span id="fig:unnamed-chunk-39-2"></span>
 <p class="caption">
 Figure 14.6: 图片的 caption
 </p>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-393"></span>
+<div class="figure"><span id="fig:unnamed-chunk-39-3"></span>
 <p class="caption">
 Figure 14.7: 图片的 caption
 </p>
@@ -1086,18 +1087,18 @@ SELECT * FROM `mtcars` where gear IN (3, 4)
 
 Table: (\#tab:unnamed-chunk-67)Displaying records 1 - 10
 
-  mpg   cyl    disp    hp   drat      wt    qsec   vs   am   gear   carb
------  ----  ------  ----  -----  ------  ------  ---  ---  -----  -----
- 21.0     6   160.0   110   3.90   2.620   16.46    0    1      4      4
- 21.0     6   160.0   110   3.90   2.875   17.02    0    1      4      4
- 22.8     4   108.0    93   3.85   2.320   18.61    1    1      4      1
- 21.4     6   258.0   110   3.08   3.215   19.44    1    0      3      1
- 18.7     8   360.0   175   3.15   3.440   17.02    0    0      3      2
- 18.1     6   225.0   105   2.76   3.460   20.22    1    0      3      1
- 14.3     8   360.0   245   3.21   3.570   15.84    0    0      3      4
- 24.4     4   146.7    62   3.69   3.190   20.00    1    0      4      2
- 22.8     4   140.8    95   3.92   3.150   22.90    1    0      4      2
- 19.2     6   167.6   123   3.92   3.440   18.30    1    0      4      4
+|  mpg| cyl|  disp|  hp| drat|    wt|  qsec| vs| am| gear| carb|
+|----:|---:|-----:|---:|----:|-----:|-----:|--:|--:|----:|----:|
+| 21.0|   6| 160.0| 110| 3.90| 2.620| 16.46|  0|  1|    4|    4|
+| 21.0|   6| 160.0| 110| 3.90| 2.875| 17.02|  0|  1|    4|    4|
+| 22.8|   4| 108.0|  93| 3.85| 2.320| 18.61|  1|  1|    4|    1|
+| 21.4|   6| 258.0| 110| 3.08| 3.215| 19.44|  1|  0|    3|    1|
+| 18.7|   8| 360.0| 175| 3.15| 3.440| 17.02|  0|  0|    3|    2|
+| 18.1|   6| 225.0| 105| 2.76| 3.460| 20.22|  1|  0|    3|    1|
+| 14.3|   8| 360.0| 245| 3.21| 3.570| 15.84|  0|  0|    3|    4|
+| 24.4|   4| 146.7|  62| 3.69| 3.190| 20.00|  1|  0|    4|    2|
+| 22.8|   4| 140.8|  95| 3.92| 3.150| 22.90|  1|  0|    4|    2|
+| 19.2|   6| 167.6| 123| 3.92| 3.440| 18.30|  1|  0|    4|    4|
 
 &lt;/div&gt;
 
@@ -1477,14 +1478,14 @@ df
 
 &lt;div class=&quot;kable-table&quot;&gt;
 
-                      mpg   cyl   disp    hp   drat      wt    qsec   vs   am   gear   carb
-------------------  -----  ----  -----  ----  -----  ------  ------  ---  ---  -----  -----
-Mazda RX4            21.0     6    160   110   3.90   2.620   16.46    0    1      4      4
-Mazda RX4 Wag        21.0     6    160   110   3.90   2.875   17.02    0    1      4      4
-Datsun 710           22.8     4    108    93   3.85   2.320   18.61    1    1      4      1
-Hornet 4 Drive       21.4     6    258   110   3.08   3.215   19.44    1    0      3      1
-Hornet Sportabout    18.7     8    360   175   3.15   3.440   17.02    0    0      3      2
-Valiant              18.1     6    225   105   2.76   3.460   20.22    1    0      3      1
+|                  |  mpg| cyl| disp|  hp| drat|    wt|  qsec| vs| am| gear| carb|
+|:-----------------|----:|---:|----:|---:|----:|-----:|-----:|--:|--:|----:|----:|
+|Mazda RX4         | 21.0|   6|  160| 110| 3.90| 2.620| 16.46|  0|  1|    4|    4|
+|Mazda RX4 Wag     | 21.0|   6|  160| 110| 3.90| 2.875| 17.02|  0|  1|    4|    4|
+|Datsun 710        | 22.8|   4|  108|  93| 3.85| 2.320| 18.61|  1|  1|    4|    1|
+|Hornet 4 Drive    | 21.4|   6|  258| 110| 3.08| 3.215| 19.44|  1|  0|    3|    1|
+|Hornet Sportabout | 18.7|   8|  360| 175| 3.15| 3.440| 17.02|  0|  0|    3|    2|
+|Valiant           | 18.1|   6|  225| 105| 2.76| 3.460| 20.22|  1|  0|    3|    1|
 
 &lt;/div&gt;
 
@@ -1614,7 +1615,7 @@ notedown index.md  &gt; index2.ipynb
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">mpg</th>
 <th align="right">cyl</th>
 <th align="right">disp</th>
@@ -1622,37 +1623,37 @@ notedown index.md  &gt; index2.ipynb
 </thead>
 <tbody>
 <tr class="odd">
-<td>Mazda RX4</td>
+<td align="left">Mazda RX4</td>
 <td align="right">21.0</td>
 <td align="right">6</td>
 <td align="right">160</td>
 </tr>
 <tr class="even">
-<td>Mazda RX4 Wag</td>
+<td align="left">Mazda RX4 Wag</td>
 <td align="right">21.0</td>
 <td align="right">6</td>
 <td align="right">160</td>
 </tr>
 <tr class="odd">
-<td>Datsun 710</td>
+<td align="left">Datsun 710</td>
 <td align="right">22.8</td>
 <td align="right">4</td>
 <td align="right">108</td>
 </tr>
 <tr class="even">
-<td>Hornet 4 Drive</td>
+<td align="left">Hornet 4 Drive</td>
 <td align="right">21.4</td>
 <td align="right">6</td>
 <td align="right">258</td>
 </tr>
 <tr class="odd">
-<td>Hornet Sportabout</td>
+<td align="left">Hornet Sportabout</td>
 <td align="right">18.7</td>
 <td align="right">8</td>
 <td align="right">360</td>
 </tr>
 <tr class="even">
-<td>Valiant</td>
+<td align="left">Valiant</td>
 <td align="right">18.1</td>
 <td align="right">6</td>
 <td align="right">225</td>
@@ -1664,7 +1665,7 @@ notedown index.md  &gt; index2.ipynb
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">mpg</th>
 <th align="right">cyl</th>
 <th align="right">disp</th>
@@ -1672,37 +1673,37 @@ notedown index.md  &gt; index2.ipynb
 </thead>
 <tbody>
 <tr class="odd">
-<td>Mazda RX4</td>
+<td align="left">Mazda RX4</td>
 <td align="right">21.0</td>
 <td align="right">6</td>
 <td align="right">160</td>
 </tr>
 <tr class="even">
-<td>Mazda RX4 Wag</td>
+<td align="left">Mazda RX4 Wag</td>
 <td align="right">21.0</td>
 <td align="right">6</td>
 <td align="right">160</td>
 </tr>
 <tr class="odd">
-<td>Datsun 710</td>
+<td align="left">Datsun 710</td>
 <td align="right">22.8</td>
 <td align="right">4</td>
 <td align="right">108</td>
 </tr>
 <tr class="even">
-<td>Hornet 4 Drive</td>
+<td align="left">Hornet 4 Drive</td>
 <td align="right">21.4</td>
 <td align="right">6</td>
 <td align="right">258</td>
 </tr>
 <tr class="odd">
-<td>Hornet Sportabout</td>
+<td align="left">Hornet Sportabout</td>
 <td align="right">18.7</td>
 <td align="right">8</td>
 <td align="right">360</td>
 </tr>
 <tr class="even">
-<td>Valiant</td>
+<td align="left">Valiant</td>
 <td align="right">18.1</td>
 <td align="right">6</td>
 <td align="right">225</td>
@@ -1735,7 +1736,7 @@ notedown index.md  &gt; index2.ipynb
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">mpg</th>
 <th align="right">cyl</th>
 <th align="right">disp</th>
@@ -1751,7 +1752,7 @@ notedown index.md  &gt; index2.ipynb
 </thead>
 <tbody>
 <tr class="odd">
-<td>Mazda RX4</td>
+<td align="left">Mazda RX4</td>
 <td align="right">21.0</td>
 <td align="right">6</td>
 <td align="right">160.0</td>
@@ -1765,7 +1766,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">4</td>
 </tr>
 <tr class="even">
-<td>Mazda RX4 Wag</td>
+<td align="left">Mazda RX4 Wag</td>
 <td align="right">21.0</td>
 <td align="right">6</td>
 <td align="right">160.0</td>
@@ -1779,7 +1780,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">4</td>
 </tr>
 <tr class="odd">
-<td>Datsun 710</td>
+<td align="left">Datsun 710</td>
 <td align="right">22.8</td>
 <td align="right">4</td>
 <td align="right">108.0</td>
@@ -1793,7 +1794,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">1</td>
 </tr>
 <tr class="even">
-<td>Hornet 4 Drive</td>
+<td align="left">Hornet 4 Drive</td>
 <td align="right">21.4</td>
 <td align="right">6</td>
 <td align="right">258.0</td>
@@ -1807,7 +1808,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">1</td>
 </tr>
 <tr class="odd">
-<td>Hornet Sportabout</td>
+<td align="left">Hornet Sportabout</td>
 <td align="right">18.7</td>
 <td align="right">8</td>
 <td align="right">360.0</td>
@@ -1821,7 +1822,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">2</td>
 </tr>
 <tr class="even">
-<td>Valiant</td>
+<td align="left">Valiant</td>
 <td align="right">18.1</td>
 <td align="right">6</td>
 <td align="right">225.0</td>
@@ -1835,7 +1836,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">1</td>
 </tr>
 <tr class="odd">
-<td>Duster 360</td>
+<td align="left">Duster 360</td>
 <td align="right">14.3</td>
 <td align="right">8</td>
 <td align="right">360.0</td>
@@ -1849,7 +1850,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">4</td>
 </tr>
 <tr class="even">
-<td>Merc 240D</td>
+<td align="left">Merc 240D</td>
 <td align="right">24.4</td>
 <td align="right">4</td>
 <td align="right">146.7</td>
@@ -1863,7 +1864,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">2</td>
 </tr>
 <tr class="odd">
-<td>Merc 230</td>
+<td align="left">Merc 230</td>
 <td align="right">22.8</td>
 <td align="right">4</td>
 <td align="right">140.8</td>
@@ -1877,7 +1878,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">2</td>
 </tr>
 <tr class="even">
-<td>Merc 280</td>
+<td align="left">Merc 280</td>
 <td align="right">19.2</td>
 <td align="right">6</td>
 <td align="right">167.6</td>
@@ -1891,7 +1892,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">4</td>
 </tr>
 <tr class="odd">
-<td>Merc 280C</td>
+<td align="left">Merc 280C</td>
 <td align="right">17.8</td>
 <td align="right">6</td>
 <td align="right">167.6</td>
@@ -1905,7 +1906,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">4</td>
 </tr>
 <tr class="even">
-<td>Merc 450SE</td>
+<td align="left">Merc 450SE</td>
 <td align="right">16.4</td>
 <td align="right">8</td>
 <td align="right">275.8</td>
@@ -1919,7 +1920,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">3</td>
 </tr>
 <tr class="odd">
-<td>Merc 450SL</td>
+<td align="left">Merc 450SL</td>
 <td align="right">17.3</td>
 <td align="right">8</td>
 <td align="right">275.8</td>
@@ -1933,7 +1934,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">3</td>
 </tr>
 <tr class="even">
-<td>Merc 450SLC</td>
+<td align="left">Merc 450SLC</td>
 <td align="right">15.2</td>
 <td align="right">8</td>
 <td align="right">275.8</td>
@@ -1947,7 +1948,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">3</td>
 </tr>
 <tr class="odd">
-<td>Cadillac Fleetwood</td>
+<td align="left">Cadillac Fleetwood</td>
 <td align="right">10.4</td>
 <td align="right">8</td>
 <td align="right">472.0</td>
@@ -1961,7 +1962,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">4</td>
 </tr>
 <tr class="even">
-<td>Lincoln Continental</td>
+<td align="left">Lincoln Continental</td>
 <td align="right">10.4</td>
 <td align="right">8</td>
 <td align="right">460.0</td>
@@ -1975,7 +1976,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">4</td>
 </tr>
 <tr class="odd">
-<td>Chrysler Imperial</td>
+<td align="left">Chrysler Imperial</td>
 <td align="right">14.7</td>
 <td align="right">8</td>
 <td align="right">440.0</td>
@@ -1989,7 +1990,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">4</td>
 </tr>
 <tr class="even">
-<td>Fiat 128</td>
+<td align="left">Fiat 128</td>
 <td align="right">32.4</td>
 <td align="right">4</td>
 <td align="right">78.7</td>
@@ -2003,7 +2004,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">1</td>
 </tr>
 <tr class="odd">
-<td>Honda Civic</td>
+<td align="left">Honda Civic</td>
 <td align="right">30.4</td>
 <td align="right">4</td>
 <td align="right">75.7</td>
@@ -2017,7 +2018,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">2</td>
 </tr>
 <tr class="even">
-<td>Toyota Corolla</td>
+<td align="left">Toyota Corolla</td>
 <td align="right">33.9</td>
 <td align="right">4</td>
 <td align="right">71.1</td>
@@ -2031,7 +2032,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">1</td>
 </tr>
 <tr class="odd">
-<td>Toyota Corona</td>
+<td align="left">Toyota Corona</td>
 <td align="right">21.5</td>
 <td align="right">4</td>
 <td align="right">120.1</td>
@@ -2045,7 +2046,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">1</td>
 </tr>
 <tr class="even">
-<td>Dodge Challenger</td>
+<td align="left">Dodge Challenger</td>
 <td align="right">15.5</td>
 <td align="right">8</td>
 <td align="right">318.0</td>
@@ -2059,7 +2060,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">2</td>
 </tr>
 <tr class="odd">
-<td>AMC Javelin</td>
+<td align="left">AMC Javelin</td>
 <td align="right">15.2</td>
 <td align="right">8</td>
 <td align="right">304.0</td>
@@ -2073,7 +2074,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">2</td>
 </tr>
 <tr class="even">
-<td>Camaro Z28</td>
+<td align="left">Camaro Z28</td>
 <td align="right">13.3</td>
 <td align="right">8</td>
 <td align="right">350.0</td>
@@ -2087,7 +2088,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">4</td>
 </tr>
 <tr class="odd">
-<td>Pontiac Firebird</td>
+<td align="left">Pontiac Firebird</td>
 <td align="right">19.2</td>
 <td align="right">8</td>
 <td align="right">400.0</td>
@@ -2101,7 +2102,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">2</td>
 </tr>
 <tr class="even">
-<td>Fiat X1-9</td>
+<td align="left">Fiat X1-9</td>
 <td align="right">27.3</td>
 <td align="right">4</td>
 <td align="right">79.0</td>
@@ -2115,7 +2116,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">1</td>
 </tr>
 <tr class="odd">
-<td>Porsche 914-2</td>
+<td align="left">Porsche 914-2</td>
 <td align="right">26.0</td>
 <td align="right">4</td>
 <td align="right">120.3</td>
@@ -2129,7 +2130,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">2</td>
 </tr>
 <tr class="even">
-<td>Lotus Europa</td>
+<td align="left">Lotus Europa</td>
 <td align="right">30.4</td>
 <td align="right">4</td>
 <td align="right">95.1</td>
@@ -2143,7 +2144,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">2</td>
 </tr>
 <tr class="odd">
-<td>Ford Pantera L</td>
+<td align="left">Ford Pantera L</td>
 <td align="right">15.8</td>
 <td align="right">8</td>
 <td align="right">351.0</td>
@@ -2157,7 +2158,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">4</td>
 </tr>
 <tr class="even">
-<td>Ferrari Dino</td>
+<td align="left">Ferrari Dino</td>
 <td align="right">19.7</td>
 <td align="right">6</td>
 <td align="right">145.0</td>
@@ -2171,7 +2172,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">6</td>
 </tr>
 <tr class="odd">
-<td>Maserati Bora</td>
+<td align="left">Maserati Bora</td>
 <td align="right">15.0</td>
 <td align="right">8</td>
 <td align="right">301.0</td>
@@ -2185,7 +2186,7 @@ notedown index.md  &gt; index2.ipynb
 <td align="right">8</td>
 </tr>
 <tr class="even">
-<td>Volvo 142E</td>
+<td align="left">Volvo 142E</td>
 <td align="right">21.4</td>
 <td align="right">4</td>
 <td align="right">121.0</td>
@@ -2218,6 +2219,11 @@ Figure 20.1: 但是在 gitbook 里面显示不出来，被覆盖了。
 
 <p>作者在这里说明的训练时间减少，不是只加入 BN 后一个 epoch 时间减少，理论上加入了过多的参数，是会变慢的，但是整体 epochs 加总时间减少，因为可以采用更大的 alpha 了。</p>
 <p>前面不要加入 <code>\@ref</code></p>
+</div>
+<div id="多个-child-引用" class="section level1">
+<h1><span class="header-section-number">22</span> 多个 child 引用</h1>
+<p><a href="https://bookdown.org/yihui/rmarkdown-cookbook/child-document.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/child-document.html</a></p>
+<p><code>{r, child=c('one.Rmd', 'two.Rmd')}</code></p>
 </div>
 <div id="附录" class="section level1 unnumbered">
 <h1>附录</h1>
