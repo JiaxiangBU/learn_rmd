@@ -427,13 +427,13 @@ xfun::file_string("analysis/text_ref02.Rmd")
 
 # Highlight Table
 
-```{r}
+```r
 # remotes::install_github("atusy/ftExtra")
 # remotes::install_github('atusy/ftExtra', ref = 'shQuote')
 library(ftExtra)
 ```
 
-```{r}
+```r
 (ftExtra_obj <-
   data.frame(
     x = c("**bold**", "*italic*"),
@@ -447,7 +447,7 @@ library(ftExtra)
 
 It works well when I reinstall 'ftExtra'.
 
-```{r}
+```r
 iris %>%
   head %>%
   as_flextable() %>%
@@ -456,7 +456,7 @@ iris %>%
 
 Works again.
 
-```{r}
+```r
 library(dplyr, warn.conflicts = FALSE)
 iris %>%
     group_by(Species) %>%
@@ -468,7 +468,7 @@ Works again.
 
 All examples in the README are reproducible. 
 
-```{r}
+```r
 class(ftExtra_obj);typeof(ftExtra_obj)
 ```
 
@@ -524,7 +524,15 @@ https://bookdown.org/yihui/rmarkdown-cookbook/child-document.html
 ```{r, child=c('one.Rmd', 'two.Rmd')}`r ''`
 ```
 
+# HTML output found in document
 
+参考 https://stackoverflow.com/questions/42543206/r-markdown-compile-error
+因为有 HTML 文件，需要用 webshot 截图。
+
+```r
+install.packages("webshot")
+webshot::install_phantomjs()
+```
 
 # 附录 {-}
 
