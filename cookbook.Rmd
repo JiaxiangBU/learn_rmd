@@ -309,6 +309,8 @@ qplot(carat, price, data=diamonds, color=cut)+
 ```{r,child="tmp/line_list.Rmd"}
 ```
 
+`{r phases, echo=FALSE, message=FALSE, warning=FALSE,fig.cap='汇率制度的变动'}`直接这样写，保证`DiagrammeR`等HTML的对象也可以存在 captions。
+
 
 # 自定义 comment 的符号
 
