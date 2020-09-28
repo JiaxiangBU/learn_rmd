@@ -1,0 +1,17 @@
+```
+pandoc-citeproc: reference 10.1007/978-3-642-45068-6_7 not found
+pandoc-citeproc: reference 10.1007/978-3-642-45068-6_7 not found
+pandoc-citeproc: reference Clark2013 not found
+pandoc-citeproc: reference Liu2015Gibbs not found
+pandoc-citeproc: reference Liu2015Gibbs not found
+pandoc-citeproc: reference Clark2013 not found
+pandoc-citeproc: reference 钁姦涔?pandoc-citeproc.exe: <stderr>: hPutChar: invalid argument (Invalid argument)
+Error running filter D:/install/RStudio/bin/pandoc/pandoc-citeproc.exe:
+Filter returned error status 1
+: pandoc document conversion failed with error 83
+: There were 45 warnings (use warnings() to see them)
+
+make: *** [Makefile:15: cookbook] Error 1
+```
+
+这个报错，肯定是一个文档对应的 bib 没有采集到，要先定位这个文档，肯定是 child 连接的。
