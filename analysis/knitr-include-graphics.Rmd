@@ -1,0 +1,9 @@
+## knitr::include_graphics
+
+参考 https://stackoverflow.com/a/51269116/8625228
+
+```r
+knitr::include_graphics(fs::dir_ls("../figure/", regexp = "2020102221"))
+```
+
+这里函数`knitr::include_graphics`已经默认了向量化操作。
