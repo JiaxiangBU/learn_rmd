@@ -6,12 +6,14 @@ output:
     bookdown::gitbook:
         split_by: none
         split_bib: TRUE
-        df_print: kable
+        df_print: paged
+        lib_dir: libs/
 bibliography: [refs/add.bib, analysis/add.bib]
+link-citations: yes
 ---
 
-```{r echo = FALSE}
-knitr::opts_chunk$set(message = FALSE, warning = FALSE, error = FALSE)
+```{r setup,echo = FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 ```
 
 <!-- Place this tag in your head or just before your close body tag. -->
@@ -21,6 +23,11 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE, error = FALSE)
 1. 这样拼接以后的笔记方便复习。
 1. 相关问题提交到
     <a class="github-button" href="https://github.com/JiaxiangBU/tutoring2/issues" data-show-count="true" aria-label="Issue JiaxiangBU/tutoring on GitHub">Issue</a>
+
+<!-- ## 须知 -->
+
+<!-- 1. `bibliography: ../add.bib` 这部分根据需要设定 `bib` 文件，否则会报错，如果没有，删除即可。 -->
+<!-- 1. `[GitHub](https://github.com/JiaxiangBU/tutoring2/issues/new)` 这部分根据需要进行删减即可。 -->
 
 ```{r}
 library(tidyverse)
@@ -303,10 +310,8 @@ qplot(carat, price, data=diamonds, color=cut)+
 
 <!-- write_tmp -->
 
-```{r,child="tmp/child_list.Rmd"}
-```
+```{r,child=c("tmp/child_list.Rmd","tmp/line_list.Rmd"),eval=FALSE}
 
-```{r,child="tmp/line_list.Rmd"}
 ```
 
 `{r phases, echo=FALSE, message=FALSE, warning=FALSE,fig.cap='汇率制度的变动'}`直接这样写，保证`DiagrammeR`等HTML的对象也可以存在 captions。
@@ -480,7 +485,7 @@ class(ftExtra_obj);typeof(ftExtra_obj)
 
 ```{r}
 tmp <- mtcars %>% select(1:3) %>% head()
-list(tmp,tmp) %>% kable()
+list(tmp,tmp) %>% knitr::kable()
 ```
 
 # Rmd with GitHub Actions
@@ -543,8 +548,9 @@ webshot::install_phantomjs()
 ```
 
 
-# 附录 {-}
 
+<!-- # 附录 {-} -->
 
+<!-- 附录不是必须的 -->
 
 # 参考文献 {-}
