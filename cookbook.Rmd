@@ -523,8 +523,8 @@ knitr::include_graphics('figure/20200722165803.png')
 
 https://bookdown.org/yihui/rmarkdown-cookbook/child-document.html
 
-```{r, child=c('one.Rmd', 'two.Rmd')}`r ''`
-```
+\`\`\`{r, child=c('one.Rmd', 'two.Rmd')}`r ''`
+\`\`\`
 
 # HTML output found in document
 
@@ -535,6 +535,13 @@ https://bookdown.org/yihui/rmarkdown-cookbook/child-document.html
 install.packages("webshot")
 webshot::install_phantomjs()
 ```
+
+# 使用 Python
+
+```{r,child="analysis/use-python.Rmd"}
+
+```
+
 
 # 附录 {-}
 

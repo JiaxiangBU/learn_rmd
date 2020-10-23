@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>RMarkdown Cookbook</title>
-  <meta name="description" content="RMarkdown Cookbook" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <title>iris: r params$species</title>
+  <meta name="description" content="iris: r params$species" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="RMarkdown Cookbook" />
+  <meta property="og:title" content="iris: r params$species" />
   <meta property="og:type" content="book" />
   
   
@@ -16,15 +16,15 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="RMarkdown Cookbook" />
+  <meta name="twitter:title" content="iris: r params$species" />
   
   
   
 
-<meta name="author" content="李家翔" />
+<meta name="author" content="Jiaxiang Li" />
 
 
-<meta name="date" content="2020-09-20" />
+<meta name="date" content="2019-03-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 
 
+<script src="libs/header-attrs-2.4/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,32 +51,34 @@
 
 
 
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -84,9 +87,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -135,7 +138,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2" data-path=""><a href="#display-chunk"><i class="fa fa-check"></i><b>2</b> display chunk</a></li>
 <li class="chapter" data-level="3" data-path=""><a href="#github-star-badges"><i class="fa fa-check"></i><b>3</b> GitHub Star Badges</a></li>
 <li class="chapter" data-level="4" data-path=""><a href="#内部链接功能"><i class="fa fa-check"></i><b>4</b> 内部链接功能</a></li>
-<li class="chapter" data-level="5" data-path=""><a href="#html-tips"><i class="fa fa-check"></i><b>5</b> HTML Tips</a><ul>
+<li class="chapter" data-level="5" data-path=""><a href="#html-tips"><i class="fa fa-check"></i><b>5</b> HTML Tips</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path=""><a href="#skip-a-line"><i class="fa fa-check"></i><b>5.1</b> Skip a line</a></li>
 <li class="chapter" data-level="5.2" data-path=""><a href="#center-an-image"><i class="fa fa-check"></i><b>5.2</b> Center an image</a></li>
 <li class="chapter" data-level="5.3" data-path=""><a href="#white-space-around-img"><i class="fa fa-check"></i><b>5.3</b> White space around img</a></li>
@@ -154,13 +158,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11" data-path=""><a href="#engine.path"><i class="fa fa-check"></i><b>11</b> engine.path</a></li>
 <li class="chapter" data-level="12" data-path=""><a href="#direct-use-dot"><i class="fa fa-check"></i><b>12</b> direct use dot</a></li>
 <li class="chapter" data-level="13" data-path=""><a href="#r-代码模块引用"><i class="fa fa-check"></i><b>13</b> R 代码模块引用</a></li>
-<li class="chapter" data-level="14" data-path=""><a href="#caption"><i class="fa fa-check"></i><b>14</b> Caption</a><ul>
+<li class="chapter" data-level="14" data-path=""><a href="#caption"><i class="fa fa-check"></i><b>14</b> Caption</a>
+<ul>
 <li class="chapter" data-level="14.1" data-path=""><a href="#caption-默认在下"><i class="fa fa-check"></i><b>14.1</b> caption 默认在下</a></li>
 <li class="chapter" data-level="14.2" data-path=""><a href="#caption-不重复"><i class="fa fa-check"></i><b>14.2</b> caption 不重复</a></li>
 <li class="chapter" data-level="14.3" data-path=""><a href="#caption-在上"><i class="fa fa-check"></i><b>14.3</b> caption 在上</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path=""><a href="#cross-reference"><i class="fa fa-check"></i><b>15</b> cross reference</a></li>
-<li class="chapter" data-level="16" data-path=""><a href="#add-toc-github-document"><i class="fa fa-check"></i><b>16</b> Add Toc Github Document</a><ul>
+<li class="chapter" data-level="16" data-path=""><a href="#add-toc-github-document"><i class="fa fa-check"></i><b>16</b> Add Toc Github Document</a>
+<ul>
 <li class="chapter" data-level="16.1" data-path=""><a href="#introduction"><i class="fa fa-check"></i><b>16.1</b> Introduction</a></li>
 <li class="chapter" data-level="16.2" data-path=""><a href="#常见报错"><i class="fa fa-check"></i><b>16.2</b> 常见报错</a></li>
 </ul></li>
@@ -171,6 +177,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="21" data-path=""><a href="#文本交叉引用"><i class="fa fa-check"></i><b>21</b> 文本交叉引用</a></li>
 <li class="chapter" data-level="22" data-path=""><a href="#多个-child-引用"><i class="fa fa-check"></i><b>22</b> 多个 child 引用</a></li>
 <li class="chapter" data-level="23" data-path=""><a href="#html-output-found-in-document"><i class="fa fa-check"></i><b>23</b> HTML output found in document</a></li>
+<li class="chapter" data-level="24" data-path=""><a href="#使用-python"><i class="fa fa-check"></i><b>24</b> 使用 Python</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#附录"><i class="fa fa-check"></i>附录</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#参考文献"><i class="fa fa-check"></i>参考文献</a></li>
 </ul>
@@ -182,7 +189,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">RMarkdown Cookbook</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">iris: <code>r params$species</code></a>
           </h1>
         </div>
 
@@ -191,9 +198,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">RMarkdown Cookbook</h1>
-<p class="author"><em>李家翔</em></p>
-<p class="date"><em>2020-09-20</em></p>
+<h1 class="title">iris: <code>r params$species</code></h1>
+<p class="author"><em>Jiaxiang Li</em></p>
+<p class="date"><em>2019-03-19</em></p>
 </div>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -203,8 +210,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>相关问题提交到
 <a class="github-button" href="https://github.com/JiaxiangBU/tutoring2/issues" data-show-count="true" aria-label="Issue JiaxiangBU/tutoring on GitHub">Issue</a></li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
-<div id="fenced-code-blocks" class="section level1">
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<div id="fenced-code-blocks" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Fenced code blocks</h1>
 <p>参考 <a href="https://github.com/carwin/markdown-styleguide" class="uri">https://github.com/carwin/markdown-styleguide</a></p>
 <pre><code>```
@@ -221,7 +228,7 @@ There is a newline above this paragraph because it is both the end of a
 list and because it follows a fenced code block.
 ```</code></pre>
 </div>
-<div id="display-chunk" class="section level1">
+<div id="display-chunk" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> display chunk</h1>
 <p>参考 <a href="https://github.com/yihui/knitr-examples/blob/master/065-rmd-chunk.Rmd" class="uri">https://github.com/yihui/knitr-examples/blob/master/065-rmd-chunk.Rmd</a></p>
 <blockquote>
@@ -233,9 +240,9 @@ The R code chunks in these examples are still identified by <strong>knitr</stron
 n = 10
 rnorm(x)
 ```</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/bug-toc.png&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/bug-toc.png&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:unnamed-chunk-3"></span>
-<img src="figure/bug-toc.png" alt="如果不缩进的话，目录会产生问题。"  />
+<img src="figure/bug-toc.png" alt="如果不缩进的话，目录会产生问题。" width="156" />
 <p class="caption">
 Figure 2.1: 如果不缩进的话，目录会产生问题。
 </p>
@@ -250,9 +257,9 @@ rnorm(x)
 ```</code></pre>
 <p>这就是 Zero Width Space 也是一种方法，一般不容易手动加入。</p>
 <p>要注意缩进。</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/nested_code_block.png&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figure/nested_code_block.png&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:unnamed-chunk-4"></span>
-<img src="figure/nested_code_block.png" alt="否则 RStudio IDE 会错误识别。"  />
+<img src="figure/nested_code_block.png" alt="否则 RStudio IDE 会错误识别。" width="530" />
 <p class="caption">
 Figure 2.2: 否则 RStudio IDE 会错误识别。
 </p>
@@ -260,7 +267,7 @@ Figure 2.2: 否则 RStudio IDE 会错误识别。
 <p>或者存到文档里面，进行 read
 参考 [rmd-template]，并且需要注意加上<code>comment=""</code>，方便复制。</p>
 </div>
-<div id="github-star-badges" class="section level1">
+<div id="github-star-badges" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> GitHub Star Badges</h1>
 <p>参考 <a href="https://github.com/ddavison/github-badges">github</a></p>
 <ol style="list-style-type: decimal">
@@ -269,17 +276,17 @@ Figure 2.2: 否则 RStudio IDE 会错误识别。
 </ol>
 <p>在 notesdown 上面增加内容</p>
 </div>
-<div id="内部链接功能" class="section level1">
+<div id="内部链接功能" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> 内部链接功能</h1>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;../figure/redirection.png&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;../figure/redirection.png&quot;</span>)</span></code></pre></div>
 <p><img src="../figure/redirection.png" /><!-- --></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;../figure/redirection_result.png&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;../figure/redirection_result.png&quot;</span>)</span></code></pre></div>
 <p><img src="../figure/redirection_result.png" /><!-- --></p>
 <p>这样就可以替代 印象笔记 的<a href="https://www.yinxiang.com/blog/blog/2018/06/01/evernote-note-link/">内部链接</a>功能。</p>
 </div>
-<div id="html-tips" class="section level1">
+<div id="html-tips" class="section level1" number="5">
 <h1><span class="header-section-number">5</span> HTML Tips</h1>
-<div id="skip-a-line" class="section level2">
+<div id="skip-a-line" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Skip a line</h2>
 <pre><code>A first sentence
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
@@ -288,20 +295,20 @@ A seconde sentence</code></pre>
 <br><br><br><br>
 A seconde sentence</p>
 </div>
-<div id="center-an-image" class="section level2">
+<div id="center-an-image" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Center an image</h2>
 <pre><code>&lt;center&gt;
 ![FigName](logo_r_graph_gallery.jpg)
 &lt;/center&gt;</code></pre>
 <p>只需要略懂<code>&lt;&gt;</code>标记语言。</p>
 </div>
-<div id="white-space-around-img" class="section level2">
+<div id="white-space-around-img" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> White space around img</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;../analysis/collapse-fail-workflowr.png&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;../analysis/collapse-fail-workflowr.png&quot;</span>)</span></code></pre></div>
 <p><img src="../analysis/collapse-fail-workflowr.png" /><!-- --></p>
 <p><code>fig.asp=5</code> 还不懂。</p>
 </div>
-<div id="footer-and-header" class="section level2">
+<div id="footer-and-header" class="section level2" number="5.4">
 <h2><span class="header-section-number">5.4</span> Footer and header</h2>
 <pre><code>&amp;nbsp;
 &lt;hr /&gt;
@@ -322,7 +329,7 @@ A seconde sentence</p>
 <p>但是会报错</p>
 <p><a href="https://github.com/JiaxiangBU/learn_rmd/issues/1" class="uri">https://github.com/JiaxiangBU/learn_rmd/issues/1</a></p>
 </div>
-<div id="figincol" class="section level2">
+<div id="figincol" class="section level2" number="5.5">
 <h2><span class="header-section-number">5.5</span> figures in columns</h2>
 <pre><code>```{r out.width=c(&#39;25%&#39;, &#39;25%&#39;, &#39;25%&#39;, &#39;25%&#39;), fig.show=&#39;hold&#39;}
 library(magrittr)
@@ -331,15 +338,15 @@ plot(rnorm(10))
 plot(rnorm(10))
 plot(rnorm(10))
 ```</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">library</span>(magrittr)</a>
-<a class="sourceLine" id="cb14-2" title="2"><span class="kw">boxplot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb14-3" title="3"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a>
-<a class="sourceLine" id="cb14-4" title="4"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a>
-<a class="sourceLine" id="cb14-5" title="5"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</a></code></pre></div>
-<p><img src="cookbook_files/figure-html/unnamed-chunk-30-1.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-30-2.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-30-3.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-30-4.png" width="25%" /></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">library</span>(magrittr)</span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="kw">boxplot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</span>
+<span id="cb14-5"><a href="#cb14-5"></a><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>))</span></code></pre></div>
+<p><img src="cookbook_files/figure-html/unnamed-chunk-31-1.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-31-2.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-31-3.png" width="25%" /><img src="cookbook_files/figure-html/unnamed-chunk-31-4.png" width="25%" /></p>
 <p><a href="https://github.com/JiaxiangBU/learn_rmd/issues/2" class="uri">https://github.com/JiaxiangBU/learn_rmd/issues/2</a></p>
 </div>
-<div id="several-columns" class="section level2">
+<div id="several-columns" class="section level2" number="5.6">
 <h2><span class="header-section-number">5.6</span> Several columns</h2>
 <p>感觉比 <a href="#figincol">figures in columns</a></p>
 <div class="row">
@@ -371,18 +378,18 @@ ggplot( mtcars, aes(x=mpg)) + geom_histogram(fill=&quot;skyblue&quot;, alpha=0.5
 &lt;/div&gt;</code></pre>
 <p><a href="https://github.com/JiaxiangBU/learn_rmd/issues/3" class="uri">https://github.com/JiaxiangBU/learn_rmd/issues/3</a></p>
 </div>
-<div id="hide-code" class="section level2">
+<div id="hide-code" class="section level2" number="5.7">
 <h2><span class="header-section-number">5.7</span> Hide code</h2>
 <pre><code>output:
   html_document:
     code_folding: &quot;hide&quot;</code></pre>
 <p>这算是给一个选择。</p>
 </div>
-<div id="inlink" class="section level2">
+<div id="inlink" class="section level2" number="5.8">
 <h2><span class="header-section-number">5.8</span> Internal link</h2>
 <p><a href="#skip-a-line">Skip a line</a></p>
 </div>
-<div id="compile-in-a-website" class="section level2">
+<div id="compile-in-a-website" class="section level2" number="5.9">
 <h2><span class="header-section-number">5.9</span> Compile in a website</h2>
 <p><code>_site.yml</code> 其中的文字</p>
 <pre><code>name: &quot;my-website&quot;
@@ -394,11 +401,11 @@ navbar:
     - text: &quot;About&quot;
       href: about.html</code></pre>
 <p>通过</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1">rmarkdown<span class="op">::</span><span class="kw">render_site</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>rmarkdown<span class="op">::</span><span class="kw">render_site</span>()</span></code></pre></div>
 <p>很快的建立了 有nav bar 的网站，workflowr 也是在这个基础上发展的。</p>
 </div>
 </div>
-<div id="公式加上编号" class="section level1">
+<div id="公式加上编号" class="section level1" number="6">
 <h1><span class="header-section-number">6</span> 公式加上编号</h1>
 <p>参考 <a href="https://github.com/nealxun/ForecastingPrinciplePractices/blob/master/11-advanced.Rmd" class="uri">https://github.com/nealxun/ForecastingPrinciplePractices/blob/master/11-advanced.Rmd</a></p>
 <pre><code>\begin{align}
@@ -416,7 +423,7 @@ navbar:
 <pre><code>\@ref(eq:var1a) 和 \@ref(eq:var1b)</code></pre>
 <p><a href="#eq:var1a">(6.1)</a> 和 <a href="#eq:var1b">(6.2)</a></p>
 </div>
-<div id="让-output-保存到特定的文件夹" class="section level1">
+<div id="让-output-保存到特定的文件夹" class="section level1" number="7">
 <h1><span class="header-section-number">7</span> 让 output 保存到特定的文件夹</h1>
 <p>参考 <a href="https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html" class="uri">https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html</a></p>
 <p>比如在 <code>analysis</code> 文件夹中产生两个文件夹</p>
@@ -425,39 +432,39 @@ navbar:
 <code>index.Rmd</code> 先 knit 得到 <code>output/index.html</code>。</li>
 <li><code>analysis/_site.yml</code>，内容为<code>output_dir: ../output</code></li>
 </ol>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb21-1" title="1"><span class="ex">On</span> branch master</a>
-<a class="sourceLine" id="cb21-2" title="2"><span class="ex">Your</span> branch is up to date with <span class="st">&#39;origin/master&#39;</span>.</a>
-<a class="sourceLine" id="cb21-3" title="3"></a>
-<a class="sourceLine" id="cb21-4" title="4"><span class="ex">Untracked</span> files:</a>
-<a class="sourceLine" id="cb21-5" title="5">  <span class="kw">(</span><span class="ex">use</span> <span class="st">&quot;git add &lt;file&gt;...&quot;</span> to include in what will be committed<span class="kw">)</span></a>
-<a class="sourceLine" id="cb21-6" title="6"></a>
-<a class="sourceLine" id="cb21-7" title="7">    <span class="ex">analysis/_site.yml</span></a>
-<a class="sourceLine" id="cb21-8" title="8">    <span class="ex">analysis/index.Rmd</span></a>
-<a class="sourceLine" id="cb21-9" title="9">    <span class="ex">analysis/test-output-dir.Rmd</span></a>
-<a class="sourceLine" id="cb21-10" title="10">    <span class="ex">output/test-output-dir.md</span></a>
-<a class="sourceLine" id="cb21-11" title="11"></a>
-<a class="sourceLine" id="cb21-12" title="12"><span class="ex">nothing</span> added to commit but untracked files present (use <span class="st">&quot;git add&quot;</span> to track)</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1"></a><span class="ex">On</span> branch master</span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="ex">Your</span> branch is up to date with <span class="st">&#39;origin/master&#39;</span>.</span>
+<span id="cb21-3"><a href="#cb21-3"></a></span>
+<span id="cb21-4"><a href="#cb21-4"></a><span class="ex">Untracked</span> files:</span>
+<span id="cb21-5"><a href="#cb21-5"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">&quot;git add &lt;file&gt;...&quot;</span> to include in what will be committed<span class="kw">)</span></span>
+<span id="cb21-6"><a href="#cb21-6"></a></span>
+<span id="cb21-7"><a href="#cb21-7"></a>    <span class="ex">analysis/_site.yml</span></span>
+<span id="cb21-8"><a href="#cb21-8"></a>    <span class="ex">analysis/index.Rmd</span></span>
+<span id="cb21-9"><a href="#cb21-9"></a>    <span class="ex">analysis/test-output-dir.Rmd</span></span>
+<span id="cb21-10"><a href="#cb21-10"></a>    <span class="ex">output/test-output-dir.md</span></span>
+<span id="cb21-11"><a href="#cb21-11"></a></span>
+<span id="cb21-12"><a href="#cb21-12"></a><span class="ex">nothing</span> added to commit but untracked files present (use <span class="st">&quot;git add&quot;</span> to track)</span></code></pre></div>
 <p>以 <code>analysis/test-output-dir.Rmd</code> 为例，当通过快捷键 Ctrl + Shift + K render 文件时，产出 <code>output/test-output-dir.md</code> 的位置在设定的路径<code>output</code>。</p>
 </div>
-<div id="类似-nbdev-写函数功能" class="section level1">
+<div id="类似-nbdev-写函数功能" class="section level1" number="8">
 <h1><span class="header-section-number">8</span> 类似 nbdev 写函数功能</h1>
 <p>Actually, I find ‘dot’ is one of the engines which ‘knitr’ support.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">library</span>(magrittr)</a>
-<a class="sourceLine" id="cb22-2" title="2"><span class="co">#&gt; Warning: 程辑包&#39;magrittr&#39;是用R版本3.6.1 来建造的</span></a>
-<a class="sourceLine" id="cb22-3" title="3"><span class="kw">names</span>(knitr<span class="op">::</span>knit_engines<span class="op">$</span><span class="kw">get</span>()) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb22-4" title="4"><span class="st">    </span><span class="kw">sort</span>()</a>
-<a class="sourceLine" id="cb22-5" title="5"><span class="co">#&gt;  [1] &quot;asis&quot;      &quot;asy&quot;       &quot;awk&quot;       &quot;bash&quot;      &quot;block&quot;     &quot;block2&quot;   </span></a>
-<a class="sourceLine" id="cb22-6" title="6"><span class="co">#&gt;  [7] &quot;c&quot;         &quot;cat&quot;       &quot;coffee&quot;    &quot;css&quot;       &quot;dot&quot;       &quot;fortran&quot;  </span></a>
-<a class="sourceLine" id="cb22-7" title="7"><span class="co">#&gt; [13] &quot;fortran95&quot; &quot;gawk&quot;      &quot;go&quot;        &quot;groovy&quot;    &quot;haskell&quot;   &quot;highlight&quot;</span></a>
-<a class="sourceLine" id="cb22-8" title="8"><span class="co">#&gt; [19] &quot;js&quot;        &quot;julia&quot;     &quot;lein&quot;      &quot;mysql&quot;     &quot;node&quot;      &quot;octave&quot;   </span></a>
-<a class="sourceLine" id="cb22-9" title="9"><span class="co">#&gt; [25] &quot;perl&quot;      &quot;psql&quot;      &quot;python&quot;    &quot;Rcpp&quot;      &quot;Rscript&quot;   &quot;ruby&quot;     </span></a>
-<a class="sourceLine" id="cb22-10" title="10"><span class="co">#&gt; [31] &quot;sas&quot;       &quot;sass&quot;      &quot;scala&quot;     &quot;scss&quot;      &quot;sed&quot;       &quot;sh&quot;       </span></a>
-<a class="sourceLine" id="cb22-11" title="11"><span class="co">#&gt; [37] &quot;sql&quot;       &quot;stan&quot;      &quot;stata&quot;     &quot;tikz&quot;      &quot;zsh&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="kw">library</span>(magrittr)</span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="co">#&gt; Warning: 程辑包&#39;magrittr&#39;是用R版本3.6.1 来建造的</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="kw">names</span>(knitr<span class="op">::</span>knit_engines<span class="op">$</span><span class="kw">get</span>()) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb22-4"><a href="#cb22-4"></a><span class="st">    </span><span class="kw">sort</span>()</span>
+<span id="cb22-5"><a href="#cb22-5"></a><span class="co">#&gt;  [1] &quot;asis&quot;      &quot;asy&quot;       &quot;awk&quot;       &quot;bash&quot;      &quot;block&quot;     &quot;block2&quot;   </span></span>
+<span id="cb22-6"><a href="#cb22-6"></a><span class="co">#&gt;  [7] &quot;c&quot;         &quot;cat&quot;       &quot;coffee&quot;    &quot;css&quot;       &quot;dot&quot;       &quot;fortran&quot;  </span></span>
+<span id="cb22-7"><a href="#cb22-7"></a><span class="co">#&gt; [13] &quot;fortran95&quot; &quot;gawk&quot;      &quot;go&quot;        &quot;groovy&quot;    &quot;haskell&quot;   &quot;highlight&quot;</span></span>
+<span id="cb22-8"><a href="#cb22-8"></a><span class="co">#&gt; [19] &quot;js&quot;        &quot;julia&quot;     &quot;lein&quot;      &quot;mysql&quot;     &quot;node&quot;      &quot;octave&quot;   </span></span>
+<span id="cb22-9"><a href="#cb22-9"></a><span class="co">#&gt; [25] &quot;perl&quot;      &quot;psql&quot;      &quot;python&quot;    &quot;Rcpp&quot;      &quot;Rscript&quot;   &quot;ruby&quot;     </span></span>
+<span id="cb22-10"><a href="#cb22-10"></a><span class="co">#&gt; [31] &quot;sas&quot;       &quot;sass&quot;      &quot;scala&quot;     &quot;scss&quot;      &quot;sed&quot;       &quot;sh&quot;       </span></span>
+<span id="cb22-11"><a href="#cb22-11"></a><span class="co">#&gt; [37] &quot;sql&quot;       &quot;stan&quot;      &quot;stata&quot;     &quot;tikz&quot;      &quot;zsh&quot;</span></span></code></pre></div>
 <p><sup>Created on 2020-02-02 by the <a href="https://reprex.tidyverse.org">reprex package</a> (v0.3.0)</sup></p>
 <p>However, I don’t find any source to run dot just like python, Julia.
 I think there is another way to do it.
 Use the chunk to preview dot code and use another r chunk to display the dot output.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1">readr<span class="op">::</span><span class="kw">read_lines</span>(<span class="st">&quot;output/use-cat.Rmd&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>readr<span class="op">::</span><span class="kw">read_lines</span>(<span class="st">&quot;output/use-cat.Rmd&quot;</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;```{cat, engine.opts=list(file = &#39;sample.dot&#39;)}&quot;
 ##  [2] &quot;digraph course {&quot;                               
 ##  [3] &quot;rankdir = LR&quot;                                   
@@ -478,33 +485,33 @@ Use the chunk to preview dot code and use another r chunk to display the dot out
 Here, ‘cat’ is also one of the engines ‘knitr’ supports. Here are the notes to introduce it.</p>
 <p><a href="https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/eng-cat.html</a></p>
 <p>以下是实现效果。</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">DiagrammeR<span class="op">::</span><span class="kw">grViz</span>(<span class="st">&quot;output/sample.dot&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-d18ebaedbfbfcd20b452" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d18ebaedbfbfcd20b452">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>DiagrammeR<span class="op">::</span><span class="kw">grViz</span>(<span class="st">&quot;output/sample.dot&quot;</span>)</span></code></pre></div>
+<div id="htmlwidget-e9df0d8bfddafb7f0fa2" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e9df0d8bfddafb7f0fa2">{"x":{"diagram":"digraph course {\nrankdir = LR\nnode [shape = box, style=filled]\nlayout = dot\ncompound =true\n#color = crimson\n\na -> b\nc -> d\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
-<div id="spin_child" class="section level1">
+<div id="spin_child" class="section level1" number="9">
 <h1><span class="header-section-number">9</span> spin_child</h1>
 <p>参考
 <a href="https://community.rstudio.com/t/how-to-write-r-script-into-rmd-as-functioning-code-chunk/37453/3?u=econkid" class="uri">https://community.rstudio.com/t/how-to-write-r-script-into-rmd-as-functioning-code-chunk/37453/3?u=econkid</a></p>
 <p><code>knitr::spin_child("analysis.R")</code></p>
 </div>
-<div id="pretty-print" class="section level1">
+<div id="pretty-print" class="section level1" number="10">
 <h1><span class="header-section-number">10</span> pretty print</h1>
 <p>参考
 <a href="https://stackoverflow.com/questions/24524594/pretty-print-sql-code-from-separate-file-with-knitr" class="uri">https://stackoverflow.com/questions/24524594/pretty-print-sql-code-from-separate-file-with-knitr</a></p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1"><span class="kw">cat</span>(<span class="st">&quot;```sql</span></a>
-<a class="sourceLine" id="cb26-2" title="2"><span class="st">`r xfun::file_string(&#39;mycode.sql&#39;)`</span></a>
-<a class="sourceLine" id="cb26-3" title="3"><span class="st">```&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="kw">cat</span>(<span class="st">&quot;```sql</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="st">`r xfun::file_string(&#39;mycode.sql&#39;)`</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a><span class="st">```&quot;</span>)</span></code></pre></div>
 <pre><code>## ```sql
 ## `r xfun::file_string(&#39;mycode.sql&#39;)`
 ## ```</code></pre>
 </div>
-<div id="engine.path" class="section level1">
+<div id="engine.path" class="section level1" number="11">
 <h1><span class="header-section-number">11</span> engine.path</h1>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">cat</span>(<span class="st">&quot;```{python, engine.path = &#39;D:</span><span class="ch">\\</span><span class="st">install</span><span class="ch">\\</span><span class="st">miniconda</span><span class="ch">\\</span><span class="st">Scripts</span><span class="ch">\\</span><span class="st">ipython3.exe&#39;}</span></a>
-<a class="sourceLine" id="cb28-2" title="2"><span class="st">import sys</span></a>
-<a class="sourceLine" id="cb28-3" title="3"><span class="st">print(sys.version)</span></a>
-<a class="sourceLine" id="cb28-4" title="4"><span class="st">```&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="kw">cat</span>(<span class="st">&quot;```{python, engine.path = &#39;D:</span><span class="ch">\\</span><span class="st">install</span><span class="ch">\\</span><span class="st">miniconda</span><span class="ch">\\</span><span class="st">Scripts</span><span class="ch">\\</span><span class="st">ipython3.exe&#39;}</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="st">import sys</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="st">print(sys.version)</span></span>
+<span id="cb28-4"><a href="#cb28-4"></a><span class="st">```&quot;</span>)</span></code></pre></div>
 <pre><code>## ```{python, engine.path = &#39;D:\install\miniconda\Scripts\ipython3.exe&#39;}
 ## import sys
 ## print(sys.version)
@@ -512,7 +519,7 @@ Here, ‘cat’ is also one of the engines ‘knitr’ supports. Here are the no
 <p>直接找到 exe。
 <code>'D:\\install\\miniconda\\Scripts\\ipython3.exe'</code> 注意要双逸出符号</p>
 </div>
-<div id="direct-use-dot" class="section level1">
+<div id="direct-use-dot" class="section level1" number="12">
 <h1><span class="header-section-number">12</span> direct use dot</h1>
 <p>I find the solution on a yihui’s <a href="https://yihui.org/knitr/demo/engines/">post</a>.
 See the example <a href="https://github.com/yihui/knitr-examples/blob/master/057-engine-dot.Rmd">‘dot.Rmd’</a> host on GitHub.</p>
@@ -523,75 +530,75 @@ See the example <a href="https://github.com/yihui/knitr-examples/blob/master/057
 <p>因此我回复了这个问题
 <a href="https://community.rstudio.com/t/dot-in-rmarkdown/51311/4" class="uri">https://community.rstudio.com/t/dot-in-rmarkdown/51311/4</a></p>
 </div>
-<div id="r-代码模块引用" class="section level1">
+<div id="r-代码模块引用" class="section level1" number="13">
 <h1><span class="header-section-number">13</span> R 代码模块引用</h1>
 <p>参考 <a href="http://stackoverflow.com/q/14802183/559676" class="uri">http://stackoverflow.com/q/14802183/559676</a>
 源代码参考 <a href="https://github.com/yihui/knitr-examples/blob/master/083-ggplot2-reference.Rmd" class="uri">https://github.com/yihui/knitr-examples/blob/master/083-ggplot2-reference.Rmd</a></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">theme</span> (<span class="dt">legend.text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">12</span>, <span class="dt">angle=</span><span class="dv">45</span>))<span class="op">+</span></a>
-<a class="sourceLine" id="cb30-2" title="2"><span class="st">  </span><span class="kw">theme</span> (<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="kw">theme</span> (<span class="dt">legend.text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">12</span>, <span class="dt">angle=</span><span class="dv">45</span>))<span class="op">+</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="st">  </span><span class="kw">theme</span> (<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
 <p>Now we can use <code>&lt;&lt;&gt;&gt;</code> to reference it.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb31-2" title="2"><span class="kw">qplot</span>(carat, price, <span class="dt">data=</span>diamonds, <span class="dt">color=</span>cut)<span class="op">+</span></a>
-<a class="sourceLine" id="cb31-3" title="3"><span class="st">  </span><span class="kw">theme</span> (<span class="dt">legend.text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">12</span>, <span class="dt">angle=</span><span class="dv">45</span>))<span class="op">+</span></a>
-<a class="sourceLine" id="cb31-4" title="4"><span class="st">    </span><span class="kw">theme</span> (<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="kw">qplot</span>(carat, price, <span class="dt">data=</span>diamonds, <span class="dt">color=</span>cut)<span class="op">+</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a><span class="st">  </span><span class="kw">theme</span> (<span class="dt">legend.text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">12</span>, <span class="dt">angle=</span><span class="dv">45</span>))<span class="op">+</span></span>
+<span id="cb31-4"><a href="#cb31-4"></a><span class="st">    </span><span class="kw">theme</span> (<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
 <p><img src="cookbook_files/figure-html/test-a-1.png" width="672" /></p>
 <p>目前测试，只支持 ggplot2</p>
 </div>
-<div id="caption" class="section level1">
+<div id="caption" class="section level1" number="14">
 <h1><span class="header-section-number">14</span> Caption</h1>
-<div id="caption-默认在下" class="section level2">
+<div id="caption-默认在下" class="section level2" number="14.1">
 <h2><span class="header-section-number">14.1</span> caption 默认在下</h2>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="kw">rep</span>(<span class="st">&quot;../figure/bug-toc.png&quot;</span>, <span class="dv">3</span>))</a></code></pre></div>
-<div class="figure"><span id="fig:unnamed-chunk-32-1"></span>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="kw">rep</span>(<span class="st">&quot;../figure/bug-toc.png&quot;</span>, <span class="dv">3</span>))</span></code></pre></div>
+<div class="figure"><span id="fig:unnamed-chunk-33-1"></span>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 <p class="caption">
 Figure 14.1: 图片的 caption
 </p>
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-32-2"></span>
+<div class="figure"><span id="fig:unnamed-chunk-33-2"></span>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 <p class="caption">
 Figure 14.2: 图片的 caption
 </p>
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-32-3"></span>
+<div class="figure"><span id="fig:unnamed-chunk-33-3"></span>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 <p class="caption">
 Figure 14.3: 图片的 caption
 </p>
 </div>
 </div>
-<div id="caption-不重复" class="section level2">
+<div id="caption-不重复" class="section level2" number="14.2">
 <h2><span class="header-section-number">14.2</span> caption 不重复</h2>
 <p><code>fig.show = "hold"</code></p>
 <pre><code>```{r, fig.cap=&#39;图片的 caption&#39;, fig.show = &quot;hold&quot;}
 knitr::include_graphics(rep(&quot;../figure/bug-toc.png&quot;, 3))
 ```</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="kw">rep</span>(<span class="st">&quot;../figure/bug-toc.png&quot;</span>, <span class="dv">3</span>))</a></code></pre></div>
-<div class="figure"><span id="fig:unnamed-chunk-33"></span>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="kw">rep</span>(<span class="st">&quot;../figure/bug-toc.png&quot;</span>, <span class="dv">3</span>))</span></code></pre></div>
+<div class="figure"><span id="fig:unnamed-chunk-34"></span>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  /><img src="../figure/bug-toc.png" alt="图片的 caption"  /><img src="../figure/bug-toc.png" alt="图片的 caption"  />
 <p class="caption">
 Figure 14.4: 图片的 caption
 </p>
 </div>
 </div>
-<div id="caption-在上" class="section level2">
+<div id="caption-在上" class="section level2" number="14.3">
 <h2><span class="header-section-number">14.3</span> caption 在上</h2>
 <p><code>fig.topcaption = TRUE</code></p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="kw">rep</span>(<span class="st">&quot;../figure/bug-toc.png&quot;</span>, <span class="dv">3</span>))</a></code></pre></div>
-<div class="figure"><span id="fig:unnamed-chunk-34-1"></span>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="kw">rep</span>(<span class="st">&quot;../figure/bug-toc.png&quot;</span>, <span class="dv">3</span>))</span></code></pre></div>
+<div class="figure"><span id="fig:unnamed-chunk-35-1"></span>
 <p class="caption">
 Figure 14.5: 图片的 caption
 </p>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-34-2"></span>
+<div class="figure"><span id="fig:unnamed-chunk-35-2"></span>
 <p class="caption">
 Figure 14.6: 图片的 caption
 </p>
 <img src="../figure/bug-toc.png" alt="图片的 caption"  />
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-34-3"></span>
+<div class="figure"><span id="fig:unnamed-chunk-35-3"></span>
 <p class="caption">
 Figure 14.7: 图片的 caption
 </p>
@@ -599,7 +606,7 @@ Figure 14.7: 图片的 caption
 </div>
 </div>
 </div>
-<div id="cross-reference" class="section level1">
+<div id="cross-reference" class="section level1" number="15">
 <h1><span class="header-section-number">15</span> cross reference</h1>
 <p>参考 <a href="https://bookdown.org/yihui/bookdown/cross-references.html" class="uri">https://bookdown.org/yihui/bookdown/cross-references.html</a></p>
 <p>[A plain text]</p>
@@ -611,9 +618,9 @@ Figure 14.7: 图片的 caption
 <!-- 这里加入 misc -->
 <!-- write_tmp -->
 </div>
-<div id="add-toc-github-document" class="section level1">
+<div id="add-toc-github-document" class="section level1" number="16">
 <h1><span class="header-section-number">16</span> Add Toc Github Document</h1>
-<div id="introduction" class="section level2">
+<div id="introduction" class="section level2" number="16.1">
 <h2><span class="header-section-number">16.1</span> Introduction</h2>
 <p>参考 <a href="https://community.rstudio.com/t/yaml-option-toc-doesnt-work-for-rmarkdown-github-document/18757">RStudio Community</a>，替换成 <code>md_document</code></p>
 <pre><code>---
@@ -771,7 +778,7 @@ kable(head(iris), format = &quot;html&quot;, caption = &quot;Title of the table&
 ```
 
 &lt;table&gt;
-&lt;caption&gt;(\#tab:unnamed-chunk-59)Title of the table&lt;/caption&gt;
+&lt;caption&gt;(\#tab:unnamed-chunk-60)Title of the table&lt;/caption&gt;
  &lt;thead&gt;
   &lt;tr&gt;
    &lt;th style=&quot;text-align:right;&quot;&gt; Sepal.Length &lt;/th&gt;
@@ -1081,7 +1088,7 @@ SELECT * FROM `mtcars` where gear IN (3, 4)
 &lt;div class=&quot;knitsql-table&quot;&gt;
 
 
-Table: (\#tab:unnamed-chunk-62)Displaying records 1 - 10
+Table: (\#tab:unnamed-chunk-63)Displaying records 1 - 10
 
 |  mpg| cyl|  disp|  hp| drat|    wt|  qsec| vs| am| gear| carb|
 |----:|---:|-----:|---:|----:|-----:|-----:|--:|--:|----:|----:|
@@ -1203,7 +1210,7 @@ library(webshot)
 webshot(url = &quot;file:///D:/work/learn_rmd/docs/use-collapse.html&quot;, file = &#39;collapse-fail-workflowr.png&#39;)
 ```
 
-&lt;img src=&quot;cookbook_files/figure-html/unnamed-chunk-65-1.png&quot; width=&quot;672&quot; /&gt;
+&lt;img src=&quot;cookbook_files/figure-html/unnamed-chunk-66-1.png&quot; width=&quot;672&quot; /&gt;
 
 
 # Use R Chunk Option Child
@@ -1373,7 +1380,7 @@ render(&quot;5-parameters.Rmd&quot;, params = list(data = &quot;aleutians&quot;)
 因此只要 base 在 Rmd 模板进行编写就可以了。</p>
 <p>还可以 knit with params，有UI 这一步没有问题。</p>
 </div>
-<div id="常见报错" class="section level2">
+<div id="常见报错" class="section level2" number="16.2">
 <h2><span class="header-section-number">16.2</span> 常见报错</h2>
 <pre><code>Error: params object already exists in knit environment so can&#39;t be overwritten by render params</code></pre>
 <p>参考 <a href="https://stackoverflow.com/a/32028424/8625228">Stack Overflow</a>
@@ -1567,40 +1574,40 @@ notedown index.md  &gt; index2.ipynb
 ````</p>
 </div>
 </div>
-<div id="highlight-table" class="section level1">
+<div id="highlight-table" class="section level1" number="17">
 <h1><span class="header-section-number">17</span> Highlight Table</h1>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" title="1"><span class="co"># remotes::install_github(&quot;atusy/ftExtra&quot;)</span></a>
-<a class="sourceLine" id="cb48-2" title="2"><span class="co"># remotes::install_github(&#39;atusy/ftExtra&#39;, ref = &#39;shQuote&#39;)</span></a>
-<a class="sourceLine" id="cb48-3" title="3"><span class="kw">library</span>(ftExtra)</a></code></pre></div>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" title="1">(ftExtra_obj &lt;-</a>
-<a class="sourceLine" id="cb49-2" title="2"><span class="st">  </span><span class="kw">data.frame</span>(</a>
-<a class="sourceLine" id="cb49-3" title="3">    <span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;**bold**&quot;</span>, <span class="st">&quot;*italic*&quot;</span>),</a>
-<a class="sourceLine" id="cb49-4" title="4">    <span class="dt">y =</span> <span class="kw">c</span>(<span class="st">&quot;^superscript^&quot;</span>, <span class="st">&quot;~subscript~&quot;</span>),</a>
-<a class="sourceLine" id="cb49-5" title="5">    <span class="dt">z =</span> <span class="kw">c</span>(<span class="st">&quot;***~ft~^Extra^** is*&quot;</span>, <span class="st">&quot;*Cool*&quot;</span>),</a>
-<a class="sourceLine" id="cb49-6" title="6">    <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb49-7" title="7">  ) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb49-8" title="8"><span class="st">  </span><span class="kw">as_flextable</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb49-9" title="9"><span class="st">  </span><span class="kw">colformat_md</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># remotes::install_github(&quot;atusy/ftExtra&quot;)</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a><span class="co"># remotes::install_github(&#39;atusy/ftExtra&#39;, ref = &#39;shQuote&#39;)</span></span>
+<span id="cb48-3"><a href="#cb48-3"></a><span class="kw">library</span>(ftExtra)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>(ftExtra_obj &lt;-</span>
+<span id="cb49-2"><a href="#cb49-2"></a><span class="st">  </span><span class="kw">data.frame</span>(</span>
+<span id="cb49-3"><a href="#cb49-3"></a>    <span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;**bold**&quot;</span>, <span class="st">&quot;*italic*&quot;</span>),</span>
+<span id="cb49-4"><a href="#cb49-4"></a>    <span class="dt">y =</span> <span class="kw">c</span>(<span class="st">&quot;^superscript^&quot;</span>, <span class="st">&quot;~subscript~&quot;</span>),</span>
+<span id="cb49-5"><a href="#cb49-5"></a>    <span class="dt">z =</span> <span class="kw">c</span>(<span class="st">&quot;***~ft~^Extra^** is*&quot;</span>, <span class="st">&quot;*Cool*&quot;</span>),</span>
+<span id="cb49-6"><a href="#cb49-6"></a>    <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span></span>
+<span id="cb49-7"><a href="#cb49-7"></a>  ) <span class="op">%&gt;%</span></span>
+<span id="cb49-8"><a href="#cb49-8"></a><span class="st">  </span><span class="kw">as_flextable</span>() <span class="op">%&gt;%</span></span>
+<span id="cb49-9"><a href="#cb49-9"></a><span class="st">  </span><span class="kw">colformat_md</span>())</span></code></pre></div>
 <p>It works well when I reinstall ‘ftExtra’.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" title="1">iris <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb50-2" title="2"><span class="st">  </span>head <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb50-3" title="3"><span class="st">  </span><span class="kw">as_flextable</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb50-4" title="4"><span class="st">  </span><span class="kw">span_header</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>iris <span class="op">%&gt;%</span></span>
+<span id="cb50-2"><a href="#cb50-2"></a><span class="st">  </span>head <span class="op">%&gt;%</span></span>
+<span id="cb50-3"><a href="#cb50-3"></a><span class="st">  </span><span class="kw">as_flextable</span>() <span class="op">%&gt;%</span></span>
+<span id="cb50-4"><a href="#cb50-4"></a><span class="st">  </span><span class="kw">span_header</span>()</span></code></pre></div>
 <p>Works again.</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" title="1"><span class="kw">library</span>(dplyr, <span class="dt">warn.conflicts =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb51-2" title="2">iris <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb51-3" title="3"><span class="st">    </span><span class="kw">group_by</span>(Species) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb51-4" title="4"><span class="st">    </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb51-5" title="5"><span class="st">    </span><span class="kw">as_flextable</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="kw">library</span>(dplyr, <span class="dt">warn.conflicts =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb51-2"><a href="#cb51-2"></a>iris <span class="op">%&gt;%</span></span>
+<span id="cb51-3"><a href="#cb51-3"></a><span class="st">    </span><span class="kw">group_by</span>(Species) <span class="op">%&gt;%</span></span>
+<span id="cb51-4"><a href="#cb51-4"></a><span class="st">    </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>) <span class="op">%&gt;%</span></span>
+<span id="cb51-5"><a href="#cb51-5"></a><span class="st">    </span><span class="kw">as_flextable</span>()</span></code></pre></div>
 <p>Works again.</p>
 <p>All examples in the README are reproducible.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" title="1"><span class="kw">class</span>(ftExtra_obj);<span class="kw">typeof</span>(ftExtra_obj)</a></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="kw">class</span>(ftExtra_obj);<span class="kw">typeof</span>(ftExtra_obj)</span></code></pre></div>
 </div>
-<div id="并列表格" class="section level1">
+<div id="并列表格" class="section level1" number="18">
 <h1><span class="header-section-number">18</span> 并列表格</h1>
 <p>参考 <span class="citation">Xie (2017)</span></p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" title="1">tmp &lt;-<span class="st"> </span>mtcars <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>()</a>
-<a class="sourceLine" id="cb53-2" title="2"><span class="kw">list</span>(tmp,tmp) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">kable</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a>tmp &lt;-<span class="st"> </span>mtcars <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>()</span>
+<span id="cb53-2"><a href="#cb53-2"></a><span class="kw">list</span>(tmp,tmp) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">kable</span>()</span></code></pre></div>
 <table class="kable_wrapper">
 <tbody>
 <tr>
@@ -1708,7 +1715,7 @@ notedown index.md  &gt; index2.ipynb
 </tbody>
 </table>
 </div>
-<div id="rmd-with-github-actions" class="section level1">
+<div id="rmd-with-github-actions" class="section level1" number="19">
 <h1><span class="header-section-number">19</span> Rmd with GitHub Actions</h1>
 <p>参考 <a href="https://github.com/JiaxiangBU/rmd-with-ci" class="uri">https://github.com/JiaxiangBU/rmd-with-ci</a></p>
 <ol style="list-style-type: decimal">
@@ -1716,15 +1723,15 @@ notedown index.md  &gt; index2.ipynb
 <li>先在 GitHub 打开 Actions 后，</li>
 <li>修改本地文档，push 后等一会，CI就把 documents 建立好了。</li>
 </ol>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" title="1"><span class="co"># fs::dir_tree(&quot;../rmd-with-ci/my-document&quot;)</span></a></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="co"># fs::dir_tree(&quot;../rmd-with-ci/my-document&quot;)</span></span></code></pre></div>
 <p>特别注意的是，在本地没有 latex 的时候也可以建立。</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" title="1">usethis<span class="op">::</span><span class="kw">edit_file</span>(<span class="st">&#39;../.github/workflows/render-cookbook.yaml&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a>usethis<span class="op">::</span><span class="kw">edit_file</span>(<span class="st">&#39;../.github/workflows/render-cookbook.yaml&#39;</span>)</span></code></pre></div>
 </div>
-<div id="use-colordf" class="section level1">
+<div id="use-colordf" class="section level1" number="20">
 <h1><span class="header-section-number">20</span> use colorDF</h1>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" title="1"><span class="kw">library</span>(colorDF)</a>
-<a class="sourceLine" id="cb56-2" title="2"><span class="kw">library</span>(magrittr)</a>
-<a class="sourceLine" id="cb56-3" title="3">mtcars <span class="op">%&gt;%</span><span class="st"> </span>colorDF</a></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="kw">library</span>(colorDF)</span>
+<span id="cb56-2"><a href="#cb56-2"></a><span class="kw">library</span>(magrittr)</span>
+<span id="cb56-3"><a href="#cb56-3"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span>colorDF</span></code></pre></div>
 <div class="kable-table">
 <table>
 <thead>
@@ -2197,13 +2204,13 @@ notedown index.md  &gt; index2.ipynb
 </div>
 
 <div class="figure"><span id="fig:20200722165833-plot"></span>
-<img src="figure/20200722165803.png" alt="但是在 gitbook 里面显示不出来，被覆盖了。"  />
+<img src="figure/20200722165803.png" alt="但是在 gitbook 里面显示不出来，被覆盖了。" width="479" />
 <p class="caption">
 Figure 20.1: 但是在 gitbook 里面显示不出来，被覆盖了。
 </p>
 </div>
 </div>
-<div id="文本交叉引用" class="section level1">
+<div id="文本交叉引用" class="section level1" number="21">
 <h1><span class="header-section-number">21</span> 文本交叉引用</h1>
 <pre><code>(ref:training-time) 作者在这里说明的训练时间减少，不是只加入 BN 后一个 epoch 时间减少，理论上加入了过多的参数，是会变慢的，但是整体 epochs 加总时间减少，因为可以采用更大的 alpha 了。 
 
@@ -2213,24 +2220,38 @@ Figure 20.1: 但是在 gitbook 里面显示不出来，被覆盖了。
 <p>作者在这里说明的训练时间减少，不是只加入 BN 后一个 epoch 时间减少，理论上加入了过多的参数，是会变慢的，但是整体 epochs 加总时间减少，因为可以采用更大的 alpha 了。</p>
 <p>前面不要加入 <code>\@ref</code></p>
 </div>
-<div id="多个-child-引用" class="section level1">
+<div id="多个-child-引用" class="section level1" number="22">
 <h1><span class="header-section-number">22</span> 多个 child 引用</h1>
 <p><a href="https://bookdown.org/yihui/rmarkdown-cookbook/child-document.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/child-document.html</a></p>
-<p><code>{r, child=c('one.Rmd', 'two.Rmd')}</code></p>
+<p>```{r, child=c(‘one.Rmd’, ‘two.Rmd’)}
+```</p>
 </div>
-<div id="html-output-found-in-document" class="section level1">
+<div id="html-output-found-in-document" class="section level1" number="23">
 <h1><span class="header-section-number">23</span> HTML output found in document</h1>
 <p>参考 <a href="https://stackoverflow.com/questions/42543206/r-markdown-compile-error" class="uri">https://stackoverflow.com/questions/42543206/r-markdown-compile-error</a>
 因为有 HTML 文件，需要用 webshot 截图。</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;webshot&quot;</span>)</a>
-<a class="sourceLine" id="cb58-2" title="2">webshot<span class="op">::</span><span class="kw">install_phantomjs</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;webshot&quot;</span>)</span>
+<span id="cb58-2"><a href="#cb58-2"></a>webshot<span class="op">::</span><span class="kw">install_phantomjs</span>()</span></code></pre></div>
 </div>
-<div id="附录" class="section level1 unnumbered">
+<div id="使用-python" class="section level1" number="24">
+<h1><span class="header-section-number">24</span> 使用 Python</h1>
+<pre><code>Quitting from lines 8-14 (./build-bigram.Rmd) 
+Quitting from lines NA-38 (./build-bigram.Rmd) 
+错误: Installation of Python not found, Python bindings not loaded.</code></pre>
+<blockquote>
+<p>Use reticulate::install_miniconda() if you’d like to install a Miniconda Python environment.
+Also, I don’t know if reticulate work well on windows with another distribution. You can try : Install the python version you want then configure <code>use_python</code> or environment varaible to the path of you python installation.
+<a href="https://community.rstudio.com/t/how-to-configure-python-with-rstudio/47310" class="uri">https://community.rstudio.com/t/how-to-configure-python-with-rstudio/47310</a></p>
+</blockquote>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="co"># https://github.com/rstudio/reticulate/issues/45#issuecomment-522964309</span></span>
+<span id="cb60-2"><a href="#cb60-2"></a>reticulate<span class="op">::</span><span class="kw">use_python</span>(<span class="kw">Sys.which</span>(<span class="st">&#39;python&#39;</span>), <span class="dt">required =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+</div>
+<div id="附录" class="section level1 unnumbered" number="">
 <h1>附录</h1>
 </div>
-<div id="参考文献" class="section level1 unnumbered">
+<div id="参考文献" class="section level1 unnumbered" number="">
 <h1>参考文献</h1>
-<div id="refs" class="references">
+<div id="refs" class="references hanging-indent">
 <div id="ref-Xie2017aligntbl">
 <p>Xie, Yihui. 2017. “Align Multiple Tables Side by Side.” Stack Overflow. 2017. <a href="https://stackoverflow.com/questions/38036680/align-multiple-tables-side-by-side">https://stackoverflow.com/questions/38036680/align-multiple-tables-side-by-side</a>.</p>
 </div>

@@ -1,0 +1,14 @@
+```
+Quitting from lines 8-14 (./build-bigram.Rmd) 
+Quitting from lines NA-38 (./build-bigram.Rmd) 
+错误: Installation of Python not found, Python bindings not loaded.
+```
+> Use reticulate::install_miniconda() if you'd like to install a Miniconda Python environment.
+Also, I don't know if reticulate work well on windows with another distribution. You can try : Install the python version you want then configure `use_python` or environment varaible to the path of you python installation.
+https://community.rstudio.com/t/how-to-configure-python-with-rstudio/47310
+
+
+```{r eval=FALSE}
+# https://github.com/rstudio/reticulate/issues/45#issuecomment-522964309
+reticulate::use_python(Sys.which('python'), required = TRUE)
+```
