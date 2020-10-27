@@ -1,0 +1,21 @@
+## convert doc document into rmarkdown format
+
+原来在 [RStudio Community](https://community.rstudio.com/t/search-a-package-to-convert-doc-document-into-rmarkdown-format/27072) 上提交了一个问题，参考
+https://www.epiphanydigest.com/2020/06/12/how-to-convert-a-word-document-to-markdown-format/
+https://stackoverflow.com/questions/16383237/how-can-doc-docx-files-be-converted-to-markdown-or-structured-text
+找到了方法。
+
+```bash
+pandoc MyWordDoc.docx -f docx -t markdown -o MyWordDoc.Rmd
+```
+
+因为 pandoc 没有申明环境变量，考虑用
+
+```bash
+"D:\install\RStudio\bin\pandoc\pandoc.exe" -f docx -t markdown foo.docx -o foo.markdown
+```
+
+`pandoc --to=FORMAT`是不支持 Rmd 的，所以用 md，然后导出格式使用 Rmd。
+
+如果有图片，使用`--extract-media ../.`
+这里 media 是相对于 md 的位置。
