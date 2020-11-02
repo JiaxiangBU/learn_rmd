@@ -1,0 +1,6 @@
+## 常用参数
+
+    widescreen: true
+    smaller: true
+
+`widescreen`美观些。
