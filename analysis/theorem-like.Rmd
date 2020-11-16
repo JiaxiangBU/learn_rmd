@@ -1,0 +1,12 @@
+| **Environment** | **Printed Name** | **Label Prefix** |
+|-----------------|------------------|------------------|
+| theorem         | Theorem          | thm              |
+| lemma           | Lemma            | lem              |
+| corollary       | Corollary        | cor              |
+| proposition     | Proposition      | prp              |
+| conjecture      | Conjecture       | cnj              |
+| definition      | Definition       | def              |
+| example         | Example          | exm              |
+| exercise        | Exercise         | exr              |
+
+: <https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#theorems>
